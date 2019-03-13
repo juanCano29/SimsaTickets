@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".cTec.TecnicoInicioActivity"
+    android:orientation="vertical">
+
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:gravity="center"
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" >
+
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/menuu"
+            android:id="@+id/botonfrag"
+            />
+
+        <TextView
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="28sp"
+            android:layout_marginLeft="83dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simsa Tickets"
+            />
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="50dp"
+            android:background="@drawable/simsa"
+            android:layout_marginLeft="25dp"/>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/contenedor">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_marginTop="50dp"
+            app:contentPaddingTop="10dp"
+            app:cardBackgroundColor="#263153"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="350dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dia" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="Bienvenido Katia"
+                android:textSize="28dp"
+                android:textAlignment="center"
+                android:textColor="#000" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="350dp"
+                android:text="Que tengas un buen dia
+...de parte de Grupo Simsa"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:textColor="#000" />
+
+
+        </android.support.v7.widget.CardView>
+    </FrameLayout>
+
+
+</LinearLayout>
