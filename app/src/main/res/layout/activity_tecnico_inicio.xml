@@ -8,7 +8,23 @@
     tools:context=".cTec.TecnicoInicioActivity"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="210dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/contsidebar">
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="512dp"
+        android:orientation="vertical"
+        android:id="@+id/contallfrag">
+    </LinearLayout>
 
 
     <android.support.v7.widget.Toolbar
@@ -19,6 +35,8 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" >
+
+
 
 
         <ImageButton
@@ -72,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:text="Bienvenido Katia"
+                android:text="Bienvenido Adolfo"
                 android:textSize="28dp"
                 android:textAlignment="center"
                 android:textColor="#000" />
