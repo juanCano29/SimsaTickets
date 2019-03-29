@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#131313"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#131313"
-    tools:context=".cTec.fragment_sidebar">
-
+    tools:context=".cRoot.cfragment_sidebar_root">
 
     <ImageButton
+        android:background="@drawable/fleci"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/fleci"
-        android:id="@+id/btniz"/>
+        android:id="@+id/rootbtniz"/>
 
     <TextView
         android:paddingTop="10dp"
@@ -19,7 +18,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20dp"
         android:id="@+id/tvpanel"
-        android:layout_below="@+id/btniz"
+        android:layout_below="@+id/rootbtniz"
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
@@ -70,9 +69,5 @@
         android:layout_height="60dp"
         android:background="#131313"
         />
-
-
-
-
 
 </RelativeLayout>
