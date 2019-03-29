@@ -9,13 +9,14 @@ import android.widget.Button;
 import com.example.juankno4.simsaticket.cTec.TecnicoInicioActivity;
 
 public class MainActivity extends AppCompatActivity {
- Button btn2;
+ Button btn2,btn3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         btn2 = findViewById(R.id.btn2);
+        btn3 = findViewById(R.id.btn3);
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(li);
             }
         });
+
+
+
 
     }
 }

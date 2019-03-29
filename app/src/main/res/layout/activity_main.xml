@@ -44,19 +44,27 @@
     <Button
         android:id="@+id/btn1"
         android:layout_width="293dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_gravity="center"
         android:background="@drawable/tx_style"
         android:text="Iniciar sesión"
         android:textColor="#ffffff" />
         <Button
-
             android:layout_marginTop="10dp"
             android:id="@+id/btn2"
             android:layout_width="293dp"
-            android:layout_height="53dp"
+            android:layout_height="30dp"
             android:layout_gravity="center"
             android:background="@drawable/tx_style"
             android:text="Tecnico"
             android:textColor="#ffffff" />
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/btn3"
+        android:layout_width="293dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/tx_style"
+        android:text="Empleado"
+        android:textColor="#ffffff"/>
 </LinearLayout>
