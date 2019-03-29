@@ -7,7 +7,7 @@
     tools:context=".cRoot.cfragment_sidebar_root">
 
     <ImageButton
-        android:background="@drawable/fleci"
+
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:id="@+id/rootbtniz"/>
