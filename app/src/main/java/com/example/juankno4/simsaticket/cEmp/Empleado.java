@@ -1,6 +1,13 @@
 package com.example.juankno4.simsaticket.cEmp;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,15 +19,19 @@ import android.view.MenuItem;
 
 import com.example.juankno4.simsaticket.R;
 
-public class activity_empleado_inicio extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Empleado extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener,fragmentHistorial.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_empleado_inicio);
+        setContentView(R.layout.activity_empleado);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -32,7 +43,31 @@ public class activity_empleado_inicio extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
-
+//        cambiar el color del titulo panel de control
+        MenuItem tools = navigationView.getMenu().findItem(R.id.panel);
+        SpannableString spans=new SpannableString(tools.getTitle());
+        spans.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spans.length(),0);
+        tools.setTitle(spans);
+//        cambiar el color del titulo inicio
+        MenuItem init = navigationView.getMenu().findItem(R.id.inicio);
+        SpannableString span=new SpannableString(init.getTitle());
+        span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
+        init.setTitle(span);
+//        cambiar el color del titulo historial
+        MenuItem hist = navigationView.getMenu().findItem(R.id.historial);
+        SpannableString spa=new SpannableString(hist.getTitle());
+        spa.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spa.length(),0);
+        hist.setTitle(spa);
+//        cambiar el color del titulo registro
+        MenuItem reg = navigationView.getMenu().findItem(R.id.registrar);
+        SpannableString x=new SpannableString(reg.getTitle());
+        x.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,x.length(),0);
+        reg.setTitle(x);
+//        cambiar el color del titulo ver datos
+        MenuItem datos = navigationView.getMenu().findItem(R.id.datos);
+        SpannableString ss=new SpannableString(datos.getTitle());
+        ss.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,ss.length(),0);
+        datos.setTitle(ss);
     }
 
     @Override
@@ -48,7 +83,7 @@ public class activity_empleado_inicio extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_empleado_inicio, menu);
+        getMenuInflater().inflate(R.menu.empleado, menu);
         return true;
     }
 
@@ -78,17 +113,23 @@ public class activity_empleado_inicio extends AppCompatActivity
         } else if (id == R.id.inicio) {
 
         } else if (id == R.id.historial) {
-
+            fragmentHistorial x=fragmentHistorial.newInstance("xx","ss");
+            getSupportFragmentManager().beginTransaction().replace(R.id.pantalla,x).commit();
         } else if (id == R.id.registrar) {
 
-        } else if (id == R.id.verDatos) {
+        } else if (id == R.id.datos) {
 
-        } /*else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_send) {
 
-        }*/
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

@@ -9,4 +9,10 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_empleado">Empleado</string>
+    <string name="panel">panel de control</string>
+    <string name="inicio">inicio</string>
+    <string name="hist">Mi historial</string>
+    <string name="registro">Registrar problema</string>
+    <string name="datos">Ver datos</string>
 </resources>
