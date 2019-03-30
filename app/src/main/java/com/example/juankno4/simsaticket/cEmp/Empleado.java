@@ -43,11 +43,6 @@ public class Empleado extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
-//        cambiar el color del titulo panel de control
-        MenuItem tools = navigationView.getMenu().findItem(R.id.panel);
-        SpannableString spans=new SpannableString(tools.getTitle());
-        spans.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spans.length(),0);
-        tools.setTitle(spans);
 //        cambiar el color del titulo inicio
         MenuItem init = navigationView.getMenu().findItem(R.id.inicio);
         SpannableString span=new SpannableString(init.getTitle());
@@ -68,6 +63,13 @@ public class Empleado extends AppCompatActivity
         SpannableString ss=new SpannableString(datos.getTitle());
         ss.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,ss.length(),0);
         datos.setTitle(ss);
+//        experimentando
+
+        MenuItem comm = navigationView.getMenu().findItem(R.id.cominuca);
+        SpannableString xxx=new SpannableString(comm.getTitle());
+        xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
+        comm.setTitle(xxx);
+
     }
 
     @Override
@@ -108,9 +110,7 @@ public class Empleado extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.panel) {
-            // Handle the camera action
-        } else if (id == R.id.inicio) {
+        if (id == R.id.inicio) {
 
         } else if (id == R.id.historial) {
             fragmentHistorial x=fragmentHistorial.newInstance("xx","ss");
@@ -118,8 +118,6 @@ public class Empleado extends AppCompatActivity
         } else if (id == R.id.registrar) {
 
         } else if (id == R.id.datos) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
