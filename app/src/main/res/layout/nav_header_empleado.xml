@@ -17,8 +17,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/emp"/>
+        android:paddingTop="@dimen/nav_header_vertical_spacing"/>
+        <!--app:srcCompat="@drawable/emp"-->
+
 
     <TextView
         android:gravity="center"
