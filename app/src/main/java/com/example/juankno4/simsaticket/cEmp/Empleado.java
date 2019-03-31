@@ -20,8 +20,8 @@ import android.view.MenuItem;
 import com.example.juankno4.simsaticket.R;
 
 public class Empleado extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,fragmentHistorial.OnFragmentInteractionListener
-//        FragmentInicioEmpleado.OnFragmentInteractionListener
+        implements NavigationView.OnNavigationItemSelectedListener,fragmentHistorial.OnFragmentInteractionListener,
+        FragmentInicioEmpleado.OnFragmentInteractionListener
       {
 
     @Override
@@ -113,8 +113,8 @@ public class Empleado extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.inicio) {
-//            FragmentInicioEmpleado i= FragmentInicioEmpleado.newInstance("xx","ss");
-//            getSupportFragmentManager().beginTransaction().replace(R.id.pantalla,i).commit();
+            FragmentInicioEmpleado i= FragmentInicioEmpleado.newInstance("xx","ss");
+            getSupportFragmentManager().beginTransaction().replace(R.id.pantalla,i).commit();
         } else if (id == R.id.historial) {
             fragmentHistorial x=fragmentHistorial.newInstance("xx","ss");
             getSupportFragmentManager().beginTransaction().replace(R.id.pantalla,x).commit();
