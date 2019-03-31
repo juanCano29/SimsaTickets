@@ -11,20 +11,22 @@
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/inicio"
-                    android:icon="@drawable/house_outline"
                     android:title="@string/inicio" />
+                <!--android:icon="@drawable/house_outline"-->
                 <item
                     android:id="@+id/historial"
-                    android:icon="@drawable/linechart"
                     android:title="@string/hist" />
+                <!--android:icon="@drawable/linechart"-->
                 <item
                     android:id="@+id/registrar"
-                    android:icon="@drawable/plus"
                     android:title="@string/registro" />
+                <!--android:icon="@drawable/plus"-->
+
                 <item
                     android:id="@+id/datos"
-                    android:icon="@drawable/idcard"
                     android:title="@string/datos" />
+                <!--android:icon="@drawable/idcard"-->
+
             </group>
         </menu>
     </item>
