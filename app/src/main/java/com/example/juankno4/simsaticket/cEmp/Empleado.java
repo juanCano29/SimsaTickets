@@ -23,7 +23,8 @@ import com.example.juankno4.simsaticket.R;
 
 public class Empleado extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,fragmentHistorial.OnFragmentInteractionListener,
-        FragmentInicioEmpleado.OnFragmentInteractionListener,RegistrarProblemaFragment.OnFragmentInteractionListener
+        FragmentInicioEmpleado.OnFragmentInteractionListener,RegistrarProblemaFragment.OnFragmentInteractionListener,
+        VerDatosFragment.OnFragmentInteractionListener
       {
 
 
@@ -129,6 +130,11 @@ public class Empleado extends AppCompatActivity
                     .commit();
 
         } else if (id == R.id.datos) {
+            VerDatosFragment vdf = VerDatosFragment.newInstance("xx","ss");
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.pantalla,vdf)
+                    .commit();
 
         }
 
