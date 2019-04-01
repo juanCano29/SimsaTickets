@@ -20,13 +20,14 @@
 
             <!-- Contenedor de Prioridad del problema -->
    <LinearLayout
-       android:layout_marginTop="40dp"
+       android:layout_marginTop="70dp"
        android:gravity="center"
        android:orientation="vertical"
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
     <TextView
-        android:layout_marginLeft="-75dp"
+        android:textSize="16dp"
+        android:layout_marginLeft="-69dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Proridad del problema:"
@@ -47,7 +48,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
     <TextView
-        android:layout_marginLeft="-85dp"
+        android:textSize="16dp"
+        android:layout_marginLeft="-78dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Fecha de problema: "
@@ -68,7 +70,8 @@
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">
     <TextView
-        android:layout_marginLeft="-90dp"
+        android:textSize="16dp"
+        android:layout_marginLeft="-84dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tipo de problema: "
@@ -88,7 +91,8 @@
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">
     <TextView
-        android:layout_marginLeft="-87dp"
+        android:textSize="16dp"
+        android:layout_marginLeft="-84dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Equipo de trabajo: "
@@ -109,6 +113,7 @@
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">
     <TextView
+        android:textSize="16dp"
         android:layout_marginLeft="-105dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -119,7 +124,8 @@
 
            android:id="@+id/edit_desc"
            android:paddingLeft="10dp"
-           android:paddingRight="-10dp"
+           android:paddingRight="10dp"
+           android:paddingBottom="3dp"
            android:background="@drawable/ed_box"
            android:layout_width="306dp"
            android:focusable="true"
@@ -128,11 +134,12 @@
        </LinearLayout>
 
     <Button
-
+       android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:id="@+id/submit_ip"
         android:layout_width="300dp"
         android:layout_height="51dp"
+        android:background="@drawable/btnsubmit"
         android:text="registrar"
 
         />
