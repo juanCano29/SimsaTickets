@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.juankno4.simsaticket.R;
 
@@ -28,6 +29,8 @@ public class RegistrarProblemaFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    EditText edit_desc;
+    View vista;
 
     private OnFragmentInteractionListener mListener;
 
@@ -60,14 +63,20 @@ public class RegistrarProblemaFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+       vista = inflater.inflate(R.layout.fragment_registrar_problema, container, false);
 
-        return inflater.inflate(R.layout.fragment_registrar_problema, container, false);
+
+
+
+
+        return vista;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

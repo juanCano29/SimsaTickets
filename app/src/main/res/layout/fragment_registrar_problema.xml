@@ -118,10 +118,13 @@
        <EditText
 
            android:id="@+id/edit_desc"
-           android:inputType="text"
+           android:paddingLeft="10dp"
+           android:paddingRight="-10dp"
            android:background="@drawable/ed_box"
            android:layout_width="306dp"
-           android:layout_height="90dp" />
+           android:focusable="true"
+           android:layout_height="90dp"
+           android:inputType="textMultiLine" />
        </LinearLayout>
 
     <Button
@@ -131,6 +134,7 @@
         android:layout_width="300dp"
         android:layout_height="51dp"
         android:text="registrar"
+
         />
 
 </LinearLayout>
