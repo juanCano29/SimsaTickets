@@ -1,24 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
-    android:orientation="horizontal"
+    android:scrollbars="none"
     tools:context=".cEmp.RegistrarProblemaFragment">
 
     <!-- TODO: Update blank fragment layout -->
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <Button
-        android:id="@+id/submit_ip"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Contenedor de Prioridad del problema -->
+   <LinearLayout
+       android:layout_marginTop="40dp"
+       android:gravity="center"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginLeft="-75dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Proridad del problema:"
+        android:textColor="#F6D600"
+    />
+       <Spinner
+           android:id="@+id/spin_pdp"
+           android:background="@drawable/ed_box"
+           android:layout_width="306dp"
+           android:layout_height="39dp">
+       </Spinner>
+       </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginLeft="-85dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de problema: "
+        android:textColor="#F6D600"
+        />
+       <EditText
+           android:id="@+id/edit_fecha"
+           android:inputType="date"
+           android:background="@drawable/ed_box"
+           android:layout_width="306dp"
+           android:layout_height="39dp" />
+       </LinearLayout>
+
+             <LinearLayout
+                 android:layout_marginTop="10dp"
+                 android:gravity="center"
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginLeft="-90dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de problema: "
+        android:textColor="#F6D600"
+        />
+       <Spinner
+           android:id="@+id/spin_tipo"
+           android:inputType="date"
+           android:background="@drawable/ed_box"
+           android:layout_width="306dp"
+           android:layout_height="39dp" />
+       </LinearLayout>
+             <LinearLayout
+                 android:layout_marginTop="10dp"
+                 android:gravity="center"
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginLeft="-87dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Equipo de trabajo: "
+        android:textColor="#F6D600"
+        />
+       <Spinner
+           android:id="@+id/spin_eqt"
+           android:inputType="date"
+           android:background="@drawable/ed_box"
+           android:layout_width="306dp"
+           android:layout_height="39dp" />
+       </LinearLayout>
+
+             <LinearLayout
+                 android:layout_marginTop="10dp"
+                 android:gravity="center"
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginLeft="-105dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripcion: "
+        android:textColor="#F6D600"
+        />
+       <EditText
+
+           android:id="@+id/edit_desc"
+           android:inputType="text"
+           android:background="@drawable/ed_box"
+           android:layout_width="306dp"
+           android:layout_height="90dp" />
+       </LinearLayout>
+
+    <Button
+
+        android:layout_gravity="center"
+        android:id="@+id/submit_ip"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:text="registrar"
         />
 
 </LinearLayout>
 
+    </LinearLayout>
 
-</LinearLayout>
+
+</ScrollView>
