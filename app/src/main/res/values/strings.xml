@@ -16,4 +16,5 @@
     <string name="registro">Registrar problema</string>
     <string name="datos">Ver datos</string>
     <string name="problem">no. problema: 123</string>
+    <string name="title_activity_tecnico">TecnicoActivity</string>
 </resources>

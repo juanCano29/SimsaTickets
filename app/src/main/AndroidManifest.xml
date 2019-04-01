@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cRoot.cRoot"></activity>
+        <activity
+            android:name=".cTec.TecnicoActivity"
+            android:label="@string/title_activity_tecnico"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".cRoot.cRoot" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -19,9 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".cTec.TecnicoInicioActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".cEmp.Empleado"
             android:label="@string/app_name"

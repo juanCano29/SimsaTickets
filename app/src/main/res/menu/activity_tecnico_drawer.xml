@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item android:title="Panel de Control">
+        <menu>
+            <item
+                android:id="@+id/nav_inicio"
+                android:icon="@drawable/house_outline"
+                android:title="Inicio" />
+            <item
+                android:id="@+id/nav_admproblema"
+                android:icon="@drawable/list"
+                android:title="Administrar Problemas" />
+            <item
+                android:id="@+id/nav_seguimiento"
+                android:icon="@drawable/eye-button"
+                android:title="Ver Seguimiento" />
+            <item
+                android:id="@+id/nav_datos"
+                android:icon="@drawable/idcard"
+                android:title="Ver Datos" />
+        </menu>
+    </item>
+
+</menu>

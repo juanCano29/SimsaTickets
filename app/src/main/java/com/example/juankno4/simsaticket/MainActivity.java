@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.juankno4.simsaticket.cEmp.Empleado;
-import com.example.juankno4.simsaticket.cTec.TecnicoInicioActivity;
+import com.example.juankno4.simsaticket.cTec.TecnicoActivity;
 
 public class MainActivity extends AppCompatActivity {
  Button btn2, btn3;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent li = new Intent(MainActivity.this,TecnicoInicioActivity.class);
+                Intent li = new Intent(MainActivity.this, TecnicoActivity.class);
                 startActivity(li);
             }
         });
