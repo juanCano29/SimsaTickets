@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:background="@drawable/fondo"
+    tools:context=".cEmp.VerDatosFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Contenedor de Prioridad del problema -->
+            <LinearLayout
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+    <TextView
+        android:textSize="16dp"
+        android:layout_marginLeft="-121dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:textColor="#F6D600"
+        />
+       <TextView
+           android:textSize="27dp"
+           android:layout_marginLeft="-119dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Katia"
+           android:textColor="@color/colorBlanco"
+           />
+       </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+    <TextView
+        android:textSize="16dp"
+        android:layout_marginLeft="-91dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellido Paterno"
+        android:textColor="#F6D600"
+        />
+         <TextView
+             android:textSize="27dp"
+             android:layout_marginLeft="-97dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Hinojosa"
+             android:textColor="@color/colorBlanco"
+             />
+       </LinearLayout>
+
+             <LinearLayout
+                 android:layout_marginTop="10dp"
+                 android:gravity="center"
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+    <TextView
+        android:textSize="16dp"
+        android:layout_marginLeft="-86dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellido Materno: "
+        android:textColor="#F6D600"
+        />
+       <TextView
+           android:textSize="27dp"
+           android:layout_marginLeft="-115dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Ibarra"
+           android:textColor="@color/colorBlanco"
+           />
+       </LinearLayout>
+             <LinearLayout
+                 android:layout_marginTop="10dp"
+                 android:gravity="center"
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+    <TextView
+        android:textSize="16dp"
+        android:layout_marginLeft="-94dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefono de Red"
+        android:textColor="#F6D600"
+        />
+     <TextView
+         android:textSize="27dp"
+         android:layout_marginLeft="-107dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="No. Def"
+         android:textColor="@color/colorBlanco"
+         />
+       </LinearLayout>
+
+             <LinearLayout
+                 android:layout_marginTop="10dp"
+                 android:gravity="center"
+                 android:orientation="vertical"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+    <TextView
+        android:textSize="16dp"
+        android:layout_marginLeft="-127dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celular"
+        android:textColor="#F6D600"
+        />
+       <TextView
+           android:textSize="27dp"
+           android:layout_marginLeft="-77dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="8714300257"
+           android:textColor="@color/colorBlanco"
+           />
+       </LinearLayout>
+              <LinearLayout
+                  android:layout_marginTop="10dp"
+                  android:gravity="center"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+    <TextView
+        android:textSize="16dp"
+        android:layout_marginLeft="-127dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo"
+        android:textColor="#F6D600"
+        />
+       <TextView
+           android:textSize="27dp"
+           android:layout_marginLeft="-107dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="No. Def"
+           android:textColor="@color/colorBlanco"
+           />
+       </LinearLayout>
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:id="@+id/submit_sync"
+        android:layout_width="300dp"
+        android:layout_height="51dp"
+        android:background="@drawable/btnsubmit"
+        android:text="Editar"
+
+        />
+
+</LinearLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
