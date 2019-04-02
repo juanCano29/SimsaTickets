@@ -39,7 +39,7 @@ public class TecnicoActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
-        //Aqui cambiamos el color de la palabra inicio
+        //Aqui cambiamos el color de la palabra inicio del drawer
         MenuItem init = navigationView.getMenu().findItem(R.id.inicio);
         SpannableString span=new SpannableString(init.getTitle());
         span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
