@@ -24,7 +24,7 @@ import com.example.juankno4.simsaticket.R;
 public class Empleado extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,fragmentHistorial.OnFragmentInteractionListener,
         FragmentInicioEmpleado.OnFragmentInteractionListener,RegistrarProblemaFragment.OnFragmentInteractionListener,
-        VerDatosFragment.OnFragmentInteractionListener
+        VerDatosFragment.OnFragmentInteractionListener,ActualizarDatosFragment.OnFragmentInteractionListener
       {
 
 

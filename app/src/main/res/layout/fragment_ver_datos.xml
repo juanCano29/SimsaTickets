@@ -166,12 +166,11 @@
     <Button
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:id="@+id/submit_sync"
+        android:id="@+id/submit_edit"
         android:layout_width="300dp"
         android:layout_height="51dp"
         android:background="@drawable/btnsubmit"
         android:text="Editar"
-
         />
 
 </LinearLayout>
