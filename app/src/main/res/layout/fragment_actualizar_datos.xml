@@ -80,7 +80,7 @@
      android:layout_width="300dp"
      android:layout_height="51dp"
      android:background="@drawable/btnsubmit"
-     android:text="Editar"
+     android:text="Editarr"
 
      />
 
