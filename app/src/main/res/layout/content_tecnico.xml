@@ -10,4 +10,5 @@
     android:background="@drawable/fondo"
     android:id="@+id/pantalla">
 
+
 </android.support.constraint.ConstraintLayout>
