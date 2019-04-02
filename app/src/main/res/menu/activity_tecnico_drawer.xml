@@ -16,8 +16,9 @@
                 android:title="Administrar Problemas" />
             <item
                 android:id="@+id/nav_seguimiento"
-                android:icon="@drawable/eye-button"
-                android:title="Ver Seguimiento" />
+                android:icon="@drawable/eye"
+                android:title="Administrar Problemas" />
+
             <item
                 android:id="@+id/nav_datos"
                 android:icon="@drawable/idcard"
