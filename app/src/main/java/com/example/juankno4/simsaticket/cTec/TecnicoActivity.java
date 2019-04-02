@@ -52,7 +52,7 @@ public class TecnicoActivity extends AppCompatActivity
         SpannableString spanseguimiento=new SpannableString(seguimiento.getTitle());
         spanseguimiento.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanseguimiento.length(),0);
         seguimiento.setTitle(spanseguimiento);
-
+        //elementos
         MenuItem administrar = navigationView.getMenu().findItem(R.id.nav_admproblema);
         SpannableString spanadm = new SpannableString(administrar.getTitle());
         spanadm.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanadm.length(),0);
