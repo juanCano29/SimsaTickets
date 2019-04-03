@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,6 +81,7 @@ public class VerDatosFragment extends Fragment {
                 ActualizarDatosFragment adf = ActualizarDatosFragment.newInstance("xx","ss");
                  getFragmentManager()
                         .beginTransaction()
+                         .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
                         .replace(R.id.pantalla,adf)
                         .commit();
             }
