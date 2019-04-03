@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -119,14 +120,23 @@ public class Empleado extends AppCompatActivity
 
         if (id == R.id.inicio) {
             FragmentInicioEmpleado i= FragmentInicioEmpleado.newInstance("xx","ss");
-            getSupportFragmentManager().beginTransaction().replace(R.id.pantalla,i).commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .replace(R.id.pantalla,i)
+                    .commit();
         } else if (id == R.id.historial) {
             fragmentHistorial x=fragmentHistorial.newInstance("xx","ss");
-            getSupportFragmentManager().beginTransaction().replace(R.id.pantalla,x).commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
+                    .replace(R.id.pantalla,x)
+                    .commit();
         } else if (id == R.id.registrar) {
             RegistrarProblemaFragment rpf = RegistrarProblemaFragment.newInstance("xx","ss");
             getSupportFragmentManager()
                     .beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
                     .replace(R.id.pantalla,rpf)
                     .commit();
 
@@ -134,6 +144,7 @@ public class Empleado extends AppCompatActivity
             VerDatosFragment vdf = VerDatosFragment.newInstance("xx","ss");
             getSupportFragmentManager()
                     .beginTransaction()
+                    .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
                     .replace(R.id.pantalla,vdf)
                     .commit();
 
