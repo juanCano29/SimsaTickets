@@ -17,4 +17,5 @@
     <string name="datos">Ver datos</string>
     <string name="problem">no. problema: 123</string>
     <string name="title_activity_tecnico">TecnicoActivity</string>
+    <string name="title_activity_c_root">cRoot</string>
 </resources>
