@@ -8,17 +8,30 @@ import android.widget.Button;
 
 import com.example.juankno4.simsaticket.cEmp.Empleado;
 import com.example.juankno4.simsaticket.cTec.TecnicoActivity;
+import com.example.juankno4.simsaticket.cRoot.cRoot;
 
 public class MainActivity extends AppCompatActivity {
- Button btn2, btn3;
+ Button btn1, btn2, btn3;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
+
+        btn1.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent root = new Intent(MainActivity.this, cRoot.class);
+                startActivity(root);
+            }
+        });
+
         btn2.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -38,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(lii);
             }
         });
+
 
     }
 }
