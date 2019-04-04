@@ -22,6 +22,7 @@ tools:context=".cTec.fragment_inicio_tecnico">
         app:cardCornerRadius="6dp"
         app:cardElevation="10dp"
         app:cardUseCompatPadding="true">
+        //lo nuevo
         <ImageView
             android:layout_width="350dp"
             android:layout_height="350dp"
