@@ -43,27 +43,10 @@ public class TecnicoActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
-        MenuItem init = navigationView.getMenu().findItem(R.id.nav_inicio);
+        MenuItem init = navigationView.getMenu().findItem(R.id.inicio);
         SpannableString span=new SpannableString(init.getTitle());
         span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
         init.setTitle(span);
-
-        MenuItem datos = navigationView.getMenu().findItem(R.id.nav_datos);
-        SpannableString spandatos=new SpannableString(datos.getTitle());
-        spandatos.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spandatos.length(),0);
-        datos.setTitle(spandatos);
-
-        MenuItem seguimiento = navigationView.getMenu().findItem(R.id.nav_seguimiento);
-        SpannableString spanseguimiento=new SpannableString(seguimiento.getTitle());
-        spanseguimiento.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanseguimiento.length(),0);
-        seguimiento.setTitle(spanseguimiento);
-        //elementos
-        MenuItem administrar = navigationView.getMenu().findItem(R.id.nav_admproblema);
-        SpannableString spanadm = new SpannableString(administrar.getTitle());
-        spanadm.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanadm.length(),0);
-        administrar.setTitle(spanadm);
-
-
     }
 
     @Override
