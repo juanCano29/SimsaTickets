@@ -8,7 +8,9 @@
     tools:context=".cTec.TecnicoActivity"
     tools:showIn="@layout/app_bar_tecnico"
     android:background="@drawable/fondo"
-    android:id="@+id/pantalla">
+    android:id="@+id/contenido">
+
+
 
 
 </android.support.constraint.ConstraintLayout>

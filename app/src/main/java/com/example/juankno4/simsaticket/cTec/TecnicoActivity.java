@@ -1,8 +1,13 @@
 package com.example.juankno4.simsaticket.cTec;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,7 +22,7 @@ import android.view.MenuItem;
 import com.example.juankno4.simsaticket.R;
 
 public class TecnicoActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,10 +105,19 @@ public class TecnicoActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_inicio) {
-            // Handle the camera action
+            Fragment inicio = new fragment_inicio_tecnico();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.contenido,inicio);
+            fragmentTransaction.commit();
         } else if (id == R.id.nav_seguimiento) {
 
+
+
         } else if (id == R.id.nav_datos) {
+            Fragment datos = new fragment_verdatos_tecnico();
+            FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.contenido,datos);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_admproblema) {
 
@@ -112,5 +126,10 @@ public class TecnicoActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

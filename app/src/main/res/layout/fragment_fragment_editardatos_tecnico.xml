@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cTec.fragment_editardatos_tecnico">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:textSize="22dp"
+        android:paddingLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre:"
+        android:id="@+id/nombre"
+        android:paddingTop="22dp"
+        android:textColor="#F6D600"/>
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editnombre"
+        android:layout_below="@+id/nombre"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editnombre"
+        android:text="Apellido Materno:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/apellidom"
+        android:textColor="#F6D600"/>
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editmaterno"
+        android:layout_below="@+id/apellidom"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editmaterno"
+        android:text="Apellido Paterno:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/apellidop"
+        android:textColor="#F6D600"/>
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editpaterno"
+        android:layout_below="@+id/apellidop"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:textColor="#F6D600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editpaterno"
+        android:text="Telefono de Red:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/telefono"/>
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittelefono"
+        android:layout_below="@+id/telefono"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edittelefono"
+        android:text="Celular:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/celular"
+        android:textColor="#F6D600"/>
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editcelular"
+        android:layout_below="@+id/celular"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:textColor="#F6D600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editcelular"
+        android:text="Correo:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/correo"/>
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editcorreo"
+        android:layout_below="@+id/correo"
+        android:layout_marginLeft="20dp"/>
+
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/editcorreo"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ed_box"
+        android:text="guardar"
+        />
+
+
+
+</RelativeLayout>

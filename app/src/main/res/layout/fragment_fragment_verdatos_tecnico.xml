@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cTec.fragment_verdatos_tecnico">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:textSize="22dp"
+        android:paddingLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre:"
+        android:id="@+id/nombre"
+        android:paddingTop="22dp"
+        android:textColor="#F6D600"/>
+    <TextView
+        android:id="@+id/nombreedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombre"
+        android:text="Katia"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nombreedit"
+        android:text="Apellido Materno:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/apellidom"
+        android:textColor="#F6D600"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apellidom"
+        android:text="Arellano"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/apellidomedit"
+        android:textColor="#FFFFFF"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apellidomedit"
+        android:text="Apellido Paterno:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/apellidop"
+        android:textColor="#F6D600"/>
+    <TextView
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apellidop"
+        android:text="Torres"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/apellidopedit"/>
+    <TextView
+        android:textColor="#F6D600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/apellidopedit"
+        android:text="Telefono de Red:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/telefono"/>
+    <TextView
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/telefono"
+        android:text="8798728972"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/telefonoedit"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/telefonoedit"
+        android:text="Celular:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/celular"
+        android:textColor="#F6D600"/>
+    <TextView
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/celular"
+        android:text="89798789785"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/celularedit"/>
+    <TextView
+        android:textColor="#F6D600"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/celularedit"
+        android:text="Correo:"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/correo"/>
+    <TextView
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/correo"
+        android:text="katiaarellanoc@gmail.com"
+        android:textSize="22dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/correoedit"/>
+
+    <Button
+
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/correoedit"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ed_box"
+        android:text="Editar"
+        android:id="@+id/editar"
+        />
+
+
+
+
+
+</RelativeLayout>
