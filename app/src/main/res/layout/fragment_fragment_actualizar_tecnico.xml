@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".cTec.fragment_actualizar_tecnico"
+    android:background="@drawable/fondo"
+    android:padding="30dp"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.CardView
+        android:layout_height="500dp"
+        android:layout_width="match_parent"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20sp">
+
+            <TextView
+                android:id="@+id/folio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="Folio:"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/efolio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/folio"
+                android:layout_marginBottom="10dp"
+                android:text="12"
+                android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/folio"
+                android:text="Nombre:"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gera"
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/nombre"
+                android:layout_below="@+id/efolio"
+                android:id="@+id/enombre"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:text="Software"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/etipo"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/etipo"
+                android:text="Tipo:"
+                android:textSize="16sp"
+                android:id="@+id/tipo"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Equipo:"
+                android:textSize="16sp"
+                android:id="@+id/equipo"
+                android:layout_below="@+id/nombre"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laptop"
+                android:textSize="16sp"
+                android:id="@+id/eequipo"
+                android:layout_below="@+id/enombre"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/equipo"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estatus:"
+                android:textSize="16sp"
+                android:id="@+id/estatus"
+                android:layout_below="@+id/equipo"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pendiente"
+                android:textSize="16sp"
+                android:id="@+id/editestatus"
+                android:layout_below="@+id/eequipo"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/equipo"
+                android:layout_marginBottom="10sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Falla:"
+                android:textSize="16sp"
+                android:id="@+id/falla"
+                android:layout_below="@+id/estatus"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Laptop"
+                android:textSize="16sp"
+                android:id="@+id/edfalla"
+                android:layout_below="@+id/editestatus"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/falla"
+                />
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="440dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/ed_box"
+            android:text="Actualizar"/>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

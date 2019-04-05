@@ -1,5 +1,6 @@
 package com.example.juankno4.simsaticket.cTec;
 
+import android.arch.lifecycle.Lifecycle;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.juankno4.simsaticket.MainActivity;
 import com.example.juankno4.simsaticket.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -85,14 +87,10 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
             @Override
             public void onClick(View v) {
 
-//                fragment_editardatos_tecnico editar = new fragment_editardatos_tecnico();
-//                FragmentTransaction fragmentTransaction = g
-
-
-//                Fragment datos = new fragment_verdatos_tecnico();
-//                FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
-//                fragmentTransaction.replace(R.id.contenido,datos);
-//                fragmentTransaction.commit();
+//                Fragment editar = new fragment_editardatos_tecnico();
+//                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//                transaction.replace(R.id.contenido,editar);
+//                transaction.commit();
 
                 Toast.makeText(getContext(),"editar datos",Toast.LENGTH_SHORT).show();
             }
@@ -147,4 +145,6 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

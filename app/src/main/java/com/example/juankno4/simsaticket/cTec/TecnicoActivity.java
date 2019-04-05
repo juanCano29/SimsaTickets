@@ -22,7 +22,8 @@ import android.view.MenuItem;
 import com.example.juankno4.simsaticket.R;
 
 public class TecnicoActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener,
+        fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener,fragment_seguimiento_tecnico.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +44,25 @@ public class TecnicoActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
-        MenuItem init = navigationView.getMenu().findItem(R.id.inicio);
+        MenuItem init = navigationView.getMenu().findItem(R.id.nav_inicio);
         SpannableString span=new SpannableString(init.getTitle());
         span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
         init.setTitle(span);
+
+        MenuItem dato = navigationView.getMenu().findItem(R.id.nav_datos);
+        SpannableString spandato=new SpannableString(dato.getTitle());
+        spandato.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spandato.length(),0);
+        dato.setTitle(spandato);
+
+        MenuItem seg = navigationView.getMenu().findItem(R.id.nav_seguimiento);
+        SpannableString spanseg=new SpannableString(seg.getTitle());
+        spanseg.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanseg.length(),0);
+        seg.setTitle(spanseg);
+
+        MenuItem adm = navigationView.getMenu().findItem(R.id.nav_admproblema);
+        SpannableString spanadm=new SpannableString(adm.getTitle());
+        spanadm.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanadm.length(),0);
+        adm.setTitle(spanadm);
     }
 
     @Override
@@ -93,7 +109,10 @@ public class TecnicoActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.contenido,inicio);
             fragmentTransaction.commit();
         } else if (id == R.id.nav_seguimiento) {
-
+            Fragment seguimiento = new fragment_seguimiento_tecnico();
+            FragmentTransaction transaction = getSupportFragmentManager(). beginTransaction();
+            transaction.replace(R.id.contenido,seguimiento);
+            transaction.commit();
 
 
         } else if (id == R.id.nav_datos) {
@@ -104,6 +123,10 @@ public class TecnicoActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_admproblema) {
 
+            Fragment problema = new fragment_problemas_tecnico();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.contenido,problema);
+            transaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -114,5 +137,9 @@ public class TecnicoActivity extends AppCompatActivity
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    public TecnicoActivity() {
+        super();
     }
 }
