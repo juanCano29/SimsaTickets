@@ -4,9 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.juankno4.simsaticket.R;
 
@@ -18,7 +21,7 @@ import com.example.juankno4.simsaticket.R;
  * Use the {@link fragment_problemas_tecnico#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_problemas_tecnico extends Fragment {
+public class fragment_problemas_tecnico extends Fragment implements fragment_actualizar_tecnico.OnFragmentInteractionListener{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,11 +64,25 @@ public class fragment_problemas_tecnico extends Fragment {
         }
     }
 
+    View vista;
+    Button ver;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_problemas_tecnico, container, false);
+
+
+
+        vista= inflater.inflate(R.layout.fragment_fragment_problemas_tecnico, container, false);
+        ver= vista.findViewById(R.id.ver);
+        ver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+        return vista ;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -90,6 +107,11 @@ public class fragment_problemas_tecnico extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     /**
