@@ -9,7 +9,6 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-
     <Button
         android:layout_width="310dp"
         android:layout_height="50dp"
