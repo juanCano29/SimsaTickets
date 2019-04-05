@@ -57,7 +57,7 @@
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:background="@drawable/tx_style"
-        android:text="Administrador"
+        android:text="Administradorr"
         android:textColor="#ffffff" />
 
         <Button
