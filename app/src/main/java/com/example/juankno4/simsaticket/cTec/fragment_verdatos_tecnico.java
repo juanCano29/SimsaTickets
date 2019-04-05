@@ -87,11 +87,8 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
             @Override
             public void onClick(View v) {
 
-//                Fragment editar = new fragment_editardatos_tecnico();
-//                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-//                transaction.replace(R.id.contenido,editar);
-//                transaction.commit();
-
+                fragment_editardatos_tecnico tecnico = fragment_editardatos_tecnico.newInstance("xx","dd");
+                tecnico.getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,tecnico).commit();
                 Toast.makeText(getContext(),"editar datos",Toast.LENGTH_SHORT).show();
             }
         });
