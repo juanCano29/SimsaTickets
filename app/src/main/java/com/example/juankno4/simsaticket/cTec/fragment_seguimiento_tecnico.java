@@ -66,7 +66,7 @@ public class fragment_seguimiento_tecnico extends Fragment {
 
     View vista;
     Button mensaje;
-    EditText c;
+
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -74,7 +74,6 @@ public class fragment_seguimiento_tecnico extends Fragment {
 
         vista= inflater.inflate(R.layout.fragment_fragment_seguimiento_tecnico, container, false);
         mensaje = vista.findViewById(R.id.mensaje);
-        c=vista.findViewById(R.id.c);
 
         mensaje.setOnClickListener(new View.OnClickListener() {
             @Override
