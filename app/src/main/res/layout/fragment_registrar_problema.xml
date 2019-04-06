@@ -9,143 +9,147 @@
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <!-- Contenedor de Prioridad del problema -->
-   <LinearLayout
-       android:layout_marginTop="70dp"
-       android:gravity="center"
-       android:orientation="vertical"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
-    <TextView
-        android:textSize="16dp"
-        android:layout_marginLeft="-69dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Proridad del problema:"
-        android:textColor="#F6D600"
-    />
-       <Spinner
-           android:id="@+id/spin_pdp"
-           android:background="@drawable/ed_blanco"
-           android:layout_width="306dp"
-           android:layout_height="39dp">
-       </Spinner>
-       </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-69dp"
+                    android:text="Proridad del problema:"
+                    android:textColor="#F6D600"
+                    android:textSize="16dp" />
+
+                <Spinner
+                    android:id="@+id/spin_pdp"
+                    android:layout_width="306dp"
+                    android:layout_height="39dp"
+                    android:background="@color/colorBlanco"></Spinner>
+            </LinearLayout>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:orientation="vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-78dp"
+                    android:text="Fecha de problema: "
+                    android:textColor="#F6D600"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/edit_fecha"
+                    android:layout_width="306dp"
+                    android:layout_height="39dp"
+                    android:background="@color/colorBlanco"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-    <TextView
-        android:textSize="16dp"
-        android:layout_marginLeft="-78dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fecha de problema: "
-        android:textColor="#F6D600"
-        />
-       <EditText
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-           android:id="@+id/edit_fecha"
-           android:inputType="date"
-           android:background="@drawable/ed_blanco"
-           android:layout_width="306dp"
-           android:layout_height="39dp" />
-       </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-84dp"
+                    android:text="Tipo de problema: "
+                    android:textColor="#F6D600"
+                    android:textSize="16dp" />
 
-             <LinearLayout
-                 android:layout_marginTop="10dp"
-                 android:gravity="center"
-                 android:orientation="vertical"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
-    <TextView
-        android:textSize="16dp"
-        android:layout_marginLeft="-84dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tipo de problema: "
-        android:textColor="#F6D600"
-        />
-       <Spinner
-           android:id="@+id/spin_tipo"
-           android:inputType="date"
-           android:background="@drawable/ed_blanco"
-           android:layout_width="306dp"
-           android:layout_height="39dp" />
-       </LinearLayout>
-             <LinearLayout
-                 android:layout_marginTop="10dp"
-                 android:gravity="center"
-                 android:orientation="vertical"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
-    <TextView
-        android:textSize="16dp"
-        android:layout_marginLeft="-84dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Equipo de trabajo: "
-        android:textColor="#F6D600"
-        />
-       <Spinner
-           android:background="@drawable/ed_blanco"
-           android:id="@+id/spin_eqt"
-           android:inputType="date"
-           android:layout_width="306dp"
-           android:layout_height="39dp" />
-       </LinearLayout>
+                <Spinner
+                    android:id="@+id/spin_tipo"
+                    android:layout_width="306dp"
+                    android:layout_height="39dp"
+                    android:background="@color/colorBlanco"
+                    android:inputType="date" />
+            </LinearLayout>
 
-             <LinearLayout
-                 android:layout_marginTop="10dp"
-                 android:gravity="center"
-                 android:orientation="vertical"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
-    <TextView
-        android:textSize="16dp"
-        android:layout_marginLeft="-105dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Descripcion: "
-        android:textColor="#F6D600"
-        />
-       <EditText
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-           android:id="@+id/edit_desc"
-           android:paddingLeft="10dp"
-           android:paddingRight="10dp"
-           android:paddingBottom="3dp"
-           android:background="@drawable/ed_blanco"
-           android:layout_width="306dp"
-           android:focusable="true"
-           android:layout_height="90dp"
-           android:inputType="textMultiLine" />
-       </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-84dp"
+                    android:text="Equipo de trabajo: "
+                    android:textColor="#F6D600"
+                    android:textSize="16dp" />
 
-    <Button
-       android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/submit_ip"
-        android:layout_width="300dp"
-        android:layout_height="51dp"
-        android:background="@drawable/btnsubmit"
-        android:text="registrar"
+                <Spinner
+                    android:id="@+id/spin_eqt"
+                    android:layout_width="306dp"
+                    android:layout_height="39dp"
+                    android:background="@color/colorBlanco"
+                    android:inputType="date" />
+            </LinearLayout>
 
-        />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-105dp"
+                    android:text="Descripcion: "
+                    android:textColor="#F6D600"
+                    android:textSize="16dp" />
+
+                <EditText
+
+                    android:id="@+id/edit_desc"
+                    android:layout_width="306dp"
+                    android:layout_height="90dp"
+                    android:background="@color/colorBlanco"
+                    android:focusable="true"
+                    android:inputType="textMultiLine"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="3dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submit_ip"
+                android:layout_width="300dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btnsubmit"
+                android:text="registrar"
+
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -71,7 +71,8 @@ public class fragmentHistorial extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_historial, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_historial, container, false);
+        return inflate;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

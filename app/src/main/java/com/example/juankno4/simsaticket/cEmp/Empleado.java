@@ -2,23 +2,18 @@ package com.example.juankno4.simsaticket.cEmp;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.example.juankno4.simsaticket.R;
 
@@ -73,9 +68,9 @@ public class Empleado extends AppCompatActivity
 //        experimentando
 
         MenuItem comm = navigationView.getMenu().findItem(R.id.cominuca);
-        SpannableString xxx=new SpannableString(comm.getTitle());
-        xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
-        comm.setTitle(xxx);
+        SpannableString xx=new SpannableString(comm.getTitle());
+        xx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xx.length(),0);
+        comm.setTitle(xx);
 
     }
 
