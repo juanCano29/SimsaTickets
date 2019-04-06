@@ -20,7 +20,8 @@ import android.view.MenuItem;
 import com.example.juankno4.simsaticket.R;
 
 public class Root extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,FragmentInicioRoot.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,FragmentInicioRoot.OnFragmentInteractionListener,
+        fragmenthistorialR.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +107,11 @@ public class Root extends AppCompatActivity
                     .commit();
             // Handle the camera action
         } else if (id == R.id.historialroot) {
+            fragmenthistorialR fhr = fragmenthistorialR.newInstance("xx","ss");
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.pantallaR,fhr)
+                    .commit();
 
         } else if (id == R.id.agregarroot) {
 
