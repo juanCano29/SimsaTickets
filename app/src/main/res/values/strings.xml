@@ -12,10 +12,12 @@
     <string name="title_activity_empleado">Empleado</string>
     <string name="panel">panel de control</string>
     <string name="inicio">inicio</string>
+    <string name="Agreg">Agregar</string>
     <string name="hist">Mi historial</string>
     <string name="registro">Registrar problema</string>
     <string name="datos">Ver datos</string>
     <string name="problem">no. problema: 123</string>
     <string name="title_activity_tecnico">TecnicoActivity</string>
     <string name="title_activity_c_root">cRoot</string>
+    <string name="title_activity_root">Root</string>
 </resources>

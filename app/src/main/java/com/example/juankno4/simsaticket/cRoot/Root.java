@@ -1,9 +1,9 @@
 package com.example.juankno4.simsaticket.cRoot;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -16,16 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 import com.example.juankno4.simsaticket.R;
-import com.example.juankno4.simsaticket.cEmp.FragmentInicioEmpleado;
 
-public class cRoot extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-{
-    //Spinner spinner = (Spinner) findViewById(R.id.spinner);
+public class Root extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener,FragmentInicioRoot.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +28,7 @@ public class cRoot extends AppCompatActivity
         setContentView(R.layout.activity_root);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("");
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,26 +40,25 @@ public class cRoot extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
-
-        MenuItem init = navigationView.getMenu().findItem(R.id.inicioroot);
-        SpannableString span=new SpannableString(init.getTitle());
+        MenuItem inir = navigationView.getMenu().findItem(R.id.inicioroot);
+        SpannableString span=new SpannableString(inir.getTitle());
         span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
-        init.setTitle(span);
+        inir.setTitle(span);
+        MenuItem hist = navigationView.getMenu().findItem(R.id.historialroot);
+        SpannableString ss=new SpannableString(hist.getTitle());
+        ss.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,ss.length(),0);
+        hist.setTitle(ss);
+        MenuItem Agregar = navigationView.getMenu().findItem(R.id.agregarroot);
+        SpannableString sp=new SpannableString(Agregar.getTitle());
+        sp.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,sp.length(),0);
+        Agregar.setTitle(sp);
 
-       /* MenuItem init2 = navigationView.getMenu().findItem(R.id.hisroot);
-        SpannableString span2=new SpannableString(init2.getTitle());
-        span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
-        init.setTitle(span2);
+        MenuItem comm = navigationView.getMenu().findItem(R.id.rootpanel);
+        SpannableString xxx=new SpannableString(comm.getTitle());
+        xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
+        comm.setTitle(xxx);
 
-        MenuItem init3 = navigationView.getMenu().findItem(R.id.addroot);
-        SpannableString span3=new SpannableString(init3.getTitle());
-        span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
-        init.setTitle(span3);*/
     }
-
-
-    //String[] letra = {"A","B","C","D","E"};
-    //spinner.setAdapter(new ArrayAdapter<String>(this, android.R.xml, letra));
 
     @Override
     public void onBackPressed() {
@@ -78,7 +73,7 @@ public class cRoot extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.c_root, menu);
+        getMenuInflater().inflate(R.menu.root, menu);
         return true;
     }
 
@@ -103,24 +98,25 @@ public class cRoot extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.inicioroot)
-        {
-            FragmentInicioRoot i= FragmentInicioRoot.newInstance("xx","ss");
+        if (id == R.id.inicioroot) {
+            FragmentInicioRoot fri = FragmentInicioRoot.newInstance("xx","ss");
             getSupportFragmentManager()
                     .beginTransaction()
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.pantallaroot,i)
+                    .replace(R.id.pantallaR,fri)
                     .commit();
-        } else if (id == R.id.hisroot)
-        {
+            // Handle the camera action
+        } else if (id == R.id.historialroot) {
 
-        } else if (id == R.id.addroot)
-        {
+        } else if (id == R.id.agregarroot) {
 
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".cRoot.cRoot"
-    android:id="@+id/pantallaroot"
+    tools:context=".cRoot.Root"
+    tools:showIn="@layout/app_bar_root"
     android:background="@drawable/fondo"
-    tools:showIn="@layout/app_bar_c_root">
+    android:id="@+id/pantallaR"
+    >
 
-    <!-- app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
     <fragment
         android:name="com.example.juankno4.simsaticket.cRoot.FragmentInicioRoot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
+
 
 </android.support.constraint.ConstraintLayout>

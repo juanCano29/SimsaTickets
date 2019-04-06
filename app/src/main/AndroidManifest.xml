@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.juankno4.simsaticket">
-    
 
     <application
         android:allowBackup="true"
@@ -11,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".cRoot.cRoot"
-            android:label="@string/title_activity_c_root"
+            android:name=".cRoot.Root"
+            android:label="@string/title_activity_root"
             android:theme="@style/AppTheme.NoActionBar.NoActionBar"></activity>
         <activity
             android:name=".cTec.TecnicoActivity"

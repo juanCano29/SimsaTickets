@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.juankno4.simsaticket.cEmp.Empleado;
 import com.example.juankno4.simsaticket.cTec.TecnicoActivity;
-import com.example.juankno4.simsaticket.cRoot.cRoot;
+import com.example.juankno4.simsaticket.cRoot.Root;
+
 
 public class MainActivity extends AppCompatActivity {
  Button btn1, btn2, btn3;
@@ -27,8 +29,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                Intent root = new Intent(MainActivity.this, cRoot.class);
-                startActivity(root);
+                  Intent in = new Intent(MainActivity.this, Root.class);
+                    startActivity(in);
+
             }
         });
 
