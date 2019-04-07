@@ -73,7 +73,7 @@ public class fragment_seguimiento_tecnico extends Fragment {
         // Inflate the layout for this fragment
 
         vista= inflater.inflate(R.layout.fragment_fragment_seguimiento_tecnico, container, false);
-        mensaje = vista.findViewById(R.id.mensaje);
+//        mensaje = vista.findViewById(R.id.mensaje);
 
         mensaje.setOnClickListener(new View.OnClickListener() {
             @Override

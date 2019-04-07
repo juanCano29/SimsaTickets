@@ -29,7 +29,7 @@ public class Root extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,FragmentInicioRoot.OnFragmentInteractionListener,
         fragmenthistorialR.OnFragmentInteractionListener{
 
-    Spinner spinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
