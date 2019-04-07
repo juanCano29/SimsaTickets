@@ -27,7 +27,7 @@ import com.example.juankno4.simsaticket.R;
 
 public class Root extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,FragmentInicioRoot.OnFragmentInteractionListener,
-        fragmenthistorialR.OnFragmentInteractionListener{
+        fragmenthistorialR.OnFragmentInteractionListener,AgregarEmpleadoFragment.OnFragmentInteractionListener{
 
 
 
@@ -140,6 +140,13 @@ public class Root extends AppCompatActivity
                     .replace(R.id.pantallaR,fhr)
                     .commit();
 
+        } else if (id == R.id.add_emp){
+
+            AgregarEmpleadoFragment aef = AgregarEmpleadoFragment.newInstance("xx","ss");
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.pantallaR,aef)
+                    .commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

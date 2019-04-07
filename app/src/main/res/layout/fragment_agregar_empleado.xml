@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    android:scrollbars="none"
+    tools:context=".cRoot.AgregarEmpleadoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-128dp"
+            android:layout_marginTop="20dp"
+            android:text="Nombre:"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ed_blanco"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginTop="10dp"
+            android:text="Apellido Paterno:"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ed_blanco"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginTop="10dp"
+            android:text="Apellido Materno:"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ed_blanco"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginTop="10dp"
+            android:text="Telefono de Red:"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ed_blanco"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginTop="10dp"
+            android:text="Telefono Personal:"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ed_blanco"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-134dp"
+            android:layout_marginTop="10dp"
+            android:text="Correo:"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ed_blanco"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-100dp"
+            android:layout_marginTop="10dp"
+            android:text="Tipo de Empleado:"
+            android:textColor="@color/colorPrimary" />
+
+        <Spinner
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ed_blanco"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-110dp"
+            android:layout_marginTop="10dp"
+            android:text="Departamento:"
+            android:textColor="@color/colorPrimary" />
+
+        <Spinner
+            android:layout_marginTop="3dp"
+            android:layout_gravity="center"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:background="@drawable/ed_blanco"
+            />
+
+        <Button
+            android:layout_width="287dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="Guardar"
+            android:background="@drawable/btnsubmit" />
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

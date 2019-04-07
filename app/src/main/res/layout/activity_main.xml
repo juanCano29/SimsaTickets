@@ -24,6 +24,8 @@
         android:background="@drawable/ed_style"
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:drawablePadding="10dp"
+        android:textColor="@color/colorNegro"
+        android:textColorHint="@color/colorNegro"
         android:inputType="text"
         android:paddingLeft="10dp" />
 
@@ -31,8 +33,10 @@
         <EditText
             android:hint="Contraseña"
             android:layout_width="293dp"
+            android:textColor="@color/colorNegro"
             android:layout_height="53dp"
             android:layout_gravity="center"
+            android:textColorHint="@color/colorNegro"
             android:layout_margin="20dp"
             android:background="@drawable/ed_style"
             android:drawableLeft="@drawable/ic_vpn_key_black_24dp"
