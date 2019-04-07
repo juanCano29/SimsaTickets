@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
     <item android:title="@string/panel"
@@ -17,13 +18,34 @@
                     android:icon="@drawable/linechart"
                     android:title="Historial" />
 
-                <item
-                    android:id="@+id/agregarroot"
-                    android:icon="@drawable/plus"
-                    android:title="@string/Agreg" />
+
 
             </group>
+
         </menu>
     </item>
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+
+    <item android:title="Agregar"
+        android:icon="@drawable/plus"
+        android:id="@+id/id_agreg"/>
+
+                <item
+                    android:id="@+id/add_emp"
+                    android:icon="@drawable/house_outline"
+                    android:title="Empleado" />
+
+                <item
+                    android:id="@+id/add_equipo"
+                    android:icon="@drawable/linechart"
+                    android:title="Equipo de Trabajo" />
+                     <item
+                    android:id="@+id/add_user"
+                    android:icon="@drawable/linechart"
+                    android:title="Usuario" />
+    </group>
 
 </menu>

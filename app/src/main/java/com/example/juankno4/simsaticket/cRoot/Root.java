@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,12 +17,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.juankno4.simsaticket.R;
 
 public class Root extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,FragmentInicioRoot.OnFragmentInteractionListener,
         fragmenthistorialR.OnFragmentInteractionListener{
+
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +38,8 @@ public class Root extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("");
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -41,6 +51,9 @@ public class Root extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
+
+
+
         MenuItem inir = navigationView.getMenu().findItem(R.id.inicioroot);
         SpannableString span=new SpannableString(inir.getTitle());
         span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
@@ -49,15 +62,27 @@ public class Root extends AppCompatActivity
         SpannableString ss=new SpannableString(hist.getTitle());
         ss.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,ss.length(),0);
         hist.setTitle(ss);
-        MenuItem Agregar = navigationView.getMenu().findItem(R.id.agregarroot);
-        SpannableString sp=new SpannableString(Agregar.getTitle());
-        sp.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,sp.length(),0);
-        Agregar.setTitle(sp);
-
         MenuItem comm = navigationView.getMenu().findItem(R.id.rootpanel);
         SpannableString xxx=new SpannableString(comm.getTitle());
         xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
         comm.setTitle(xxx);
+        MenuItem commm = navigationView.getMenu().findItem(R.id.id_agreg);
+        SpannableString xxxx=new SpannableString(commm.getTitle());
+        xxxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,xxxx.length(),0);
+        commm.setTitle(xxxx);
+        MenuItem co = navigationView.getMenu().findItem(R.id.add_emp);
+        SpannableString xx=new SpannableString(co.getTitle());
+        xx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,xx.length(),0);
+        co.setTitle(xx);
+        MenuItem coo = navigationView.getMenu().findItem(R.id.add_user);
+        SpannableString x=new SpannableString(coo.getTitle());
+        x.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,x.length(),0);
+        coo.setTitle(x);
+        MenuItem coa = navigationView.getMenu().findItem(R.id.add_equipo);
+        SpannableString xvx=new SpannableString(coa.getTitle());
+        xvx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,xvx.length(),0);
+        coa.setTitle(xvx);
+
 
     }
 
@@ -97,6 +122,8 @@ public class Root extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+
         int id = item.getItemId();
 
         if (id == R.id.inicioroot) {
@@ -112,8 +139,6 @@ public class Root extends AppCompatActivity
                     .beginTransaction()
                     .replace(R.id.pantallaR,fhr)
                     .commit();
-
-        } else if (id == R.id.agregarroot) {
 
         }
 
