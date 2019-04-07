@@ -33,7 +33,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F6D600"
+            android:background="@color/colorBlanco"
             android:padding="20sp">
 
             <TextView
