@@ -16,10 +16,11 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-128dp"
+            android:layout_marginLeft="-118dp"
             android:layout_marginTop="20dp"
             android:text="Nombre:"
             android:textColor="@color/colorPrimary" />
@@ -33,10 +34,11 @@
             android:background="@drawable/ed_blanco"
             />
         <TextView
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-100dp"
+            android:layout_marginLeft="-82dp"
             android:layout_marginTop="10dp"
             android:text="Apellido Paterno:"
             android:textColor="@color/colorPrimary" />
@@ -50,10 +52,11 @@
             android:background="@drawable/ed_blanco"
             />
         <TextView
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-100dp"
+            android:layout_marginLeft="-82dp"
             android:layout_marginTop="10dp"
             android:text="Apellido Materno:"
             android:textColor="@color/colorPrimary" />
@@ -67,10 +70,11 @@
             android:background="@drawable/ed_blanco"
             />
         <TextView
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-100dp"
+            android:layout_marginLeft="-82dp"
             android:layout_marginTop="10dp"
             android:text="Telefono de Red:"
             android:textColor="@color/colorPrimary" />
@@ -84,10 +88,11 @@
             android:background="@drawable/ed_blanco"
             />
         <TextView
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-100dp"
+            android:layout_marginLeft="-75dp"
             android:layout_marginTop="10dp"
             android:text="Telefono Personal:"
             android:textColor="@color/colorPrimary" />
@@ -101,10 +106,11 @@
             android:background="@drawable/ed_blanco"
             />
         <TextView
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-134dp"
+            android:layout_marginLeft="-126dp"
             android:layout_marginTop="10dp"
             android:text="Correo:"
             android:textColor="@color/colorPrimary" />
@@ -118,10 +124,11 @@
             android:background="@drawable/ed_blanco"
             />
         <TextView
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-100dp"
+            android:layout_marginLeft="-74dp"
             android:layout_marginTop="10dp"
             android:text="Tipo de Empleado:"
             android:textColor="@color/colorPrimary" />
@@ -135,10 +142,11 @@
             android:background="@drawable/ed_blanco"
             />
         <TextView
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="-110dp"
+            android:layout_marginLeft="-88dp"
             android:layout_marginTop="10dp"
             android:text="Departamento:"
             android:textColor="@color/colorPrimary" />

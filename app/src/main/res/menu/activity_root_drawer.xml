@@ -36,16 +36,16 @@
 
                 <item
                     android:id="@+id/add_emp"
-                    android:icon="@drawable/house_outline"
+                    android:icon="@drawable/male"
                     android:title="Empleado" />
 
                 <item
                     android:id="@+id/add_equipo"
-                    android:icon="@drawable/linechart"
+                    android:icon="@drawable/monitor"
                     android:title="Equipo de Trabajo" />
                      <item
                     android:id="@+id/add_user"
-                    android:icon="@drawable/linechart"
+                    android:icon="@drawable/multipleusers"
                     android:title="Usuario" />
     </group>
 
