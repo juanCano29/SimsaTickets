@@ -62,6 +62,7 @@ public class fragment_actualizar_tecnico extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    //Cambios
     View v;
     Spinner spiner;
     @Override
