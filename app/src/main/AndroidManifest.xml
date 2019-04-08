@@ -12,6 +12,7 @@
         <activity
             android:name=".cRoot.Root"
             android:label="@string/title_activity_root"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.NoActionBar"></activity>
         <activity
             android:name=".cTec.TecnicoActivity"
