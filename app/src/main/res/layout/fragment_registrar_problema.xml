@@ -38,7 +38,7 @@
                     android:id="@+id/spin_pdp"
                     android:layout_width="306dp"
                     android:layout_height="39dp"
-                    android:background="@color/colorBlanco"></Spinner>
+                    android:background="@drawable/ed_blanco"/>
             </LinearLayout>
 
             <LinearLayout
@@ -60,7 +60,7 @@
                     android:id="@+id/edit_fecha"
                     android:layout_width="306dp"
                     android:layout_height="39dp"
-                    android:background="@color/colorBlanco"
+                    android:background="@drawable/ed_blanco"
                     android:inputType="date" />
             </LinearLayout>
 
@@ -83,7 +83,7 @@
                     android:id="@+id/spin_tipo"
                     android:layout_width="306dp"
                     android:layout_height="39dp"
-                    android:background="@color/colorBlanco"
+                    android:background="@drawable/ed_blanco"
                     android:inputType="date" />
             </LinearLayout>
 
@@ -106,7 +106,7 @@
                     android:id="@+id/spin_eqt"
                     android:layout_width="306dp"
                     android:layout_height="39dp"
-                    android:background="@color/colorBlanco"
+                    android:background="@drawable/ed_blanco"
                     android:inputType="date" />
             </LinearLayout>
 
@@ -126,11 +126,10 @@
                     android:textSize="16dp" />
 
                 <EditText
-
                     android:id="@+id/edit_desc"
                     android:layout_width="306dp"
                     android:layout_height="90dp"
-                    android:background="@color/colorBlanco"
+                    android:background="@drawable/ed_blanco"
                     android:focusable="true"
                     android:inputType="textMultiLine"
                     android:paddingLeft="10dp"
