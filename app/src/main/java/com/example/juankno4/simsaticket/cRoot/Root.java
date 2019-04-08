@@ -27,7 +27,9 @@ import com.example.juankno4.simsaticket.R;
 
 public class Root extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,FragmentInicioRoot.OnFragmentInteractionListener,
-        fragmenthistorialR.OnFragmentInteractionListener,AgregarEmpleadoFragment.OnFragmentInteractionListener{
+        fragmenthistorialR.OnFragmentInteractionListener,AgregarEmpleadoFragment.OnFragmentInteractionListener,AgregarEquipoFragment.OnFragmentInteractionListener,
+        AgregarUsuarioFragment.OnFragmentInteractionListener
+{
 
 
 
@@ -146,6 +148,18 @@ public class Root extends AppCompatActivity
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.pantallaR,aef)
+                    .commit();
+        } else if (id == R.id.add_equipo){
+            AgregarEquipoFragment af = AgregarEquipoFragment.newInstance("xx","ss");
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.pantallaR, af)
+                    .commit();
+        }else if (id == R.id.add_user){
+            AgregarUsuarioFragment auf = AgregarUsuarioFragment.newInstance("xx","ss");
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.pantallaR, auf)
                     .commit();
         }
 

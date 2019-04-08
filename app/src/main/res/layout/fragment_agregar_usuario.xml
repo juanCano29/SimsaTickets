@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/fondo"
+    tools:context=".cRoot.AgregarUsuarioFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:textSize="20sp"
+        android:layout_marginLeft="-57dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="Seleccionar Empleado:"
+        />
+    <Spinner
+        android:id="@+id/spin_selectemp"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center"
+        android:layout_width="327dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/ed_blanco"
+        android:layout_height="43dp" />
+
+    <TextView
+        android:textSize="20sp"
+        android:layout_marginLeft="-120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="Usuario:"
+        />
+    <EditText
+        android:id="@+id/editr_usr"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center"
+        android:layout_width="327dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/ed_blanco"
+        android:layout_height="43dp" />
+    <TextView
+        android:textSize="20sp"
+        android:layout_marginLeft="-103dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="Contraseña:"
+        />
+    <EditText
+        android:id="@+id/editr_pass"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center"
+        android:layout_width="327dp"
+        android:paddingLeft="10dp"
+        android:inputType="textPassword"
+        android:background="@drawable/ed_blanco"
+        android:layout_height="43dp" />
+
+    <Button
+        android:id="@+id/btnr_saveusr"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_width="287dp"
+        android:layout_height="43dp"
+      android:background="@drawable/btnsubmit"
+        android:text="Guardar"
+        />
+
+</LinearLayout>
+
+</LinearLayout>
