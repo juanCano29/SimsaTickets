@@ -23,7 +23,8 @@ import com.example.juankno4.simsaticket.R;
 
 public class TecnicoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener,
-        fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener,fragment_seguimiento_tecnico.OnFragmentInteractionListener{
+        fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener,fragment_seguimiento_tecnico.OnFragmentInteractionListener,
+        fragment_actualizar_tecnico.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
