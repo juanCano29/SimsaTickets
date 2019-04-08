@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.example.juankno4.simsaticket.R;
 
@@ -60,12 +62,22 @@ public class fragment_actualizar_tecnico extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    View v;
+    Spinner spiner;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_actualizar_tecnico, container, false);
+
+        v=inflater.inflate(R.layout.fragment_fragment_actualizar_tecnico, container, false);
+
+        spiner = v.findViewById(R.id.editestatus);
+
+        String[] datos = {"Pendiente","En Proceso","Atendido"};
+
+        spiner.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,datos));
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -100,17 +100,15 @@
                 android:textSize="16sp"
                 android:id="@+id/estatus"
                 android:layout_below="@+id/equipo"
-                android:layout_marginBottom="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
+                android:layout_marginBottom="14dp"/>
+            <Spinner
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Pendiente"
-                android:textSize="16sp"
-                android:id="@+id/editestatus"
                 android:layout_below="@+id/eequipo"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/equipo"
                 android:layout_marginBottom="10sp"
+                android:id="@+id/editestatus"
                 />
             <TextView
                 android:layout_width="wrap_content"
