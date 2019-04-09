@@ -65,7 +65,7 @@ public class fragment_seguimiento_tecnico extends Fragment {
     }
 
     View vista;
-    Button mensaje;
+
 
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
@@ -73,16 +73,7 @@ public class fragment_seguimiento_tecnico extends Fragment {
         // Inflate the layout for this fragment
 
         vista= inflater.inflate(R.layout.fragment_fragment_seguimiento_tecnico, container, false);
-//        mensaje = vista.findViewById(R.id.mensaje);
 
-        mensaje.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://www.google.com.mx/"));
-                startActivity(intent);
-            }
-        });
 
         return vista;
     }
