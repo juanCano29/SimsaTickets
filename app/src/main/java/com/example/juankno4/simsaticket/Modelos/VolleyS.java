@@ -16,14 +16,11 @@ public class VolleyS {
     }
     public static VolleyS getInstance(Context c){
         if(vs ==null){
-
             vs=new VolleyS(c);
         }
         return   vs;
-
     }
     public  RequestQueue getRq(){
         return  rq;
     }
-
 }
