@@ -3,6 +3,10 @@ package com.example.juankno4.simsaticket.Modelos;
 public class Usuario {
     public int id;
     public String NomUsario;
+
+
+
+    public String PassUsuario;
     public String api_token;
     public int CodEmp;
 
@@ -43,6 +47,14 @@ public class Usuario {
 
     public void setCodEmp(int codEmp) {
         CodEmp = codEmp;
+    }
+
+    public String getPassUsuario() {
+        return PassUsuario;
+    }
+
+    public void setPassUsuario(String passUsuario) {
+        PassUsuario = passUsuario;
     }
 
 

@@ -14,6 +14,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.Modelos.Usuario;
 import com.example.juankno4.simsaticket.cEmp.Empleado;
 import com.example.juankno4.simsaticket.cRoot.Root;
@@ -27,7 +28,6 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity {
  Button btn1, btn2, btn3, btnl;
  EditText ed,pas;
- final SharedPreferences shp=getSharedPreferences("user", Context.MODE_PRIVATE);
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -90,19 +90,31 @@ public class MainActivity extends AppCompatActivity {
                         new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                // kiko este apartado es lo modificado del shared preference
+                        // para que no le muevas weeeeey
 
                         try {
                             Gson gson = new Gson();
                             Usuario us= gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
-                            Datos.Usuario=us;
+                            Datos.usuario=us;
+                            SharedPreferences shp = getSharedPreferences("user", Context.MODE_PRIVATE);
 
                             SharedPreferences.Editor edi=shp.edit();
-                            edi.putString("email",us.email);
+                            edi.putString("email",ed.getText().toString());
                             edi.putString("pass",pas.getText().toString());
+                            edi.commit();
 
 
-                            Intent i=new Intent(MainActivity.this,RosaActivity.class);
-                            startActivity(i);
+                             if (us.CodEmp == 1){
+                                 Intent root = new Intent(MainActivity.this, Root.class);
+                                 startActivity(root);
+                             } else if (us.CodEmp == 2){
+                                 Intent tec = new Intent(MainActivity.this, TecnicoActivity.class);
+                                 startActivity(tec);
+                             } else if (us.CodEmp == 3){
+                                 Intent emp = new Intent(MainActivity.this, Empleado.class);
+                                 startActivity(emp);
+                             }
                             finish();
 
                         } catch (JSONException e) {
