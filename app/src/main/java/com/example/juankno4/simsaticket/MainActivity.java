@@ -1,7 +1,5 @@
 package com.example.juankno4.simsaticket;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,60 +15,61 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.juankno4.simsaticket.Modelos.Datos;
-import com.example.juankno4.simsaticket.Modelos.Usuario;
 import com.example.juankno4.simsaticket.Modelos.VolleyS;
-import com.example.juankno4.simsaticket.cEmp.Empleado;
-import com.example.juankno4.simsaticket.cRoot.Root;
-import com.example.juankno4.simsaticket.cTec.TecnicoActivity;
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity {
- Button btn1, btn2, btn3, btnl;
- EditText ed,pas;
- RequestQueue request;
+    Button btn1, btn2, btn3, btnl;
+    SharedPreferences shp;
+    EditText ed, pas;
+    RequestQueue request;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        shp = getSharedPreferences("archivo", MODE_PRIVATE);
+        request = Volley.newRequestQueue(this);
 
+        ed = findViewById(R.id.user);
+        pas = findViewById(R.id.pas);
+        btnl = findViewById(R.id.btn_login);
 
-        request=Volley.newRequestQueue(this);
+        /*String enUs = shp.getString("user", null);
+        String enPassm = shp.getString("password", null);*/
+        /*if (enUs != null) {
+            ed.setText(enUs);
+            pas.setText(enPassm);
+        }*/
 
-        ed=findViewById(R.id.user);
-        pas=findViewById(R.id.pas);
-
-
-        btnl=findViewById(R.id.btn_login);
 
         btnl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 JSONObject dd = new JSONObject();
-
-
                 try {
-                    dd.put("user",ed.getText().toString());
-                    dd.put("pass",pas.getText().toString());
+                    dd.put("NomUsuario", ed.getText().toString());
+                    dd.put("PassUsuario", pas.getText().toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
-                String url=Datos.URL+"/loginAn";
+                String url = Datos.URL + "/loginAnd";
 
-                JsonObjectRequest jor=new JsonObjectRequest(Request.Method.POST, url, dd, new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        Toast.makeText(MainActivity.this, "ENTRO", Toast.LENGTH_SHORT).show();
-                    }
-
-                }, new Response.ErrorListener() {
+                JsonObjectRequest jor = new JsonObjectRequest(
+                        Request.Method.POST,
+                        url,
+                        dd,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
@@ -136,6 +135,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
 
+    public void iniciarsesion(View v) {
+//        SharedPreferences shp.getSharedPreferences("user", );
+        ed = findViewById(R.id.user);
+        pas = findViewById(R.id.pas);
     }
 }

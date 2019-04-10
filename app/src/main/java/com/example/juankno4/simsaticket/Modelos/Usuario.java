@@ -3,9 +3,6 @@ package com.example.juankno4.simsaticket.Modelos;
 public class Usuario {
     public int id;
     public String NomUsario;
-
-
-
     public String PassUsuario;
     public String api_token;
     public int CodEmp;
