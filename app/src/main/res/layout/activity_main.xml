@@ -28,8 +28,7 @@
         android:inputType="text"
         android:paddingLeft="10dp"
         android:textColor="@color/colorNegro"
-        android:textColorHint="#8A8A8A"
-        android:text="Ale"/>
+        android:textColorHint="#8A8A8A"/>
 
 
     <EditText
@@ -45,8 +44,7 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:textColor="@color/colorNegro"
-        android:textColorHint="#8A8A8A"
-        android:text="123"/>
+        android:textColorHint="#8A8A8A" />
 
 
     <Button

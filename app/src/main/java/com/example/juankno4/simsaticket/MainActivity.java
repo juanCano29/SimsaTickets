@@ -20,6 +20,8 @@ import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.Modelos.Usuario;
 import com.example.juankno4.simsaticket.Modelos.VolleyS;
 import com.example.juankno4.simsaticket.cEmp.Empleado;
+import com.example.juankno4.simsaticket.cRoot.Root;
+import com.example.juankno4.simsaticket.cTec.TecnicoActivity;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -57,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
                 JSONObject dd = new JSONObject();
                 try {
-                    dd.put("NomUsuario", "Ale");
-                    dd.put("PassUsuario", "123");
+                    dd.put("NomUsuario", ed.getText().toString());
+                    dd.put("PassUsuario", pas.getText().toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -74,17 +76,21 @@ public class MainActivity extends AppCompatActivity {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-
-
-
-
                                 Log.d("response", response.toString());
                                 try {
                                     Gson gson = new Gson();
                                     Usuario us = gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
+
 //                                    Toast.makeText(MainActivity.this,us.getNomUsuario(), Toast.LENGTH_LONG).show();
                                     if (us.getCodEmp()==1){
+//                                        Toast.makeText(MainActivity.this, "este es un root",Toast.LENGTH_LONG).show();
                                         Intent emp=new Intent(MainActivity.this, Empleado.class);
+                                        startActivity(emp);
+                                    }if (us.getCodEmp()==2){
+                                        Intent emp=new Intent(MainActivity.this, TecnicoActivity.class);
+                                        startActivity(emp);
+                                    }if (us.getCodEmp()==3){
+                                        Intent emp=new Intent(MainActivity.this, Root.class);
                                         startActivity(emp);
                                     }
                                 } catch (JSONException e) {
