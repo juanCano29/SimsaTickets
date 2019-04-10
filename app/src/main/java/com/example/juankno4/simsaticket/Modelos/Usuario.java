@@ -6,13 +6,23 @@ public class Usuario {
     public String PassUsuario;
     public String api_token;
     public int CodEmp;
+    public int TipoP;
 
-    public Usuario(int id, String nomUsuario, String passUsuario, String api_token, int codEmp) {
+    public Usuario(int id, String nomUsuario, String passUsuario, String api_token, int codEmp,int tipoP) {
         this.id = id;
         NomUsuario = nomUsuario;
         PassUsuario = passUsuario;
         this.api_token = api_token;
         CodEmp = codEmp;
+        TipoP=tipoP;
+    }
+
+    public int getTipoP() {
+        return TipoP;
+    }
+
+    public void setTipoP(int tipoP) {
+        TipoP = tipoP;
     }
 
     public int getId() {

@@ -1,5 +1,6 @@
 package com.example.juankno4.simsaticket;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.Modelos.Usuario;
 import com.example.juankno4.simsaticket.Modelos.VolleyS;
+import com.example.juankno4.simsaticket.cEmp.Empleado;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -80,7 +82,11 @@ public class MainActivity extends AppCompatActivity {
                                 try {
                                     Gson gson = new Gson();
                                     Usuario us = gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
-                                    Toast.makeText(MainActivity.this,us.getNomUsuario(), Toast.LENGTH_LONG).show();
+//                                    Toast.makeText(MainActivity.this,us.getNomUsuario(), Toast.LENGTH_LONG).show();
+                                    if (us.getCodEmp()==1){
+                                        Intent emp=new Intent(MainActivity.this, Empleado.class);
+                                        startActivity(emp);
+                                    }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
