@@ -17,6 +17,7 @@
         android:background="@drawable/simsatransporte_contacto_imagen" />
 
     <EditText
+        android:id="@+id/user"
         android:layout_width="293dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
@@ -28,10 +29,11 @@
         android:paddingLeft="10dp"
         android:textColor="@color/colorNegro"
         android:textColorHint="#8A8A8A"
-        android:id="@+id/user"/>
+        android:text="Ale"/>
 
 
     <EditText
+        android:id="@+id/pas"
         android:layout_width="293dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
@@ -43,8 +45,8 @@
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:textColor="@color/colorNegro"
-        android:id="@+id/pas"
-        android:textColorHint="#8A8A8A" />
+        android:textColorHint="#8A8A8A"
+        android:text="123"/>
 
 
     <Button
@@ -54,7 +56,8 @@
         android:layout_gravity="center"
         android:background="@drawable/tx_style"
         android:text="Iniciar sesión"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        />
 
 
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.juankno4.simsaticket;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +16,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.juankno4.simsaticket.Modelos.Datos;
+import com.example.juankno4.simsaticket.Modelos.Usuario;
 import com.example.juankno4.simsaticket.Modelos.VolleyS;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,13 +55,15 @@ public class MainActivity extends AppCompatActivity {
 
                 JSONObject dd = new JSONObject();
                 try {
-                    dd.put("NomUsuario", ed.getText().toString());
-                    dd.put("PassUsuario", pas.getText().toString());
+                    dd.put("NomUsuario", "Ale");
+                    dd.put("PassUsuario", "123");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+// Toast.makeText(MainActivity.this,dd.toString(),Toast.LENGTH_LONG).show();
 
                 String url = Datos.URL + "/loginAnd";
+//                Toast.makeText(MainActivity.this,url.toString(),Toast.LENGTH_LONG).show();
 
                 JsonObjectRequest jor = new JsonObjectRequest(
                         Request.Method.POST,
@@ -67,11 +72,27 @@ public class MainActivity extends AppCompatActivity {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+
+
+
+
+                                Log.d("response", response.toString());
+                                try {
+                                    Gson gson = new Gson();
+                                    Usuario us = gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
+                                    Toast.makeText(MainActivity.this,us.getNomUsuario(), Toast.LENGTH_LONG).show();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+//                                Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
+
+
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Log.d("mensaje", error.toString());
                         Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -137,9 +158,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void iniciarsesion(View v) {
-//        SharedPreferences shp.getSharedPreferences("user", );
-        ed = findViewById(R.id.user);
-        pas = findViewById(R.id.pas);
-    }
 }

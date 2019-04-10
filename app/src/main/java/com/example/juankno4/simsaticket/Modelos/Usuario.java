@@ -2,16 +2,17 @@ package com.example.juankno4.simsaticket.Modelos;
 
 public class Usuario {
     public int id;
-    public String NomUsario;
+    public String NomUsuario;
     public String PassUsuario;
     public String api_token;
     public int CodEmp;
 
-    public Usuario(int id, String nomUsario, String api_token, int codEmp) {
+    public Usuario(int id, String nomUsuario, String passUsuario, String api_token, int codEmp) {
         this.id = id;
-        this.NomUsario = nomUsario;
+        NomUsuario = nomUsuario;
+        PassUsuario = passUsuario;
         this.api_token = api_token;
-        this.CodEmp = codEmp;
+        CodEmp = codEmp;
     }
 
     public int getId() {
@@ -22,12 +23,20 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNomUsario() {
-        return NomUsario;
+    public String getNomUsuario() {
+        return NomUsuario;
     }
 
-    public void setNomUsario(String nomUsario) {
-        NomUsario = nomUsario;
+    public void setNomUsuario(String nomUsuario) {
+        NomUsuario = nomUsuario;
+    }
+
+    public String getPassUsuario() {
+        return PassUsuario;
+    }
+
+    public void setPassUsuario(String passUsuario) {
+        PassUsuario = passUsuario;
     }
 
     public String getApi_token() {
@@ -45,14 +54,4 @@ public class Usuario {
     public void setCodEmp(int codEmp) {
         CodEmp = codEmp;
     }
-
-    public String getPassUsuario() {
-        return PassUsuario;
-    }
-
-    public void setPassUsuario(String passUsuario) {
-        PassUsuario = passUsuario;
-    }
-
-
 }
