@@ -174,10 +174,6 @@ public class ActualizarDatosFragment extends Fragment {
                         });
 
                                         VolleyS.getInstance(getContext()).getRq().add(jor);
-
-
-
-
             }});
 
 
