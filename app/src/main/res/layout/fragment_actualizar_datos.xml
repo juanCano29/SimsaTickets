@@ -17,13 +17,15 @@
            android:gravity="center"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
+
            <EditText
-               android:textColor="@color/colorBlanco"
-               android:textStyle="bold"
-               android:textSize="27sp"
-               android:backgroundTint="@color/colorBlanco"
+                android:id="@+id/edit_empNombre"
                android:layout_width="285dp"
-               android:layout_height="match_parent" />
+               android:layout_height="match_parent"
+               android:backgroundTint="@color/colorBlanco"
+               android:textColor="@color/colorBlanco"
+               android:textSize="27sp"
+               android:textStyle="bold" />
        </LinearLayout>
 
          <LinearLayout
@@ -32,6 +34,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content">
            <EditText
+               android:id="@+id/edit_empAp"
                android:textColor="@color/colorBlanco"
                android:textStyle="bold"
                android:textSize="27sp"
@@ -45,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
            <EditText
+               android:id="@+id/edit_empAm"
                android:textColor="@color/colorBlanco"
                android:textStyle="bold"
                android:textSize="27sp"
@@ -58,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
            <EditText
+               android:id="@+id/edit_empTR"
                android:textColor="@color/colorBlanco"
                android:textStyle="bold"
                android:textSize="27sp"
@@ -71,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
            <EditText
+               android:id="@+id/edit_empCel"
                android:textColor="@color/colorBlanco"
                android:textStyle="bold"
                android:textSize="27sp"
@@ -84,6 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
            <EditText
+               android:id="@+id/edit_empMail"
                android:textColor="@color/colorBlanco"
                android:textStyle="bold"
                android:textSize="27sp"

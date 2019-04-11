@@ -17,155 +17,152 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <!-- Contenedor de Prioridad del problema -->
             <LinearLayout
-                android:layout_marginTop="35dp"
-                android:gravity="center"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-    <TextView
-        android:textSize="16dp"
-        android:layout_marginLeft="-121dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre"
-        android:textColor="#F6D600"
-        />
-       <TextView
-           android:textSize="27dp"
-           android:layout_marginLeft="-119dp"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Katia"
-           android:textColor="@color/colorBlanco"
-           />
-       </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:paddingLeft="25dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre"
+                    android:textColor="#F6D600"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/text_empNombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlanco"
+                    android:textSize="27dp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_marginTop="10dp"
-                android:gravity="center"
+                android:paddingLeft="25dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
     <TextView
         android:textSize="16dp"
-        android:layout_marginLeft="-91dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Apellido Paterno"
         android:textColor="#F6D600"
         />
          <TextView
+             android:id="@+id/text_empAp"
              android:textSize="27dp"
-             android:layout_marginLeft="-97dp"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:text="Hinojosa"
+
              android:textColor="@color/colorBlanco"
              />
        </LinearLayout>
 
              <LinearLayout
                  android:layout_marginTop="10dp"
-                 android:gravity="center"
+                 android:paddingLeft="25dp"
                  android:orientation="vertical"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">
     <TextView
         android:textSize="16dp"
-        android:layout_marginLeft="-86dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Apellido Materno: "
         android:textColor="#F6D600"
         />
        <TextView
+           android:id="@+id/text_empAm"
            android:textSize="27dp"
-           android:layout_marginLeft="-115dp"
+
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="Ibarra"
+
            android:textColor="@color/colorBlanco"
            />
        </LinearLayout>
              <LinearLayout
                  android:layout_marginTop="10dp"
-                 android:gravity="center"
+                 android:paddingLeft="25dp"
                  android:orientation="vertical"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">
     <TextView
         android:textSize="16dp"
-        android:layout_marginLeft="-94dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Telefono de Red"
         android:textColor="#F6D600"
         />
      <TextView
+         android:id="@+id/text_empTR"
          android:textSize="27dp"
-         android:layout_marginLeft="-107dp"
+
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:text="No. Def"
+
          android:textColor="@color/colorBlanco"
          />
        </LinearLayout>
 
              <LinearLayout
                  android:layout_marginTop="10dp"
-                 android:gravity="center"
+                 android:paddingLeft="25dp"
                  android:orientation="vertical"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content">
     <TextView
         android:textSize="16dp"
-        android:layout_marginLeft="-127dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Celular"
         android:textColor="#F6D600"
         />
        <TextView
+           android:id="@+id/text_empCel"
            android:textSize="27dp"
-           android:layout_marginLeft="-77dp"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="8714300257"
            android:textColor="@color/colorBlanco"
            />
        </LinearLayout>
               <LinearLayout
                   android:layout_marginTop="10dp"
-                  android:gravity="center"
+                  android:paddingLeft="25dp"
                   android:orientation="vertical"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content">
     <TextView
         android:textSize="16dp"
-        android:layout_marginLeft="-127dp"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Correo"
         android:textColor="#F6D600"
         />
        <TextView
+           android:id="@+id/text_empMail"
            android:textSize="27dp"
-           android:layout_marginLeft="-107dp"
+
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="No. Def"
            android:textColor="@color/colorBlanco"
            />
        </LinearLayout>
 
     <Button
+
         android:layout_marginTop="45dp"
         android:layout_gravity="center"
         android:id="@+id/submit_edit"

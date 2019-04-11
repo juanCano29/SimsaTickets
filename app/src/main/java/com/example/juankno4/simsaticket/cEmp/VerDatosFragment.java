@@ -10,9 +10,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.juankno4.simsaticket.MainActivity;
+import com.example.juankno4.simsaticket.Modelos.Datos;
+import com.example.juankno4.simsaticket.Modelos.Personas;
+import com.example.juankno4.simsaticket.Modelos.VolleyS;
 import com.example.juankno4.simsaticket.R;
+import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 /**
@@ -34,6 +47,7 @@ public class VerDatosFragment extends Fragment {
     private String mParam2;
     View vista;
     Button submit_edit;
+    TextView text_empNombre,text_empAp,text_empAm,text_empTR,text_empCel,text_empMail;
 
     private OnFragmentInteractionListener mListener;
 
@@ -74,6 +88,44 @@ public class VerDatosFragment extends Fragment {
         // Inflate the layout for this fragment
         vista = inflater.inflate(R.layout.fragment_ver_datos, container, false);
         submit_edit = vista.findViewById(R.id.submit_edit);
+        text_empNombre = vista.findViewById(R.id.text_empNombre);
+        text_empAp = vista.findViewById(R.id.text_empAp);
+        text_empAm = vista.findViewById(R.id.text_empAm);
+        text_empTR = vista.findViewById(R.id.text_empTR);
+        text_empCel = vista.findViewById(R.id.text_empCel);
+        text_empMail = vista.findViewById(R.id.text_empMail);
+
+        JsonObjectRequest jor = new JsonObjectRequest(
+                Request.Method.GET,
+                Datos.URL + "/mostrar",
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            Gson gson = new Gson();
+                            Personas per = gson.fromJson(response.getJSONObject("info").getJSONObject("person").toString(),Personas.class);
+                             text_empNombre.setText(per.getNomEmp());
+                             text_empAp.setText(per.getApPat());
+                             text_empAm.setText(per.getApMat());
+                             text_empTR.setText(per.getTelRed());
+                             text_empCel.setText(per.getCelEmp());
+                             text_empMail.setText(per.getEmailEmp());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+        VolleyS.getInstance(getContext()).getRq().add(jor);
+
+
 
         submit_edit.setOnClickListener(new View.OnClickListener() {
             @Override

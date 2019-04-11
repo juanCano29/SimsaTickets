@@ -113,56 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 VolleyS.getInstance(getApplicationContext()).getRq().add(jor);
 
 
-                /*jor=new JsonObjectRequest(
-                  //    Request.Method.POST,
-                    //    Datos.URL+"/loginAn",
-                      //  dd,
-                        new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                // kiko este apartado es lo modificado del shared preference
-                        // para que no le muevas weeeeey
-
-                        try {
-                            Gson gson = new Gson();
-                            Usuario us= gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
-                            Datos.usuario=us;
-                            SharedPreferences shp = getSharedPreferences("user", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor edi=shp.edit();
-                            edi.putString("usr",us.NomUsario);
-                            edi.putString("pass",pas.getText().toString());
-                            edi.commit();
-
-
-                             if (us.CodEmp == 1){
-                                 Toast.makeText(MainActivity.this, "puto el fofo", Toast.LENGTH_SHORT).show();
-                                 Intent root = new Intent(MainActivity.this, Root.class);
-                                 startActivity(root);
-                             } else if (us.CodEmp == 2){
-                                 Toast.makeText(MainActivity.this, "puto el fofo", Toast.LENGTH_SHORT).show();
-                                 Intent tec = new Intent(MainActivity.this, TecnicoActivity.class);
-                                 startActivity(tec);
-                             } else if (us.CodEmp == 3){
-                                 Toast.makeText(MainActivity.this, "puto el fofo", Toast.LENGTH_SHORT).show();
-                                 Intent emp = new Intent(MainActivity.this, Empleado.class);
-                                 startActivity(emp);
-                             }
-                            finish();
-                        } catch (JSONException e) {
-
-                            Toast.makeText(MainActivity.this, "verifica tus datos", Toast.LENGTH_SHORT).show();
-                             e.printStackTrace();
-                        }
-
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                VolleyS.getInstance(getApplicationContext()).getRq().add(jor);*/
 
             }
         });
