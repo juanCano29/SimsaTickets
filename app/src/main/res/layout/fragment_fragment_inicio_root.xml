@@ -30,11 +30,11 @@
                 android:src="@drawable/dia" />
 
             <TextView
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:text="Bienvenido Emanuel"
+                android:text=""
+                android:id="@+id/nomprincipal"
                 android:textSize="28dp"
                 android:textAlignment="center"
                 android:textColor="#fff" />

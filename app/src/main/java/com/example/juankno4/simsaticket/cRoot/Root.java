@@ -21,8 +21,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.juankno4.simsaticket.MainActivity;
 import com.example.juankno4.simsaticket.R;
 
 public class Root extends AppCompatActivity
@@ -31,7 +33,7 @@ public class Root extends AppCompatActivity
         AgregarUsuarioFragment.OnFragmentInteractionListener
 {
 
-
+    TextView nomprincipal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class Root extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("");
+        nomprincipal = findViewById(R.id.nomprincipal);
+
 
 
 
@@ -52,6 +56,16 @@ public class Root extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
+
+        Bundle buu = new Bundle();
+        buu.getString("nomPer");
+        buu.getInt("idPer");
+        //nomprincipal.setText(buu.getBundle("nomPer"));
+        nomprincipal.setText("Bienvenido " + buu.getString("nomPer"));
+
+        Toast.makeText(Root.this,buu.getString("nomPer"), Toast.LENGTH_LONG).show();
+
+
 
 
 

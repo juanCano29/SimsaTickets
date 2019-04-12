@@ -5,16 +5,29 @@ public class Usuario {
     public String NomUsuario;
     public String PassUsuario;
     public String api_token;
+    public String NomPer;
     public int CodEmp;
     public int TipoP;
 
-    public Usuario(int id, String nomUsuario, String passUsuario, String api_token, int codEmp,int tipoP) {
+
+    public Usuario(int id, String nomUsuario, String passUsuario, String api_token, int codEmp, int tipoP, String nomPer) {
         this.id = id;
         NomUsuario = nomUsuario;
         PassUsuario = passUsuario;
         this.api_token = api_token;
         CodEmp = codEmp;
         TipoP=tipoP;
+        NomPer = nomPer;
+    }
+
+    public String getNomPer()
+    {
+        return NomPer;
+    }
+
+    public void setNomPer(String nomPer)
+    {
+        NomPer = nomPer;
     }
 
     public int getTipoP() {

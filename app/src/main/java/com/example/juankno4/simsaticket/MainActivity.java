@@ -46,9 +46,12 @@ public class MainActivity extends AppCompatActivity {
         pas = findViewById(R.id.pas);
         btnl = findViewById(R.id.btn_login);
 
-
-
-
+        /*String enUs = shp.getString("user", null);
+        String enPassm = shp.getString("password", null);*/
+        /*if (enUs != null) {
+            ed.setText(enUs);
+            pas.setText(enPassm);
+        }*/
 
 
         btnl.setOnClickListener(new View.OnClickListener() {
@@ -77,18 +80,51 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d("response", response.toString());
                                 try {
                                     Gson gson = new Gson();
-                                    Personas us = gson.fromJson(response.getJSONObject("datos").getJSONObject("persona").toString(), Personas.class);
+                                    Personas per = gson.fromJson(response.getJSONObject("datos").getJSONObject("persona").toString(), Personas.class);
+                                    Usuario us = gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
 
-//                                    Toast.makeText(MainActivity.this,us.getNomUsuario(), Toast.LENGTH_LONG).show();
-                                    if (us.getCodTipoPersona()==1){
+
+                                    String nomPer = us.NomUsuario;
+                                    //String nomPer = us.NomPer;
+                                    Integer idPer = us.CodEmp;
+                                    Integer tipoPer = us.TipoP;
+
+
+
+
+                                    if (us.getCodEmp()==1)
+                                    {
 //                                        Toast.makeText(MainActivity.this, "este es un root",Toast.LENGTH_LONG).show();
+                                        Bundle bu = new Bundle();
+                                        bu.putString("nomPer",nomPer);
+                                        bu.putInt("idPer",idPer);
+
+
                                         Intent emp=new Intent(MainActivity.this, Empleado.class);
+                                        emp.putExtras(bu);
+                                        Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
                                         startActivity(emp);
-                                    }if (us.getCodTipoPersona()==2){
-                                        Intent tec=new Intent(MainActivity.this, TecnicoActivity.class);
-                                        startActivity(tec);
-                                    }if (us.getCodTipoPersona()==3){
+
+                                    }if (us.getCodEmp()==2){
+                                        Bundle bu = new Bundle();
+                                        bu.putString("nomPer",nomPer);
+                                        bu.putInt("idPer",idPer);
+
+                                        Intent emp=new Intent(MainActivity.this, TecnicoActivity.class);
+                                        emp.putExtras(bu);
+                                        Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
+
+                                        startActivity(emp);
+                                    }if (us.getCodEmp()==3){
+
+                                        Bundle bu = new Bundle();
+                                        bu.putString("nomPer",nomPer);
+                                        bu.putInt("idPer",idPer);
+
                                         Intent emp=new Intent(MainActivity.this, Root.class);
+                                        emp.putExtras(bu);
+                                        Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
+
                                         startActivity(emp);
                                     }
                                 } catch (JSONException e) {
