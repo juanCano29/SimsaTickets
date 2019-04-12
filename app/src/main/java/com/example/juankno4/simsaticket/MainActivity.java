@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         Intent emp=new Intent(MainActivity.this, Empleado.class);
                                         emp.putExtras(bu);
-                                        Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
                                         startActivity(emp);
 
                                     }if (per.getCodTipoPersona()==2){
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         Intent emp=new Intent(MainActivity.this, TecnicoActivity.class);
                                         emp.putExtras(bu);
-                                        Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
 
                                         startActivity(emp);
                                     }if (per.getCodTipoPersona()==1){
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         Intent emp=new Intent(MainActivity.this, Root.class);
                                         emp.putExtras(bu);
-                                        Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
 
                                         startActivity(emp);
                                     }

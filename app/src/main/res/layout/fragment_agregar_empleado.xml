@@ -26,6 +26,7 @@
             android:textColor="@color/colorPrimary" />
 
         <EditText
+            android:id="@+id/nom"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"
             android:layout_width="327dp"
@@ -44,6 +45,7 @@
             android:textColor="@color/colorPrimary" />
 
         <EditText
+            android:id="@+id/apeP"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"
             android:paddingLeft="10dp"
@@ -62,6 +64,7 @@
             android:textColor="@color/colorPrimary" />
 
         <EditText
+            android:id="@+id/apeM"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"
             android:layout_width="327dp"
@@ -80,6 +83,7 @@
             android:textColor="@color/colorPrimary" />
 
         <EditText
+            android:id="@+id/telR"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"
             android:paddingLeft="10dp"
@@ -98,6 +102,7 @@
             android:textColor="@color/colorPrimary" />
 
         <EditText
+            android:id="@+id/telP"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"
             android:layout_width="327dp"
@@ -116,6 +121,7 @@
             android:textColor="@color/colorPrimary" />
 
         <EditText
+            android:id="@+id/mail"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"
             android:layout_width="327dp"
@@ -133,7 +139,8 @@
             android:text="Tipo de Empleado:"
             android:textColor="@color/colorPrimary" />
 
-        <Spinner
+        <EditText
+            android:id="@+id/tper"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"
             android:layout_width="327dp"
@@ -151,7 +158,8 @@
             android:text="Departamento:"
             android:textColor="@color/colorPrimary" />
 
-        <Spinner
+        <EditText
+            android:id="@+id/dep"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"
             android:layout_width="327dp"

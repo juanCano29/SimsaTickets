@@ -112,7 +112,7 @@ public class VerDatosFragment extends Fragment {
                              text_empCel.setText(per.getCelEmp());
                              text_empMail.setText(per.getEmailEmp());
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            Toast.makeText(getContext(), "Problemas al obtener la informacion...", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -120,6 +120,7 @@ public class VerDatosFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Problemas al obtener la informacion...", Toast.LENGTH_SHORT).show();
                     }
                 });
 
