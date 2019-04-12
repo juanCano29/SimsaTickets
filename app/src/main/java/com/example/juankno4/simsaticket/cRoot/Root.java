@@ -32,8 +32,20 @@ public class Root extends AppCompatActivity
         setContentView(R.layout.activity_root);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("");
-        nomprincipal =(TextView) findViewById(R.id.nomprincipal);
+
+        nomprincipal =(TextView) findViewById(R.id.principio);
+
+
+        Bundle buu = getIntent().getExtras();
+        //nomprincipal.setText(buu.getBundle("nomPer"));
+        nomprincipal.setText("Bienvenido " + buu.getString("nomPer"));
+
+        Toast.makeText(Root.this,buu.getString("nomPer"), Toast.LENGTH_LONG).show();
+
+
+
+
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -46,13 +58,7 @@ public class Root extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
-        Bundle buu = new Bundle();
-        buu.getString("nomPer");
-        buu.getInt("idPer");
-        //nomprincipal.setText(buu.getBundle("nomPer"));
-        nomprincipal.setText("Bienvenido " + buu.getString("nomPer"));
 
-        Toast.makeText(Root.this,buu.getString("nomPer"), Toast.LENGTH_LONG).show();
 
 
         MenuItem comm = navigationView.getMenu().findItem(R.id.rootpanel);

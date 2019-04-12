@@ -14,6 +14,7 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.example.juankno4.simsaticket.R;
 
@@ -23,17 +24,20 @@ public class Empleado extends AppCompatActivity
         VerDatosFragment.OnFragmentInteractionListener,ActualizarDatosFragment.OnFragmentInteractionListener
       {
 
-
+          TextView principal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empleado);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("");
 
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
+
+        principal= findViewById(R.id.principal);
+        Bundle cajaE=getIntent().getExtras();
+
+        principal.setText("Bienvenido "+cajaE.get("nomPer"));
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

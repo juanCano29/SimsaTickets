@@ -38,7 +38,7 @@ public class TecnicoActivity extends AppCompatActivity
         Bundle caja= getIntent().getExtras();
         presentacion= findViewById(R.id.presentacion);
 
-        presentacion.setText("Bienvenido"+" "+caja.get("nomPer"));
+        presentacion.setText("Bienvenido "+caja.get("nomPer"));
         Toast.makeText(TecnicoActivity.this,caja.getString("nomPer"), Toast.LENGTH_LONG).show();
 
 

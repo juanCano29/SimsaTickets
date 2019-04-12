@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
-                android:text="Bienvenido Gera"
+                android:id="@+id/principal"
                 android:textSize="28dp"
                 android:textAlignment="center"
             android:textColor="#fff" />
