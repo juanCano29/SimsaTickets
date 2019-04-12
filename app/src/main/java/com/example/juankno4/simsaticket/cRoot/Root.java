@@ -2,29 +2,20 @@ package com.example.juankno4.simsaticket.cRoot;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
-import android.view.Gravity;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.juankno4.simsaticket.MainActivity;
 import com.example.juankno4.simsaticket.R;
 
 public class Root extends AppCompatActivity
@@ -42,9 +33,7 @@ public class Root extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setTitle("");
-        nomprincipal = findViewById(R.id.nomprincipal);
-
-
+        nomprincipal =(TextView) findViewById(R.id.nomprincipal);
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -66,38 +55,11 @@ public class Root extends AppCompatActivity
         Toast.makeText(Root.this,buu.getString("nomPer"), Toast.LENGTH_LONG).show();
 
 
-
-
-
-
-        MenuItem inir = navigationView.getMenu().findItem(R.id.inicioroot);
-        SpannableString span=new SpannableString(inir.getTitle());
-        span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
-        inir.setTitle(span);
-        MenuItem hist = navigationView.getMenu().findItem(R.id.historialroot);
-        SpannableString ss=new SpannableString(hist.getTitle());
-        ss.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,ss.length(),0);
-        hist.setTitle(ss);
         MenuItem comm = navigationView.getMenu().findItem(R.id.rootpanel);
         SpannableString xxx=new SpannableString(comm.getTitle());
         xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
         comm.setTitle(xxx);
-        MenuItem commm = navigationView.getMenu().findItem(R.id.id_agreg);
-        SpannableString xxxx=new SpannableString(commm.getTitle());
-        xxxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,xxxx.length(),0);
-        commm.setTitle(xxxx);
-        MenuItem co = navigationView.getMenu().findItem(R.id.add_emp);
-        SpannableString xx=new SpannableString(co.getTitle());
-        xx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,xx.length(),0);
-        co.setTitle(xx);
-        MenuItem coo = navigationView.getMenu().findItem(R.id.add_user);
-        SpannableString x=new SpannableString(coo.getTitle());
-        x.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,x.length(),0);
-        coo.setTitle(x);
-        MenuItem coa = navigationView.getMenu().findItem(R.id.add_equipo);
-        SpannableString xvx=new SpannableString(coa.getTitle());
-        xvx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,xvx.length(),0);
-        coa.setTitle(xvx);
+
 
 
     }

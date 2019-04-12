@@ -7,8 +7,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.juankno4.simsaticket.Datos;
 import com.example.juankno4.simsaticket.R;
+
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +35,8 @@ public class fragmenthistorialR extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    TextView txt;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -59,12 +69,32 @@ public class fragmenthistorialR extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        txt.findViewById(R.id.objeto);
+
+        JsonObjectRequest jor= new JsonObjectRequest(
+                Request.Method.POST,
+                Datos.URL + "/mostrarHist",
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }
+
+        );
         return inflater.inflate(R.layout.fragment_fragmenthistorial_r, container, false);
     }
 
