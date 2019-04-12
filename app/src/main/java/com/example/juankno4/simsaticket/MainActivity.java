@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.juankno4.simsaticket.Modelos.Datos;
+import com.example.juankno4.simsaticket.Modelos.Personas;
 import com.example.juankno4.simsaticket.Modelos.Usuario;
 import com.example.juankno4.simsaticket.Modelos.VolleyS;
 import com.example.juankno4.simsaticket.cEmp.Empleado;
@@ -45,12 +46,9 @@ public class MainActivity extends AppCompatActivity {
         pas = findViewById(R.id.pas);
         btnl = findViewById(R.id.btn_login);
 
-        /*String enUs = shp.getString("user", null);
-        String enPassm = shp.getString("password", null);*/
-        /*if (enUs != null) {
-            ed.setText(enUs);
-            pas.setText(enPassm);
-        }*/
+
+
+
 
 
         btnl.setOnClickListener(new View.OnClickListener() {
@@ -79,17 +77,17 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d("response", response.toString());
                                 try {
                                     Gson gson = new Gson();
-                                    Usuario us = gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
+                                    Personas us = gson.fromJson(response.getJSONObject("datos").getJSONObject("persona").toString(), Personas.class);
 
 //                                    Toast.makeText(MainActivity.this,us.getNomUsuario(), Toast.LENGTH_LONG).show();
-                                    if (us.getCodEmp()==1){
+                                    if (us.getCodTipoPersona()==1){
 //                                        Toast.makeText(MainActivity.this, "este es un root",Toast.LENGTH_LONG).show();
                                         Intent emp=new Intent(MainActivity.this, Empleado.class);
                                         startActivity(emp);
-                                    }if (us.getCodEmp()==2){
+                                    }if (us.getCodTipoPersona()==2){
                                         Intent tec=new Intent(MainActivity.this, TecnicoActivity.class);
                                         startActivity(tec);
-                                    }if (us.getCodEmp()==3){
+                                    }if (us.getCodTipoPersona()==3){
                                         Intent emp=new Intent(MainActivity.this, Root.class);
                                         startActivity(emp);
                                     }
