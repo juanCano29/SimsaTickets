@@ -148,6 +148,7 @@ public class AgregarEmpleadoFragment extends Fragment {
                                 catch (JSONException e)
                                 {
                                     Toast.makeText(getContext(), "HOUSTON TENEMOS UN PROBLEMA", Toast.LENGTH_SHORT).show();
+                                    //putos
                                 }
 
 
