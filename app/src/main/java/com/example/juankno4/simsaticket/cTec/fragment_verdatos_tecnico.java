@@ -12,10 +12,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.juankno4.simsaticket.MainActivity;
+import com.example.juankno4.simsaticket.Modelos.Datos;
+import com.example.juankno4.simsaticket.Modelos.Personas;
+import com.example.juankno4.simsaticket.Modelos.VolleyS;
 import com.example.juankno4.simsaticket.R;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 /**
@@ -28,6 +42,7 @@ import com.example.juankno4.simsaticket.R;
  */
 public class fragment_verdatos_tecnico extends Fragment implements fragment_editardatos_tecnico.OnFragmentInteractionListener{
 
+    private int id;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,20 +83,74 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            id = getArguments().getInt("idPer",0);
 
         }
+
+
     }
 
     Button editar;
     View vista;
-
+    TextView nombreeditT,apellidomeditT,apellidopeditT,telefonoeditT,celulareditT,correoeditT;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         vista=inflater.inflate(R.layout.fragment_fragment_verdatos_tecnico, container, false);
-
         editar= vista.findViewById(R.id.editar);
+        nombreeditT = vista.findViewById(R.id.nombreeditT);
+        apellidomeditT = vista.findViewById(R.id.apellidomeditT);
+        apellidopeditT = vista.findViewById(R.id.apellidopeditT);
+        telefonoeditT = vista.findViewById(R.id.telefonoeditT);
+        celulareditT = vista.findViewById(R.id.celulareditT);
+        correoeditT = vista.findViewById(R.id.correoeditT);
+
+
+
+        JSONObject objeto= new JSONObject();
+        try {
+            objeto.put("idTec",id);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                Datos.URL + "/datostec",
+                objeto,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        try {
+                            Gson g = new Gson();
+                            Personas p = g.fromJson(response.getJSONObject("tec").toString(),Personas.class);
+                            nombreeditT.setText(p.getNomEmp());
+                            apellidomeditT.setText(p.getApMat());
+                            apellidopeditT.setText(p.getApPat());
+                            telefonoeditT.setText(p.getTelRed());
+                            celulareditT.setText(p.getCelEmp());
+                            correoeditT.setText(p.getEmailEmp());
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }
+        );
+        VolleyS.getInstance(getContext()).getRq().add(jsonObjectRequest);
+
+
+
+        Toast.makeText(getContext(),"Id "+ id,Toast.LENGTH_SHORT).show();
+
 
         editar.setOnClickListener(new View.OnClickListener() {
             @Override

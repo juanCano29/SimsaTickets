@@ -17,11 +17,11 @@
         android:paddingTop="22dp"
         android:textColor="#F6D600"/>
     <TextView
-        android:id="@+id/nombreedit"
+        android:id="@+id/nombreeditT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nombre"
-        android:text="Katia"
+
         android:textSize="22dp"
         android:paddingTop="10dp"
         android:paddingLeft="20dp"
@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nombreedit"
+        android:layout_below="@+id/nombreeditT"
         android:text="Apellido Materno:"
         android:textSize="22dp"
         android:paddingTop="10dp"
@@ -40,16 +40,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/apellidom"
-        android:text="Arellano"
+
         android:textSize="22dp"
         android:paddingTop="10dp"
         android:paddingLeft="20dp"
-        android:id="@+id/apellidomedit"
+        android:id="@+id/apellidomeditT"
         android:textColor="#FFFFFF"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/apellidomedit"
+        android:layout_below="@+id/apellidomeditT"
         android:text="Apellido Paterno:"
         android:textSize="22dp"
         android:paddingTop="10dp"
@@ -61,16 +61,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/apellidop"
-        android:text="Torres"
+
         android:textSize="22dp"
         android:paddingTop="10dp"
         android:paddingLeft="20dp"
-        android:id="@+id/apellidopedit"/>
+        android:id="@+id/apellidopeditT"/>
     <TextView
         android:textColor="#F6D600"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/apellidopedit"
+        android:layout_below="@+id/apellidopeditT"
         android:text="Telefono de Red:"
         android:textSize="22dp"
         android:paddingTop="10dp"
@@ -81,15 +81,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/telefono"
-        android:text="8798728972"
+
         android:textSize="22dp"
         android:paddingTop="10dp"
         android:paddingLeft="20dp"
-        android:id="@+id/telefonoedit"/>
+        android:id="@+id/telefonoeditT"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/telefonoedit"
+        android:layout_below="@id/telefonoeditT"
         android:text="Celular:"
         android:textSize="22dp"
         android:paddingTop="10dp"
@@ -101,16 +101,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/celular"
-        android:text="89798789785"
+
         android:textSize="22dp"
         android:paddingTop="10dp"
         android:paddingLeft="20dp"
-        android:id="@+id/celularedit"/>
+        android:id="@+id/celulareditT"/>
     <TextView
         android:textColor="#F6D600"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/celularedit"
+        android:layout_below="@+id/celulareditT"
         android:text="Correo:"
         android:textSize="22dp"
         android:paddingTop="10dp"
@@ -121,17 +121,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/correo"
-        android:text="katiaarellanoc@gmail.com"
+
         android:textSize="22dp"
         android:paddingTop="10dp"
         android:paddingLeft="20dp"
-        android:id="@+id/correoedit"/>
+        android:id="@+id/correoeditT"/>
 
     <Button
 
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/correoedit"
+        android:layout_below="@+id/correoeditT"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/ed_box"

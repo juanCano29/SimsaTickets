@@ -126,7 +126,12 @@ public class TecnicoActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_datos) {
+
+            Bundle cajaT= getIntent().getExtras();
+
             Fragment datos = new fragment_verdatos_tecnico();
+
+            datos.setArguments(cajaT);
             FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.contenido,datos);
             fragmentTransaction.commit();
