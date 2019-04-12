@@ -87,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
                                         Intent emp=new Intent(MainActivity.this, Empleado.class);
                                         startActivity(emp);
                                     }if (us.getCodEmp()==2){
-                                        Intent emp=new Intent(MainActivity.this, TecnicoActivity.class);
-                                        startActivity(emp);
+                                        Intent tec=new Intent(MainActivity.this, TecnicoActivity.class);
+                                        startActivity(tec);
                                     }if (us.getCodEmp()==3){
                                         Intent emp=new Intent(MainActivity.this, Root.class);
                                         startActivity(emp);

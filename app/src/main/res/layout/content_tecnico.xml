@@ -11,6 +11,10 @@
     android:id="@+id/contenido">
 
 
-
+    <fragment
+        android:name="com.example.juankno4.simsaticket.cTec.fragment_inicio_tecnico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
 
 </android.support.constraint.ConstraintLayout>
