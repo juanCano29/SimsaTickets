@@ -92,9 +92,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                                    if (us.getCodEmp()==1)
+                                    if (per.getCodTipoPersona()==3)
                                     {
-//                                        Toast.makeText(MainActivity.this, "este es un root",Toast.LENGTH_LONG).show();
+
                                         Bundle bu = new Bundle();
                                         bu.putString("nomPer",nomPer);
                                         bu.putInt("idPer",idPer);
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
                                         startActivity(emp);
 
-                                    }if (us.getCodEmp()==2){
+                                    }if (per.getCodTipoPersona()==2){
                                         Bundle bu = new Bundle();
                                         bu.putString("nomPer",nomPer);
                                         bu.putInt("idPer",idPer);
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
 
                                         startActivity(emp);
-                                    }if (us.getCodEmp()==3){
+                                    }if (per.getCodTipoPersona()==1){
 
                                         Bundle bu = new Bundle();
                                         bu.putString("nomPer",nomPer);

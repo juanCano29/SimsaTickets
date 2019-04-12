@@ -34,10 +34,11 @@ tools:context=".cTec.fragment_inicio_tecnico">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
-            android:text="Bienvenido Katia"
+
             android:textSize="28dp"
             android:textAlignment="center"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:id="@+id/presentacion"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

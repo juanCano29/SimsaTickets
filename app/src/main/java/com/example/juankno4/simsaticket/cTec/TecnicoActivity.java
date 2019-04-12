@@ -18,6 +18,8 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.juankno4.simsaticket.R;
 
@@ -25,12 +27,29 @@ public class TecnicoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener,
         fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener,fragment_seguimiento_tecnico.OnFragmentInteractionListener, fragment_actualizar_tecnico.OnFragmentInteractionListener{
 
+    TextView presentacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tecnico);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Bundle caja= new Bundle();
+        caja.getString("nomPer");
+
+        presentacion= findViewById(R.id.presentacion);
+
+        presentacion.setText("Bienvenido"+caja.getString("nomPer"));
+        Toast.makeText(TecnicoActivity.this,caja.getString("nomPer"), Toast.LENGTH_LONG).show();
+
+
+
+
+
+
+
+
 
 
 
