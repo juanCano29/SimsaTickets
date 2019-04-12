@@ -84,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
                                     Usuario us = gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
 
 
-                                    String nomPer = us.NomUsuario;
+                                    String nomPer = per.NomEmp;
                                     //String nomPer = us.NomPer;
-                                    Integer idPer = us.CodEmp;
+                                    Integer idPer = per.id;
                                     Integer tipoPer = us.TipoP;
 
 
@@ -127,8 +127,10 @@ public class MainActivity extends AppCompatActivity {
 
                                         startActivity(emp);
                                     }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+
+                                } catch (JSONException e)
+                                {
+                                    Toast.makeText(MainActivity.this,"USUARIO O CONTRASEÑA INCORRECTOS", Toast.LENGTH_LONG).show();
                                 }
 
 //                                Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
@@ -139,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.d("mensajee", error.toString());
-                        Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this,"PROBLEMAS DE CONEXION...", Toast.LENGTH_LONG).show();
                     }
                 });
 
