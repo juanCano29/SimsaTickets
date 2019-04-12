@@ -28,6 +28,7 @@ import com.example.juankno4.simsaticket.R;
  */
 public class fragment_verdatos_tecnico extends Fragment implements fragment_editardatos_tecnico.OnFragmentInteractionListener{
 
+    private int id;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,8 +69,11 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            id = getArguments().getInt("idPer",0);
 
         }
+
+
     }
 
     Button editar;
@@ -82,7 +86,7 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
         vista=inflater.inflate(R.layout.fragment_fragment_verdatos_tecnico, container, false);
 
         editar= vista.findViewById(R.id.editar);
-
+        Toast.makeText(getContext(),"Id "+ id,Toast.LENGTH_SHORT).show();
         editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

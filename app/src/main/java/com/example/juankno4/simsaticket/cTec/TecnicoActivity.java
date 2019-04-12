@@ -44,12 +44,6 @@ public class TecnicoActivity extends AppCompatActivity
 
 
 
-
-
-
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -133,7 +127,12 @@ public class TecnicoActivity extends AppCompatActivity
 
 
         } else if (id == R.id.nav_datos) {
+
+            Bundle cajaT= getIntent().getExtras();
+
             Fragment datos = new fragment_verdatos_tecnico();
+
+            datos.setArguments(cajaT);
             FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.contenido,datos);
             fragmentTransaction.commit();
