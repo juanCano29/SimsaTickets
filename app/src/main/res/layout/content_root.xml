@@ -10,7 +10,10 @@
     android:background="@drawable/fondo"
     android:id="@+id/pantallaR"
     >
-
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/objeto"/>-->
     <fragment
         android:name="com.example.juankno4.simsaticket.cRoot.FragmentInicioRoot"
         android:layout_width="wrap_content"

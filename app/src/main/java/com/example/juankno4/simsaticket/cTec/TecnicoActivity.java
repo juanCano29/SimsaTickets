@@ -1,12 +1,9 @@
 package com.example.juankno4.simsaticket.cTec;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
@@ -63,25 +60,10 @@ public class TecnicoActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
-        MenuItem init = navigationView.getMenu().findItem(R.id.nav_inicio);
-        SpannableString span=new SpannableString(init.getTitle());
-        span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
-        init.setTitle(span);
-
-        MenuItem dato = navigationView.getMenu().findItem(R.id.nav_datos);
-        SpannableString spandato=new SpannableString(dato.getTitle());
-        spandato.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spandato.length(),0);
-        dato.setTitle(spandato);
-
-        MenuItem seg = navigationView.getMenu().findItem(R.id.nav_seguimiento);
-        SpannableString spanseg=new SpannableString(seg.getTitle());
-        spanseg.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanseg.length(),0);
-        seg.setTitle(spanseg);
-
-        MenuItem adm = navigationView.getMenu().findItem(R.id.nav_admproblema);
-        SpannableString spanadm=new SpannableString(adm.getTitle());
-        spanadm.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanadm.length(),0);
-        adm.setTitle(spanadm);
+        MenuItem comm = navigationView.getMenu().findItem(R.id.rootpanel);
+        SpannableString xxx=new SpannableString(comm.getTitle());
+        xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
+        comm.setTitle(xxx);
     }
 
     @Override

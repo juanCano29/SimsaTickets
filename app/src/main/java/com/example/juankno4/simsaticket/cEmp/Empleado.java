@@ -45,27 +45,6 @@ public class Empleado extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
-//        cambiar el color del titulo inicio
-        MenuItem init = navigationView.getMenu().findItem(R.id.inicio);
-        SpannableString span=new SpannableString(init.getTitle());
-        span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
-        init.setTitle(span);
-//        cambiar el color del titulo historial
-        MenuItem hist = navigationView.getMenu().findItem(R.id.historial);
-        SpannableString spa=new SpannableString(hist.getTitle());
-        spa.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spa.length(),0);
-        hist.setTitle(spa);
-//        cambiar el color del titulo registro
-        MenuItem reg = navigationView.getMenu().findItem(R.id.registrar);
-        SpannableString x=new SpannableString(reg.getTitle());
-        x.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,x.length(),0);
-        reg.setTitle(x);
-//        cambiar el color del titulo ver datos
-        MenuItem datos = navigationView.getMenu().findItem(R.id.datos);
-        SpannableString ss=new SpannableString(datos.getTitle());
-        ss.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,ss.length(),0);
-        datos.setTitle(ss);
-//        experimentando
 
         MenuItem comm = navigationView.getMenu().findItem(R.id.cominuca);
         SpannableString xx=new SpannableString(comm.getTitle());

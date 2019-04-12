@@ -47,6 +47,7 @@
                 android:textSize="20dp"
                 android:textAlignment="center"
                 android:textColor="#fff"
+                android:id="@+id/saludo"
                 />
 
 
