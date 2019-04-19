@@ -1,13 +1,17 @@
 package com.example.juankno4.simsaticket.cRoot;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -15,9 +19,20 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
 import com.example.juankno4.simsaticket.Modelos.Datos;
+import com.example.juankno4.simsaticket.Modelos.Personas;
+import com.example.juankno4.simsaticket.Modelos.Problemas;
+import com.example.juankno4.simsaticket.Modelos.TipoProb;
+import com.example.juankno4.simsaticket.Modelos.VolleyS;
 import com.example.juankno4.simsaticket.R;
+import com.example.juankno4.simsaticket.adaptadores.adaptaHistR;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,7 +51,8 @@ public class fragmenthistorialR extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    TextView txt;
+    TextView txt, txt2, txt3;
+    RecyclerView lp;
 
 
     private OnFragmentInteractionListener mListener;
@@ -76,27 +92,67 @@ public class fragmenthistorialR extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_fragmenthistorial_r, container, false);
+//        lp = v.findViewById(R.id.rv);
+        txt = v.findViewById(R.id.txt_tipopro);
+        txt2 = v.findViewById(R.id.txt_tecasi);
+        txt3 = v.findViewById(R.id.empl);
+        /*String codEmp = String.valueOf(Datos.getpersona().getCodEmp());
+        txt.setText(codEmp);*/
         // Inflate the layout for this fragment
-        txt.findViewById(R.id.objeto);
+        /*txt.findViewById(R.id.objeto);*/
 
-        JsonObjectRequest jor= new JsonObjectRequest(
+        JsonObjectRequest jor = new JsonObjectRequest(
                 Request.Method.POST,
                 Datos.URL + "/mostrarHist",
                 null,
                 new Response.Listener<JSONObject>() {
+                    @SuppressLint("SetTextI18n")
                     @Override
                     public void onResponse(JSONObject response) {
+                        try {
+                            Gson requeson = new Gson();
+//                            Problemas prob = requeson.fromJson(response.getJSONObject("info").getJSONArray("problemas").toString(),Problemas.class);
+//                            Toast.makeText(getContext(), "loqesea", Toast.LENGTH_SHORT).show();
+                            TipoProb tipo = requeson.fromJson(response.getJSONObject("info").getJSONArray("tipo").get(0).toString(), TipoProb.class);
+                            Personas emp = requeson.fromJson(response.getJSONObject("info").getJSONArray("empleado").get(0).toString(), Personas.class);
+                            Personas tec = requeson.fromJson(response.getJSONObject("info").getJSONArray("tec").get(0).toString(), Personas.class);
+                            txt.setText(tipo.getNombreProblema());
+                            txt2.setText(tec.getNomEmp());
+                            txt3.setText(emp.getNomEmp());
+                            /*Type TProbList=new TypeToken<List<TipoProb>>(){}.getType();
+                            String p=response.getJSONObject("info").getJSONArray("problemas").get(0).toString();
+                            List<TipoProb>tipoProblemas=new Gson().fromJson(p,TProbList);
+                            Type EmplList=new TypeToken<List<Personas>>(){}.getType();
+                            String e=response.getJSONObject("info").getJSONArray("empleado").get(0).toString();
+                            List<Personas>empleado=new Gson().fromJson(e,EmplList);
+                            Type tecList=new TypeToken<List<Personas>>(){}.getType();
+                            String t=response.getJSONObject("info").getJSONArray("tec").get(0).toString();
+                            List<Personas>tecnico=new Gson().fromJson(t,tecList);
+                            lp.setLayoutManager(new LinearLayoutManager(getContext()));
+                            lp.setAdapter(new adaptaHistR(tipoProblemas,empleado,tecnico));*/
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        /*try {
+                            txt.setText(response.getJSONObject("info").getJSONArray("problemas"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }*/
+
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                error.printStackTrace();
             }
         }
 
         );
-        return inflater.inflate(R.layout.fragment_fragmenthistorial_r, container, false);
+        VolleyS.getInstance(getContext()).getRq().add(jor);
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

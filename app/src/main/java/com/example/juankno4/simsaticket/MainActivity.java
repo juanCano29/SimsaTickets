@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
                                     Personas per = gson.fromJson(response.getJSONObject("datos").getJSONObject("persona").toString(), Personas.class);
                                     Usuario us = gson.fromJson(response.getJSONObject("datos").getJSONObject("user").toString(), Usuario.class);
 
-
+                                    Datos.setUsm(us);
+                                    Datos.setPer(per);
                                     String nomPer = per.NomEmp;
                                     //String nomPer = us.NomPer;
                                     Integer idPer = per.id;
