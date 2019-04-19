@@ -5,7 +5,8 @@
     android:background="@drawable/fondo"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".cRoot.AgregarEquipoFragment">
+    tools:context=".cRoot.AgregarEquipoFragment"
+    android:padding="30dp">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -29,17 +30,15 @@
                 android:orientation="vertical">
 
                 <TextView
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-100dp"
                     android:text="Descripcion: "
                     android:textColor="#F6D600"
                     android:textSize="20dp" />
-
                 <EditText
                     android:id="@+id/edit_descequipo"
-                    android:layout_width="327dp"
+                    android:layout_width="match_parent"
                     android:layout_height="98dp"
                     android:background="@drawable/ed_blanco"
                     android:focusable="true"
@@ -63,10 +62,9 @@
                     android:text="Numero de serie:"
                     android:textColor="#F6D600"
                     android:textSize="20dp" />
-
                 <EditText
                     android:id="@+id/textv_nums"
-                    android:layout_width="327dp"
+                    android:layout_width="match_parent"
                     android:layout_height="43dp"
                     android:paddingLeft="10dp"
                     android:background="@drawable/ed_blanco"/>
@@ -80,14 +78,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-91dp"
+                    android:layout_gravity="left"
                     android:text="Tipo de Equipo:"
                     android:textColor="#F6D600"
                     android:textSize="20dp" />
                 <Spinner
                     android:id="@+id/spin_tipoequipo"
                     android:paddingLeft="10dp"
-                    android:layout_width="327dp"
+                    android:layout_width="match_parent"
                     android:layout_height="43dp"
                     android:background="@drawable/ed_blanco"/>
             </LinearLayout>
@@ -101,13 +99,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-115dp"
+                    android:layout_gravity="left"
                     android:text="Persona:"
                     android:textColor="#F6D600"
                     android:textSize="20dp" />
                 <Spinner
                     android:id="@+id/spin_persona"
-                    android:layout_width="327dp"
+                    android:layout_width="match_parent"
                     android:paddingLeft="10dp"
                     android:layout_height="43dp"
                     android:background="@drawable/ed_blanco"/>
@@ -120,7 +118,6 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btnsubmit"
                 android:text="registrar"
-
                 />
         </LinearLayout>
     </LinearLayout>

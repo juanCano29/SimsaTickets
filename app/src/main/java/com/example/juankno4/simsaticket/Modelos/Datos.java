@@ -21,7 +21,7 @@ public class Datos {
         Datos.usm = usm;
     }
 
-    public static Usuario getpersona(){
+    public static Usuario getUsm(){
         return usm;
     }
 }

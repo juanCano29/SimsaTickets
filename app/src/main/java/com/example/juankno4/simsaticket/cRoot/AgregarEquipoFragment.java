@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 /**
@@ -27,6 +28,7 @@ public class AgregarEquipoFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     private OnFragmentInteractionListener mListener;
 
