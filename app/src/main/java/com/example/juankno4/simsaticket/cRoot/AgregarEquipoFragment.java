@@ -7,9 +7,26 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.juankno4.simsaticket.Modelos.Datos;
+import com.example.juankno4.simsaticket.Modelos.Personas;
+import com.example.juankno4.simsaticket.Modelos.VolleyS;
 import com.example.juankno4.simsaticket.R;
+import com.google.gson.Gson;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +45,10 @@ public class AgregarEquipoFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    View v;
+    EditText descr,nums;
+    Spinner tequ,per;
+    Button submit;
 
 
     private OnFragmentInteractionListener mListener;
@@ -66,8 +87,49 @@ public class AgregarEquipoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        v=inflater.inflate(R.layout.fragment_agregar_equipo, container, false);
+        descr=v.findViewById(R.id.edit_descequipo);
+        nums=v.findViewById(R.id.textv_nums);
+
+        tequ=v.findViewById(R.id.spin_tipoequipo);
+        String[] array_tequip={"LAPTOP","ESCRITORIO","TELEFONO"};
+        tequ.setAdapter(new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,array_tequip));
+
+        per=v.findViewById(R.id.spin_persona);
+        JsonObjectRequest jor=new JsonObjectRequest(
+                Request.Method.POST,
+                Datos.URL + "/mostrarEmp",
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        try {
+                            Gson requeson=new Gson();
+                            for (int i=0; i<=response.length(); i++){
+                                Personas emp = requeson.fromJson(response.getJSONArray("empleados").get(i).toString(), Personas.class);
+                                Personas xd[] = {emp};
+                            }
+//                            Toast.makeText(getContext(), emp.getNomEmp(), Toast.LENGTH_LONG).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+//                        descr.setText(emp.toString());
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), "nachos!!", Toast.LENGTH_SHORT).show();
+                error.printStackTrace();
+            }
+        }
+        );
+
+        VolleyS.getInstance(getContext()).getRq().add(jor);
+//        String[] array_per={}
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_agregar_equipo, container, false);
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

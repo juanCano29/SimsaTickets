@@ -10,6 +10,7 @@ public class Personas {
     public String CelEmp;
     public String EmailEmp;
     public int CodTipoPersona;
+    public int CodDepa;
 
     public Personas(int id, String nomEmp, String apPat, String apMat, String telRed, String celEmp, String emailEmp, int codTipoPersona, int codDepa) {
         this.id = id;
@@ -95,7 +96,7 @@ public class Personas {
         CodDepa = codDepa;
     }
 
-    public int CodDepa;
+
 
 
 
