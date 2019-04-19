@@ -136,17 +136,17 @@
             android:layout_gravity="center"
             android:layout_marginLeft="-74dp"
             android:layout_marginTop="10dp"
-            android:text="Tipo de Empleado:"
+            android:text="Tipo de Persona:"
             android:textColor="@color/colorPrimary" />
 
-        <EditText
-            android:id="@+id/tper"
-            android:layout_marginTop="3dp"
-            android:layout_gravity="center"
-            android:layout_width="327dp"
-            android:paddingLeft="10dp"
-            android:layout_height="43dp"
+        <Spinner
             android:background="@drawable/ed_blanco"
+            android:layout_marginTop="3dp"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="10sp"
+            android:id="@+id/tper"
+            android:layout_gravity="center"
             />
         <TextView
             android:textSize="20sp"
@@ -158,17 +158,18 @@
             android:text="Departamento:"
             android:textColor="@color/colorPrimary" />
 
-        <EditText
-            android:id="@+id/dep"
-            android:layout_marginTop="3dp"
-            android:layout_gravity="center"
-            android:layout_width="327dp"
-            android:paddingLeft="10dp"
-            android:layout_height="43dp"
+        <Spinner
             android:background="@drawable/ed_blanco"
+            android:layout_marginTop="3dp"
+            android:layout_width="327dp"
+            android:layout_height="43dp"
+            android:layout_marginBottom="10sp"
+            android:id="@+id/dep"
+            android:layout_gravity="center"
             />
 
         <Button
+            android:id="@+id/btnroot_addPer"
             android:layout_width="287dp"
             android:layout_height="43dp"
             android:layout_gravity="center"

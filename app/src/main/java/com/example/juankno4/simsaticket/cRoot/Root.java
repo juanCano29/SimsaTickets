@@ -37,10 +37,7 @@ public class Root extends AppCompatActivity
 
 
         Bundle buu = getIntent().getExtras();
-        //nomprincipal.setText(buu.getBundle("nomPer"));
         nomprincipal.setText("Bienvenido " + buu.getString("nomPer"));
-
-        Toast.makeText(Root.this,buu.getString("nomPer"), Toast.LENGTH_LONG).show();
 
 
 

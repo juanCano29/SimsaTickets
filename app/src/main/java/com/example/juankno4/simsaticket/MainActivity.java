@@ -63,12 +63,10 @@ public class MainActivity extends AppCompatActivity {
                     dd.put("NomUsuario", ed.getText().toString());
                     dd.put("PassUsuario", pas.getText().toString());
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    Toast.makeText(MainActivity.this,"Tenemos problemas técnicos... Lo sentimos", Toast.LENGTH_LONG).show();
                 }
-// Toast.makeText(MainActivity.this,dd.toString(),Toast.LENGTH_LONG).show();
 
                 String url = Datos.URL + "/loginAnd";
-//                Toast.makeText(MainActivity.this,url.toString(),Toast.LENGTH_LONG).show();
 
                 JsonObjectRequest jor = new JsonObjectRequest(
                         Request.Method.POST,
@@ -103,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
 
                                         Intent emp=new Intent(MainActivity.this, Empleado.class);
                                         emp.putExtras(bu);
-                                        //Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
                                         startActivity(emp);
 
                                     }if (per.getCodTipoPersona()==2){
@@ -113,8 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
                                         Intent emp=new Intent(MainActivity.this, TecnicoActivity.class);
                                         emp.putExtras(bu);
-                                        //Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
-
                                         startActivity(emp);
                                     }if (per.getCodTipoPersona()==1){
 
@@ -124,8 +119,6 @@ public class MainActivity extends AppCompatActivity {
 
                                         Intent emp=new Intent(MainActivity.this, Root.class);
                                         emp.putExtras(bu);
-                                        //Toast.makeText(MainActivity.this,bu.toString(), Toast.LENGTH_LONG).show();
-
                                         startActivity(emp);
                                     }
 
@@ -133,9 +126,6 @@ public class MainActivity extends AppCompatActivity {
                                 {
                                     Toast.makeText(MainActivity.this,"USUARIO O CONTRASEÑA INCORRECTOS", Toast.LENGTH_LONG).show();
                                 }
-
-//                                Toast.makeText(MainActivity.this,response.toString(),Toast.LENGTH_LONG).show();
-
 
                             }
                         }, new Response.ErrorListener() {
