@@ -23,7 +23,7 @@ public class Personas {
         this.CodTipoPersona = codTipoPersona;
         this.CodDepa = codDepa;
     }
-
+    public Personas(){}
     public int getId() {
         return id;
     }

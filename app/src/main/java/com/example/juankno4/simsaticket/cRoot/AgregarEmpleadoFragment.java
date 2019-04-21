@@ -89,8 +89,6 @@ public class AgregarEmpleadoFragment extends Fragment {
     {
 
         vista = inflater.inflate(R.layout.fragment_agregar_empleado, container, false);
-
-
         edit_rootNombre = vista.findViewById(R.id.nom);
         edit_RootaP = vista.findViewById(R.id.apeP);
         edit_RootaM = vista.findViewById(R.id.apeM);
@@ -169,7 +167,7 @@ public class AgregarEmpleadoFragment extends Fragment {
 
                 } catch (JSONException e)
                 {
-                    Toast.makeText(getContext(),"Tenemos problemas técnicos...Lo sentimos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(),"Por favor, llena los campos necesarios", Toast.LENGTH_LONG).show();
 
                 }
 
