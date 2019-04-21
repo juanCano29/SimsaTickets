@@ -135,6 +135,13 @@ public class TecnicoActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.contenido,datos);
             fragmentTransaction.commit();
 
+
+
+            Fragment otro = new fragment_editardatos_tecnico();
+            otro.setArguments(cajaT);
+            FragmentTransaction frag= getSupportFragmentManager().beginTransaction();
+            frag.commit();
+
         } else if (id == R.id.nav_admproblema) {
 
             Fragment problema = new fragment_problemas_tecnico();

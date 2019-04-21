@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
+import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 /**
@@ -63,12 +64,15 @@ public class fragment_actualizar_tecnico extends Fragment {
         }
     }
     //Cambios
+
     View v;
     Spinner spiner;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
 
         v=inflater.inflate(R.layout.fragment_fragment_actualizar_tecnico, container, false);
 

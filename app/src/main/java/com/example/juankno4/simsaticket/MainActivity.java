@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
                                     if (per.getCodTipoPersona()==3)
                                     {
 

@@ -85,6 +85,8 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
             mParam2 = getArguments().getString(ARG_PARAM2);
             id = getArguments().getInt("idPer",0);
 
+
+
         }
 
 
