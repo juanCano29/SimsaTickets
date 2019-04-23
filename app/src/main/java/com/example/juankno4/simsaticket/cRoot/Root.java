@@ -32,6 +32,7 @@ public class Root extends AppCompatActivity
         setContentView(R.layout.activity_root);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("");
 
         nomprincipal =(TextView) findViewById(R.id.principio);
 

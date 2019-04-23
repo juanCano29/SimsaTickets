@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                                         emp.putExtras(bu);
                                         startActivity(emp);
                                     }
+                                    finish();
 
                                 } catch (JSONException e)
                                 {

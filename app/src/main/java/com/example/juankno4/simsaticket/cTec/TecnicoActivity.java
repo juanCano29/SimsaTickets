@@ -34,6 +34,7 @@ public class TecnicoActivity extends AppCompatActivity
         setContentView(R.layout.activity_tecnico);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("");
 
         Bundle caja= getIntent().getExtras();
         presentacion= findViewById(R.id.presentacion);

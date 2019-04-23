@@ -4,6 +4,7 @@ public class Datos {
     public  static  String  URL="http://www.simsa.mipantano.com/api";
     public static  Usuario usm;
     public static Personas per;
+    public static EquipoTrabajo equipoTrabajo;
 
     public Datos(Usuario usm) {
         this.usm = usm;

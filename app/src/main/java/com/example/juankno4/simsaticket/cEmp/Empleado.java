@@ -31,7 +31,7 @@ public class Empleado extends AppCompatActivity
         setContentView(R.layout.activity_empleado);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        setTitle("");
 
         principal= findViewById(R.id.principal);
         Bundle cajaE=getIntent().getExtras();
