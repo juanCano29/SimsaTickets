@@ -162,15 +162,13 @@
        </LinearLayout>
 
     <Button
-
         android:layout_marginTop="45dp"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal|bottom"
         android:id="@+id/submit_edit"
         android:layout_width="300dp"
         android:layout_height="51dp"
         android:background="@drawable/btnsubmit"
         android:text="Editar"
-
         />
 
 </LinearLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,7 +92,13 @@ public class ActualizarDatosFragment extends Fragment {
         edit_empMail = vista.findViewById(R.id.edit_empMail);
         submit_reload = vista.findViewById(R.id.submit_reload);
 
-        JsonObjectRequest jor = new JsonObjectRequest(
+        edit_empNombre.setText(Datos.getPer().getNomEmp());
+        edit_empAp.setText(Datos.getPer().getApPat());
+        edit_empAm.setText(Datos.getPer().getApMat());
+        edit_empTR.setText(Datos.getPer().getTelRed());
+        edit_empCel.setText(Datos.getPer().getCelEmp());
+        edit_empMail.setText(Datos.getPer().getEmailEmp());
+        /*JsonObjectRequest jor = new JsonObjectRequest(
                 Request.Method.GET,
                 Datos.URL + "/mostrar",
                 null,
@@ -119,7 +126,7 @@ public class ActualizarDatosFragment extends Fragment {
                     }
                 });
 
-        VolleyS.getInstance(getContext()).getRq().add(jor);
+        VolleyS.getInstance(getContext()).getRq().add(jor);*/
 
 
 
@@ -130,6 +137,7 @@ public class ActualizarDatosFragment extends Fragment {
                 JSONObject dd = new JSONObject();
 
                 try {
+                    dd.put("id",Datos.getPer().getId());
                     dd.put("NomEmp",edit_empNombre.getText().toString());
                     dd.put("ApPat",edit_empAp.getText().toString());
                     dd.put("ApMat",edit_empAm.getText().toString());
@@ -151,6 +159,7 @@ public class ActualizarDatosFragment extends Fragment {
                                 try {
                                     Gson gso = new Gson();
                                     Personas p = gso.fromJson(response.getJSONObject("Act").getJSONObject("Persona").toString(), Personas.class);
+                                    Datos.setPer(p);
                                     edit_empNombre.setText(p.getNomEmp());
                                     edit_empAp.setText(p.getApPat());
                                     edit_empAm.setText(p.getApMat());
@@ -158,6 +167,12 @@ public class ActualizarDatosFragment extends Fragment {
                                     edit_empCel.setText(p.getCelEmp());
                                     edit_empMail.setText(p.getEmailEmp());
                                     Toast.makeText(getContext(), "Actualizado", Toast.LENGTH_SHORT).show();
+                                    VerDatosFragment x=VerDatosFragment.newInstance("xx","ss");
+                                    getFragmentManager()
+                                            .beginTransaction()
+                                            .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
+                                            .replace(R.id.pantalla,x)
+                                            .commit();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -174,6 +189,7 @@ public class ActualizarDatosFragment extends Fragment {
                         });
 
                                         VolleyS.getInstance(getContext()).getRq().add(jor);
+
             }});
 
 

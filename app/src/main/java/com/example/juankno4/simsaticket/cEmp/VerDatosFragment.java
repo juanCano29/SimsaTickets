@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,16 +96,26 @@ public class VerDatosFragment extends Fragment {
         text_empCel = vista.findViewById(R.id.text_empCel);
         text_empMail = vista.findViewById(R.id.text_empMail);
 
+        JSONObject dd=new JSONObject();
+        try {
+            dd.put("id",Datos.getPer().getId());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.d("pifi",dd.toString());
+
         JsonObjectRequest jor = new JsonObjectRequest(
-                Request.Method.GET,
+                Request.Method.POST,
                 Datos.URL + "/mostrar",
-                null,
+                dd,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
+//                            Log.d("pifi",response.toString());
                             Gson gson = new Gson();
-                            Personas per = gson.fromJson(response.getJSONObject("info").getJSONObject("person").toString(),Personas.class);
+                            Personas per = gson.fromJson(response.getJSONObject("info").toString(),Personas.class);
+                            Datos.setPer(per);
                              text_empNombre.setText(per.getNomEmp());
                              text_empAp.setText(per.getApPat());
                              text_empAm.setText(per.getApMat());
@@ -119,7 +130,8 @@ public class VerDatosFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                        Log.d("nachos",error.toString());
+//                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
                         Toast.makeText(getContext(), "Problemas al obtener la informacion...", Toast.LENGTH_SHORT).show();
                     }
                 });

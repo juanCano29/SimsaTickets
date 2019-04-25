@@ -71,7 +71,7 @@ public class fragment_problemas_tecnico extends Fragment implements fragment_act
         // Inflate the layout for this fragment
 
         vista= inflater.inflate(R.layout.fragment_fragment_problemas_tecnico, container, false);
-        ver= vista.findViewById(R.id.ver);
+        ver= vista.findViewById(R.id.aver);
         ver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
