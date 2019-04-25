@@ -1,24 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="30dp"
-    android:background="@drawable/fondo"
-    tools:context=".cTec.fragment_seguimiento_tecnico">
-
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Problema"
-        android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:textSize="35sp"
-        android:textColor="@color/colorPrimary"/>
+    android:padding="10dp">
 
     <android.support.v7.widget.CardView
         android:layout_height="wrap_content"
@@ -81,18 +67,6 @@
                 android:text="Tipo:"
                 android:textSize="16sp"
                 android:id="@+id/tipo"/>
-
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_below="@+id/tipo"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/ed_box"
-                android:layout_marginTop="6dp"
-                android:text="VER"
-                android:id="@+id/ver"
-                />
-
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>

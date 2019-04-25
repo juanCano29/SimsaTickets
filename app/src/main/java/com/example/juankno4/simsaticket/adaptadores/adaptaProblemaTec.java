@@ -25,7 +25,7 @@ public class adaptaProblemaTec extends RecyclerView.Adapter<adaptaProblemaTec.Vi
     @NonNull
     @Override
     public adaptaProblemaTec.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View vista = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_fragment_seguimiento_tecnico,viewGroup,false);
+        View vista = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cartas_adm_tec,viewGroup,false);
         return new ViewHolder(vista);
     }
 
