@@ -1,5 +1,6 @@
 package com.example.juankno4.simsaticket.adaptadores;
 
+import android.annotation.SuppressLint;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -28,13 +29,14 @@ public class adaptaProblemaTec extends RecyclerView.Adapter<adaptaProblemaTec.Vi
         return new ViewHolder(vista);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
 
         AdministrarTec problemas = listaproblemas.get(i);
         viewHolder.etipo.setText(problemas.getNombreProblema());
         viewHolder.enombre.setText(problemas.getNomEmp());
-        viewHolder.efolio.setText(problemas.getId());
+        viewHolder.efolio.setText(problemas.getId().toString());
     }
 
     @Override

@@ -101,7 +101,7 @@ public class fragment_problemas_tecnico extends Fragment implements fragment_act
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("id",Datos.getPer().id);
+            jsonObject.put("id",Datos.getPer().getId());
         } catch (JSONException e) {
             e.printStackTrace();
         }
