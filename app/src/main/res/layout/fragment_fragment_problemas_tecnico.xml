@@ -20,78 +20,10 @@
         android:textSize="35sp"
         android:textColor="@color/colorPrimary"/>
 
-    <android.support.v7.widget.CardView
-        android:layout_height="wrap_content"
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="4dp"
-        android:id="@+id/card"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20sp">
-
-            <TextView
-                android:id="@+id/folio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Folio:"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/efolio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/folio"
-                android:layout_marginBottom="10dp"
-                android:text="12"
-                android:layout_marginLeft="10dp"/>
-
-            <TextView
-                android:id="@+id/nombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/folio"
-                android:text="Nombre:"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gera"
-                android:textSize="16sp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/nombre"
-                android:layout_below="@+id/efolio"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="10dp"
-                android:text="Software"
-                android:textSize="16sp"
-                android:id="@+id/etipo"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@+id/etipo"
-                android:text="Tipo:"
-                android:textSize="16sp"
-                android:id="@+id/tipo"/>
-
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="30dp"
-                android:layout_below="@+id/tipo"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/ed_box"
-                android:layout_marginTop="6dp"
-                android:text="VER"
-                android:id="@+id/aver" />
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+        android:layout_height="match_parent"
+        android:id="@+id/lista"/>
 
 
 </LinearLayout>

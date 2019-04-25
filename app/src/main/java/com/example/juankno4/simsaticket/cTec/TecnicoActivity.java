@@ -63,10 +63,7 @@ public class TecnicoActivity extends AppCompatActivity
         spandato.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spandato.length(),0);
         dato.setTitle(spandato);
 
-        MenuItem seg = navigationView.getMenu().findItem(R.id.nav_seguimiento);
-        SpannableString spanseg=new SpannableString(seg.getTitle());
-        spanseg.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanseg.length(),0);
-        seg.setTitle(spanseg);
+
 
         MenuItem adm = navigationView.getMenu().findItem(R.id.nav_admproblema);
         SpannableString spanadm=new SpannableString(adm.getTitle());
@@ -117,15 +114,7 @@ public class TecnicoActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.contenido,inicio);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_seguimiento) {
-
-            Fragment seguimiento = new fragment_seguimiento_tecnico();
-            FragmentTransaction transactions = getSupportFragmentManager().beginTransaction();
-            transactions.replace(R.id.contenido,seguimiento);
-            transactions.commit();
-
-
-        } else if (id == R.id.nav_datos) {
+        }else if (id == R.id.nav_datos) {
 
             Bundle cajaT= getIntent().getExtras();
 

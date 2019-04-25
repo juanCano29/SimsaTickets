@@ -5,12 +5,35 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.example.juankno4.simsaticket.Modelos.AdministrarTec;
+import com.example.juankno4.simsaticket.Modelos.Datos;
+import com.example.juankno4.simsaticket.Modelos.Personas;
+import com.example.juankno4.simsaticket.Modelos.Problemas;
+import com.example.juankno4.simsaticket.Modelos.VolleyS;
 import com.example.juankno4.simsaticket.R;
+import com.example.juankno4.simsaticket.adaptadores.adaptaProblemaTec;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -64,6 +87,7 @@ public class fragment_problemas_tecnico extends Fragment implements fragment_act
     }
     Button ver;
     View vista;
+    RecyclerView lista;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -71,7 +95,46 @@ public class fragment_problemas_tecnico extends Fragment implements fragment_act
         // Inflate the layout for this fragment
 
         vista= inflater.inflate(R.layout.fragment_fragment_problemas_tecnico, container, false);
-        ver= vista.findViewById(R.id.aver);
+        ver= vista.findViewById(R.id.ver);
+
+        lista = vista.findViewById(R.id.lista);
+
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("id",Datos.getPer().id);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.put(jsonObject);
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.POST,
+                Datos.URL + "/histec",
+                jsonArray,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Type ProblemaList = new TypeToken<List<AdministrarTec>>(){}.getType();
+
+                        List<AdministrarTec> problemas = new Gson().fromJson(response.toString(),ProblemaList);
+
+                        lista.setLayoutManager(new LinearLayoutManager(getContext()));
+                        lista.setAdapter(new adaptaProblemaTec(problemas));
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        VolleyS.getInstance(getContext()).getRq().add(jsonArrayRequest);
+
+
+
+
         ver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

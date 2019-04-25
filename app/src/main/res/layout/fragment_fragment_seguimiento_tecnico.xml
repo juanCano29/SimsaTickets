@@ -14,7 +14,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Seguimiento"
+        android:text="Problema"
         android:gravity="center"
         android:layout_marginBottom="10dp"
         android:textSize="35sp"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/folio"
                 android:layout_marginBottom="10dp"
-                android:text="12"
+                android:text="texto"
                 android:layout_marginLeft="10dp"/>
 
             <TextView
@@ -54,32 +54,44 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/folio"
-                android:text="Estatus:"
+                android:text="Nombre:"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pendiente"
+                android:text="texto"
                 android:textSize="16sp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/nombre"
-                android:layout_below="@+id/efolio"/>
+                android:layout_below="@+id/efolio"
+                android:id="@+id/enombre"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="10dp"
-                android:text="12/12/2019"
+                android:text="texto"
                 android:textSize="16sp"
                 android:id="@+id/etipo"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/etipo"
-                android:text="Fecha:"
+                android:text="Tipo:"
                 android:textSize="16sp"
                 android:id="@+id/tipo"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/tipo"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ed_box"
+                android:layout_marginTop="6dp"
+                android:text="VER"
+                android:id="@+id/ver"
+                />
 
 
         </RelativeLayout>
