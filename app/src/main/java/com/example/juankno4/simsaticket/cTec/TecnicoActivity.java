@@ -21,13 +21,14 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 public class TecnicoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener,
         fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener, fragment_actualizar_tecnico.OnFragmentInteractionListener{
 
-    TextView presentacion;
+    TextView presentacion,persona;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,8 @@ public class TecnicoActivity extends AppCompatActivity
         presentacion= findViewById(R.id.presentacion);
         presentacion.setText("Bienvenido "+caja.get("nomPer"));
 
-
+        persona= findViewById(R.id.persona);
+        persona.setText(Datos.getPer().getNomEmp());
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
