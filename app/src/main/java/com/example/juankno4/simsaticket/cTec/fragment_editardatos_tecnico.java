@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -125,6 +127,8 @@ public class fragment_editardatos_tecnico extends Fragment {
                             edittel.setText(p.getTelRed());
                             editcel.setText(p.getCelEmp());
                             editemail.setText(p.getEmailEmp());
+                            fragment_verdatos_tecnico datos = fragment_verdatos_tecnico.newInstance("za","za");
+                            getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,datos).commit();
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -190,6 +194,9 @@ public class fragment_editardatos_tecnico extends Fragment {
                             }
                         });
                 VolleyS.getInstance(getContext()).getRq().add(json);
+
+                fragment_verdatos_tecnico tecnico = fragment_verdatos_tecnico.newInstance("as","dd");
+                getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,tecnico).commit();
             }
 
         });
