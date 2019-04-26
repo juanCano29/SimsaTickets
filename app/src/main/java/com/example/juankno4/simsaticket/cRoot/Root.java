@@ -14,10 +14,12 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.juankno4.simsaticket.MainActivity;
+import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 public class Root extends AppCompatActivity
@@ -43,11 +45,6 @@ public class Root extends AppCompatActivity
         nomprincipal.setText("Bienvenido " + buu.getString("nomPer"));
 
 
-
-
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -58,15 +55,14 @@ public class Root extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
-
-
-
         MenuItem comm = navigationView.getMenu().findItem(R.id.rootpanel);
         SpannableString xxx=new SpannableString(comm.getTitle());
         xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
         comm.setTitle(xxx);
 
-
+        View encabezado=navigationView.getHeaderView(0);
+        TextView nombre=(TextView) encabezado.findViewById(R.id.nomRoot);
+        nombre.setText(Datos.getPer().getNomEmp());
 
     }
 

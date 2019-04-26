@@ -15,6 +15,7 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.juankno4.simsaticket.MainActivity;
@@ -37,12 +38,6 @@ TextView name;
         setSupportActionBar(toolbar);
         setTitle("");
 
-        /*principal= findViewById(R.id.principal);
-        Bundle cajaE=getIntent().getExtras();
-
-        principal.setText("Bienvenido "+ Datos.getPer().getNomEmp());*/
-
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -60,8 +55,9 @@ TextView name;
         comm.setTitle(xx);
 
 
-        /*name.findViewById(R.id.NomEmp);
-        name.setText(Datos.getPer().getNomEmp());*/
+        View encabezado=navigationView.getHeaderView(0);
+        TextView nombre=(TextView) encabezado.findViewById(R.id.NomEmp);
+        nombre.setText(Datos.getPer().getNomEmp());
 
 
     }
