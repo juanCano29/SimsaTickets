@@ -23,13 +23,12 @@ import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 public class Empleado extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,fragmentHistorial.OnFragmentInteractionListener,
-        FragmentInicioEmpleado.OnFragmentInteractionListener,RegistrarProblemaFragment.OnFragmentInteractionListener,
-        VerDatosFragment.OnFragmentInteractionListener,ActualizarDatosFragment.OnFragmentInteractionListener
-      {
+        implements NavigationView.OnNavigationItemSelectedListener, fragmentHistorial.OnFragmentInteractionListener,
+        FragmentInicioEmpleado.OnFragmentInteractionListener, RegistrarProblemaFragment.OnFragmentInteractionListener,
+        VerDatosFragment.OnFragmentInteractionListener, ActualizarDatosFragment.OnFragmentInteractionListener {
 
-//          TextView principal;
-TextView name;
+    //          TextView principal;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +49,13 @@ TextView name;
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
         MenuItem comm = navigationView.getMenu().findItem(R.id.cominuca);
-        SpannableString xx=new SpannableString(comm.getTitle());
-        xx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xx.length(),0);
+        SpannableString xx = new SpannableString(comm.getTitle());
+        xx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.colorPrimary)), 0, xx.length(), 0);
         comm.setTitle(xx);
 
 
-        View encabezado=navigationView.getHeaderView(0);
-        TextView nombre=(TextView) encabezado.findViewById(R.id.NomEmp);
+        View encabezado = navigationView.getHeaderView(0);
+        TextView nombre = (TextView) encabezado.findViewById(R.id.NomEmp);
         nombre.setText(Datos.getPer().getNomEmp());
 
 
@@ -80,8 +79,7 @@ TextView name;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks in kiko. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -102,37 +100,37 @@ TextView name;
         int id = item.getItemId();
 
         if (id == R.id.inicio) {
-            FragmentInicioEmpleado i= FragmentInicioEmpleado.newInstance("xx","ss");
+            FragmentInicioEmpleado i = FragmentInicioEmpleado.newInstance("xx", "ss");
             getSupportFragmentManager()
                     .beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                    .replace(R.id.pantalla,i)
+                    .replace(R.id.pantalla, i)
                     .commit();
         } else if (id == R.id.historial) {
-            fragmentHistorial x=fragmentHistorial.newInstance("xx","ss");
+            fragmentHistorial x = fragmentHistorial.newInstance("xx", "ss");
             getSupportFragmentManager()
                     .beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
-                    .replace(R.id.pantalla,x)
+                    .replace(R.id.pantalla, x)
                     .commit();
         } else if (id == R.id.registrar) {
-            RegistrarProblemaFragment rpf = RegistrarProblemaFragment.newInstance("xx","ss");
+            RegistrarProblemaFragment rpf = RegistrarProblemaFragment.newInstance("xx", "ss");
             getSupportFragmentManager()
                     .beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
-                    .replace(R.id.pantalla,rpf)
+                    .replace(R.id.pantalla, rpf)
                     .commit();
 
         } else if (id == R.id.datos) {
-            VerDatosFragment vdf = VerDatosFragment.newInstance("xx","ss");
+            VerDatosFragment vdf = VerDatosFragment.newInstance("xx", "ss");
             getSupportFragmentManager()
                     .beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
-                    .replace(R.id.pantalla,vdf)
+                    .replace(R.id.pantalla, vdf)
                     .commit();
 
-        }else if (id==R.id.Cerrar){
-            Intent ss=new  Intent(getApplicationContext(), MainActivity.class);
+        } else if (id == R.id.Cerrar) {
+            Intent ss = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(ss);
             finish();
         }

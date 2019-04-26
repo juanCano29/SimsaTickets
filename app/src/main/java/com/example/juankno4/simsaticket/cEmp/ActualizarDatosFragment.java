@@ -43,7 +43,7 @@ public class ActualizarDatosFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     View vista;
-    EditText edit_empNombre,edit_empAp,edit_empAm,edit_empTR,edit_empCel,edit_empMail;
+    EditText edit_empNombre, edit_empAp, edit_empAm, edit_empTR, edit_empCel, edit_empMail;
     Button submit_reload;
     private OnFragmentInteractionListener mListener;
 
@@ -98,36 +98,6 @@ public class ActualizarDatosFragment extends Fragment {
         edit_empTR.setText(Datos.getPer().getTelRed());
         edit_empCel.setText(Datos.getPer().getCelEmp());
         edit_empMail.setText(Datos.getPer().getEmailEmp());
-        /*JsonObjectRequest jor = new JsonObjectRequest(
-                Request.Method.GET,
-                Datos.URL + "/mostrar",
-                null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            Gson gson = new Gson();
-                            Personas per = gson.fromJson(response.getJSONObject("info").getJSONObject("person").toString(),Personas.class);
-                            edit_empNombre.setText(per.getNomEmp());
-                            edit_empAp.setText(per.getApPat());
-                            edit_empAm.setText(per.getApMat());
-                            edit_empTR.setText(per.getTelRed());
-                            edit_empCel.setText(per.getCelEmp());
-                            edit_empMail.setText(per.getEmailEmp());
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-        VolleyS.getInstance(getContext()).getRq().add(jor);*/
-
 
 
         submit_reload.setOnClickListener(new View.OnClickListener() {
@@ -137,13 +107,13 @@ public class ActualizarDatosFragment extends Fragment {
                 JSONObject dd = new JSONObject();
 
                 try {
-                    dd.put("id",Datos.getPer().getId());
-                    dd.put("NomEmp",edit_empNombre.getText().toString());
-                    dd.put("ApPat",edit_empAp.getText().toString());
-                    dd.put("ApMat",edit_empAm.getText().toString());
-                    dd.put("TelRed",edit_empTR.getText().toString());
-                    dd.put("CelEmp",edit_empCel.getText().toString());
-                    dd.put("EmailEmp",edit_empMail.getText().toString());
+                    dd.put("id", Datos.getPer().getId());
+                    dd.put("NomEmp", edit_empNombre.getText().toString());
+                    dd.put("ApPat", edit_empAp.getText().toString());
+                    dd.put("ApMat", edit_empAm.getText().toString());
+                    dd.put("TelRed", edit_empTR.getText().toString());
+                    dd.put("CelEmp", edit_empCel.getText().toString());
+                    dd.put("EmailEmp", edit_empMail.getText().toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -154,7 +124,6 @@ public class ActualizarDatosFragment extends Fragment {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-
 
                                 try {
                                     Gson gso = new Gson();
@@ -167,11 +136,11 @@ public class ActualizarDatosFragment extends Fragment {
                                     edit_empCel.setText(p.getCelEmp());
                                     edit_empMail.setText(p.getEmailEmp());
                                     Toast.makeText(getContext(), "Actualizado", Toast.LENGTH_SHORT).show();
-                                    VerDatosFragment x=VerDatosFragment.newInstance("xx","ss");
+                                    VerDatosFragment x = VerDatosFragment.newInstance("xx", "ss");
                                     getFragmentManager()
                                             .beginTransaction()
                                             .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
-                                            .replace(R.id.pantalla,x)
+                                            .replace(R.id.pantalla, x)
                                             .commit();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -183,16 +152,15 @@ public class ActualizarDatosFragment extends Fragment {
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getContext(),error.toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
 
                             }
                         });
 
-                                        VolleyS.getInstance(getContext()).getRq().add(jor);
+                VolleyS.getInstance(getContext()).getRq().add(jor);
 
-            }});
-
-
+            }
+        });
 
 
         // Inflate the layout for this fragment

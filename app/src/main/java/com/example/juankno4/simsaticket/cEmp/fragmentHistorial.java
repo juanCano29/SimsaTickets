@@ -54,7 +54,6 @@ public class fragmentHistorial extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    TextView txt1,txt2,txt4;
     RecyclerView rec;
 
     private OnFragmentInteractionListener mListener;
@@ -84,7 +83,7 @@ public class fragmentHistorial extends Fragment {
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
@@ -98,65 +97,32 @@ public class fragmentHistorial extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_historial, container, false);
-        /*txt1=v.findViewById(R.id.tipi);
-        txt2=v.findViewById(R.id.esta);
-        txt4=v.findViewById(R.id.hrst);*/
-        rec=v.findViewById(R.id.rec);
+        rec = v.findViewById(R.id.rec);
 
-        JSONObject obj=new JSONObject();
+        JSONObject obj = new JSONObject();
         try {
             obj.put("id", Datos.getPer().getId());
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        JSONArray dd=new JSONArray();
+        JSONArray dd = new JSONArray();
         dd.put(obj);
-//        dd.put("id");
-//        dd.put(Datos.getPer().getId());
 //        Log.d("pifi",dd.toString());
 
 
-
-
-        JsonArrayRequest jar=new JsonArrayRequest(
+        JsonArrayRequest jar = new JsonArrayRequest(
                 Request.Method.POST,
-                Datos.URL+"/history",
+                Datos.URL + "/history",
                 dd,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
 //                        Log.d("pifi",response.toString());
-                        Type histLista=new TypeToken<List<HistorialEmp>>(){}.getType();
-                        List<HistorialEmp>hist=new Gson().fromJson(response.toString(),histLista);
+                        Type histLista = new TypeToken<List<HistorialEmp>>() {
+                        }.getType();
+                        List<HistorialEmp> hist = new Gson().fromJson(response.toString(), histLista);
                         rec.setLayoutManager(new LinearLayoutManager(getContext()));
                         rec.setAdapter(new adaptaHistR(hist));
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                }
-        );
-        /*JsonObjectRequest jor=new JsonObjectRequest(
-                Request.Method.POST,
-                Datos.URL + "/history",
-                dd,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-                        try {
-                            Gson requeson=new Gson();
-                            HistorialEmp prob=requeson.fromJson(response.getJSONArray("historial").get(0).toString(),HistorialEmp.class);
-//                            Log.d("respuesta",response.toString());
-                            txt1.setText(prob.getNombreProblema());
-                            txt2.setText(prob.getEstatus());
-                            String valor=(String) prob.getId().toString();
-                            txt4.setText(valor);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -164,7 +130,8 @@ public class fragmentHistorial extends Fragment {
                 error.printStackTrace();
             }
         }
-        );*/
+        );
+
         VolleyS.getInstance(getContext()).getRq().add(jar);
         return v;
     }

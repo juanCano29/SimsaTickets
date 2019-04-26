@@ -69,9 +69,9 @@ public class FragmentInicioEmpleado extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v=inflater.inflate(R.layout.fragment_fragment_inicio_empleado, container, false);
-        principal=v.findViewById(R.id.principal);
-        principal.setText("Bienvenido "+ Datos.getPer().getNomEmp());
+        View v = inflater.inflate(R.layout.fragment_fragment_inicio_empleado, container, false);
+        principal = v.findViewById(R.id.principal);
+        principal.setText("Bienvenido " + Datos.getPer().getNomEmp());
         return v;
     }
 

@@ -48,7 +48,7 @@ public class VerDatosFragment extends Fragment {
     private String mParam2;
     View vista;
     Button submit_edit;
-    TextView text_empNombre,text_empAp,text_empAm,text_empTR,text_empCel,text_empMail;
+    TextView text_empNombre, text_empAp, text_empAm, text_empTR, text_empCel, text_empMail;
 
     private OnFragmentInteractionListener mListener;
 
@@ -96,13 +96,13 @@ public class VerDatosFragment extends Fragment {
         text_empCel = vista.findViewById(R.id.text_empCel);
         text_empMail = vista.findViewById(R.id.text_empMail);
 
-        JSONObject dd=new JSONObject();
+        JSONObject dd = new JSONObject();
         try {
-            dd.put("id",Datos.getPer().getId());
+            dd.put("id", Datos.getPer().getId());
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d("pifi",dd.toString());
+        Log.d("pifi", dd.toString());
 
         JsonObjectRequest jor = new JsonObjectRequest(
                 Request.Method.POST,
@@ -114,14 +114,14 @@ public class VerDatosFragment extends Fragment {
                         try {
 //                            Log.d("pifi",response.toString());
                             Gson gson = new Gson();
-                            Personas per = gson.fromJson(response.getJSONObject("info").toString(),Personas.class);
+                            Personas per = gson.fromJson(response.getJSONObject("info").toString(), Personas.class);
                             Datos.setPer(per);
-                             text_empNombre.setText(per.getNomEmp());
-                             text_empAp.setText(per.getApPat());
-                             text_empAm.setText(per.getApMat());
-                             text_empTR.setText(per.getTelRed());
-                             text_empCel.setText(per.getCelEmp());
-                             text_empMail.setText(per.getEmailEmp());
+                            text_empNombre.setText(per.getNomEmp());
+                            text_empAp.setText(per.getApPat());
+                            text_empAm.setText(per.getApMat());
+                            text_empTR.setText(per.getTelRed());
+                            text_empCel.setText(per.getCelEmp());
+                            text_empMail.setText(per.getEmailEmp());
                         } catch (JSONException e) {
                             Toast.makeText(getContext(), "Problemas al obtener la informacion...", Toast.LENGTH_SHORT).show();
                         }
@@ -130,7 +130,7 @@ public class VerDatosFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("nachos",error.toString());
+                        Log.d("nachos", error.toString());
 //                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_SHORT).show();
                         Toast.makeText(getContext(), "Problemas al obtener la informacion...", Toast.LENGTH_SHORT).show();
                     }
@@ -139,15 +139,14 @@ public class VerDatosFragment extends Fragment {
         VolleyS.getInstance(getContext()).getRq().add(jor);
 
 
-
         submit_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActualizarDatosFragment adf = ActualizarDatosFragment.newInstance("xx","ss");
-                 getFragmentManager()
+                ActualizarDatosFragment adf = ActualizarDatosFragment.newInstance("xx", "ss");
+                getFragmentManager()
                         .beginTransaction()
-                         .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
-                        .replace(R.id.pantalla,adf)
+                        .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
+                        .replace(R.id.pantalla, adf)
                         .commit();
             }
         });

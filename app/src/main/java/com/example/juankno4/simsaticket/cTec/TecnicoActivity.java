@@ -27,10 +27,11 @@ import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 public class TecnicoActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener,
-        fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener, fragment_actualizar_tecnico.OnFragmentInteractionListener{
+        implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener, fragment_verdatos_tecnico.OnFragmentInteractionListener,
+        fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener, fragment_actualizar_tecnico.OnFragmentInteractionListener {
 
     TextView presentacion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +40,9 @@ public class TecnicoActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         setTitle("");
 
-        Bundle caja= getIntent().getExtras();
-        presentacion= findViewById(R.id.presentacion);
-        presentacion.setText("Bienvenido "+caja.get("nomPer"));
-
+        Bundle caja = getIntent().getExtras();
+        presentacion = findViewById(R.id.presentacion);
+        presentacion.setText("Bienvenido " + caja.get("nomPer"));
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -56,8 +56,8 @@ public class TecnicoActivity extends AppCompatActivity
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
         MenuItem comm = navigationView.getMenu().findItem(R.id.pn);
-        SpannableString xxx=new SpannableString(comm.getTitle());
-        xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
+        SpannableString xxx = new SpannableString(comm.getTitle());
+        xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.colorPrimary)), 0, xxx.length(), 0);
         comm.setTitle(xxx);
 
         //Esto es lo que agrgue señor kike
@@ -69,12 +69,9 @@ public class TecnicoActivity extends AppCompatActivity
         //Esto de arriba
 
 
-
-
-
         MenuItem adm = navigationView.getMenu().findItem(R.id.nav_admproblema);
-        SpannableString spanadm=new SpannableString(adm.getTitle());
-        spanadm.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanadm.length(),0);
+        SpannableString spanadm = new SpannableString(adm.getTitle());
+        spanadm.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.colorBlanco)), 0, spanadm.length(), 0);
         adm.setTitle(spanadm);
     }
 
@@ -119,34 +116,33 @@ public class TecnicoActivity extends AppCompatActivity
         if (id == R.id.nav_inicio) {
             Fragment inicio = new fragment_inicio_tecnico();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.contenido,inicio);
+            fragmentTransaction.replace(R.id.contenido, inicio);
             fragmentTransaction.commit();
-        }else if (id == R.id.nav_datos) {
+        } else if (id == R.id.nav_datos) {
 
-            Bundle cajaT= getIntent().getExtras();
+            Bundle cajaT = getIntent().getExtras();
 
             Fragment datos = new fragment_verdatos_tecnico();
 
             datos.setArguments(cajaT);
-            FragmentTransaction fragmentTransaction= getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.contenido,datos);
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.contenido, datos);
             fragmentTransaction.commit();
-
 
 
             Fragment otro = new fragment_editardatos_tecnico();
             otro.setArguments(cajaT);
-            FragmentTransaction frag= getSupportFragmentManager().beginTransaction();
+            FragmentTransaction frag = getSupportFragmentManager().beginTransaction();
             frag.commit();
 
         } else if (id == R.id.nav_admproblema) {
 
             Fragment problema = new fragment_problemas_tecnico();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.contenido,problema);
+            transaction.replace(R.id.contenido, problema);
             transaction.commit();
-        }else if (id==R.id.Cerrar){
-            Intent ss=new  Intent(getApplicationContext(), MainActivity.class);
+        } else if (id == R.id.Cerrar) {
+            Intent ss = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(ss);
             finish();
         }

@@ -95,7 +95,7 @@ public class RegistrarProblemaFragment extends Fragment {
     }
 
     Button submit_ip;
-    Spinner spin_pdp,spin_tipo,spin_eqt;
+    Spinner spin_pdp, spin_tipo, spin_eqt;
     EditText edit_fecha;
     DatePickerDialog.OnDateSetListener fechaescucha;
 
@@ -103,132 +103,109 @@ public class RegistrarProblemaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       vista = inflater.inflate(R.layout.fragment_registrar_problema, container, false);
-      spin_pdp = (Spinner) vista.findViewById(R.id.spin_pdp);
-      spin_tipo = (Spinner) vista.findViewById(R.id.spin_tipo);
-      spin_eqt = (Spinner) vista.findViewById(R.id.spin_eqt);
-      edit_desc = vista.findViewById(R.id.edit_desc);
-      edit_fecha = vista.findViewById(R.id.edit_fecha);
-      submit_ip = vista.findViewById(R.id.submit_ip);
-      String prioridad[] = {"Baja","Media","Alta"};
-      String tipoprob[] = {"Hardware","Software","Desconocido"};
-      spin_pdp.setAdapter(new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_dropdown_item,prioridad));
-      spin_tipo.setAdapter(new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_dropdown_item,tipoprob));
+        vista = inflater.inflate(R.layout.fragment_registrar_problema, container, false);
+        spin_pdp = (Spinner) vista.findViewById(R.id.spin_pdp);
+        spin_tipo = (Spinner) vista.findViewById(R.id.spin_tipo);
+        spin_eqt = (Spinner) vista.findViewById(R.id.spin_eqt);
+        edit_desc = vista.findViewById(R.id.edit_desc);
+        edit_fecha = vista.findViewById(R.id.edit_fecha);
+        submit_ip = vista.findViewById(R.id.submit_ip);
+        String prioridad[] = {"Baja", "Media", "Alta"};
+        String tipoprob[] = {"Hardware", "Software", "Desconocido"};
+        spin_pdp.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, prioridad));
+        spin_tipo.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, tipoprob));
 
-      edit_fecha.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              Calendar cal = Calendar.getInstance();
-              int año = cal.get(Calendar.YEAR);
-              int mes = cal.get(Calendar.MONTH);
-              int dia = cal.get(Calendar.DAY_OF_MONTH);
+        edit_fecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar cal = Calendar.getInstance();
+                int año = cal.get(Calendar.YEAR);
+                int mes = cal.get(Calendar.MONTH);
+                int dia = cal.get(Calendar.DAY_OF_MONTH);
 
-              DatePickerDialog dialogo = new DatePickerDialog(getContext(),android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth,fechaescucha,año,mes,dia);
+                DatePickerDialog dialogo = new DatePickerDialog(getContext(), android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth, fechaescucha, año, mes, dia);
 
-              dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-              dialogo.show();
-          }
-      });
+                dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialogo.show();
+            }
+        });
 
-      fechaescucha = new DatePickerDialog.OnDateSetListener() {
-          @Override
-          public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        fechaescucha = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
                 String fecha = dayOfMonth + "-" + month + "-" + year;
                 edit_fecha.setText(fecha);
-          }
-      };
+            }
+        };
 
-      JSONObject eq=new JSONObject();
+        JSONObject eq = new JSONObject();
         try {
-            eq.put("id",Datos.getPer().getId());
+            eq.put("id", Datos.getPer().getId());
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
 
         JsonObjectRequest jor = new JsonObjectRequest(
-              Request.Method.POST,
-              Datos.URL + "/EquipoEmp",
-              eq,
-              new Response.Listener<JSONObject>() {
-                  @Override
-                  public void onResponse(JSONObject response) {
+                Request.Method.POST,
+                Datos.URL + "/EquipoEmp",
+                eq,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
 
-                      try {
-                          JSONArray Equipos = response.getJSONArray("Equip");
-                          String[] Dessc = new String[Equipos.length()];
-                          Gson gson = new Gson();
-                          for (int i = 0; i < Equipos.length(); i++) {
-                      EquipoTrabajo equipoTrabajo = gson.fromJson(Equipos.get(i).toString(),EquipoTrabajo.class);
-                      Datos.equipoTrabajo = equipoTrabajo;
-                              Dessc[i] = equipoTrabajo.getDescripcion();
-                          }
-                       ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,Dessc);
-                          spin_eqt.setAdapter(adapter);
-
-
-
-                      } catch (JSONException e) {
-
-                          e.printStackTrace();
-                      }
+                        try {
+                            JSONArray Equipos = response.getJSONArray("Equip");
+                            String[] Dessc = new String[Equipos.length()];
+                            Gson gson = new Gson();
+                            for (int i = 0; i < Equipos.length(); i++) {
+                                EquipoTrabajo equipoTrabajo = gson.fromJson(Equipos.get(i).toString(), EquipoTrabajo.class);
+                                Datos.equipoTrabajo = equipoTrabajo;
+                                Dessc[i] = equipoTrabajo.getDescripcion();
+                            }
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, Dessc);
+                            spin_eqt.setAdapter(adapter);
 
 
-                      // Sirve pero sin id
+                        } catch (JSONException e) {
 
-//                      try {
-//
-//                              JSONArray Equipos = response.getJSONArray("Equip");
-//
-//                              String[] Dessc = new String[Equipos.length()];
-//                              String[] id = new String[Equipos.length()];
-//
-//                              for (int i = 0; i < Equipos.length(); i++) {
-//                                  Dessc[i] = Equipos.getJSONObject(i).getString("Descripcion"); ;
-////                                  id[i] = Equipos.getJSONObject(i).getString("id");
-////                              }
-//
-//                          ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,id);
-//                          spin_eqt.setAdapter(adapter);
-//
-//                          } catch (JSONException e) {
-//                              e.printStackTrace();
-//                          }
-                  }
-              },
-              new Response.ErrorListener() {
-                  @Override
-                  public void onErrorResponse(VolleyError error) {
-                      error.printStackTrace();
-                  }
-              });
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                });
 
         VolleyS.getInstance(getContext()).getRq().add(jor);
 
 
-
         submit_ip.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 JSONObject dd = new JSONObject();
                 try {
-                    dd.put("CodEqTrab",Datos.equipoTrabajo.getId());
-                    dd.put("NotaProblema",edit_desc.getText().toString());
-                    dd.put("prioridad",spin_pdp.getSelectedItem());
+                    dd.put("CodEqTrab", Datos.equipoTrabajo.getId());
+                    dd.put("NotaProblema", edit_desc.getText().toString());
+                    dd.put("prioridad", spin_pdp.getSelectedItem());
                     String valorcod = (String) spin_tipo.getSelectedItem();
-                    if (valorcod == "Hardware"){
-                        dd.put("CodTipoProblema",500);
-                    }  if (valorcod == "Software"){
-                        dd.put("CodTipoProblema",501);
-                    }  if (valorcod == "Desconocido"){
-                        dd.put("CodTipoProblema",502);
+                    if (valorcod == "Hardware") {
+                        dd.put("CodTipoProblema", 500);
+                    }
+                    if (valorcod == "Software") {
+                        dd.put("CodTipoProblema", 501);
+                    }
+                    if (valorcod == "Desconocido") {
+                        dd.put("CodTipoProblema", 502);
                     }
 
-                } catch (JSONException e)
-                {
-                    Toast.makeText(getContext(),"Por favor, llena los campos necesarios", Toast.LENGTH_LONG).show();
+                } catch (JSONException e) {
+                    Toast.makeText(getContext(), "Por favor, llena los campos necesarios", Toast.LENGTH_LONG).show();
                 }
 
                 JsonObjectRequest jor2 = new JsonObjectRequest(
@@ -238,9 +215,9 @@ public class RegistrarProblemaFragment extends Fragment {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                Log.d("pifi",response.toString());
+                                Log.d("pifi", response.toString());
                                 try {
-                                    Toast.makeText(getContext(),response.getJSONObject("prob").get("Mensaje").toString(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getContext(), response.getJSONObject("prob").get("Mensaje").toString(), Toast.LENGTH_LONG).show();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
