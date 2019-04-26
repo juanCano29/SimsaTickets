@@ -35,4 +35,10 @@
         </menu>
     </item>
 
+    <item
+        android:id="@+id/Cerrar"
+        android:title="cerrar sesion"
+        android:icon="@drawable/boton"
+        />
+
 </menu>

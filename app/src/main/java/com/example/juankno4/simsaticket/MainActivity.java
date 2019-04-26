@@ -30,8 +30,7 @@ import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity {
-    Button btn1, btn2, btn3, btnl;
-    SharedPreferences shp;
+    Button btnl;
     EditText ed, pas;
     RequestQueue request;
 

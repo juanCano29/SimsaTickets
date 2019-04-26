@@ -117,6 +117,7 @@ public class fragment_problemas_tecnico extends Fragment implements fragment_act
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
+//                        Toast.makeText(getContext(), response.toString(), Toast.LENGTH_SHORT).show();
                         Type ProblemaList = new TypeToken<List<AdministrarTec>>(){}.getType();
 
                         List<AdministrarTec> problemas = new Gson().fromJson(response.toString(),ProblemaList);
@@ -128,21 +129,14 @@ public class fragment_problemas_tecnico extends Fragment implements fragment_act
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                error.printStackTrace();
+                Toast.makeText(getContext(), "Error "+getContext().toString(), Toast.LENGTH_SHORT).show();
             }
         });
         VolleyS.getInstance(getContext()).getRq().add(jsonArrayRequest);
 
 
 
-
-        ver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragment_actualizar_tecnico actualizar_tecnico= fragment_actualizar_tecnico.newInstance("ss","aa");
-                getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,actualizar_tecnico).commit();
-            }
-        });
 
         return vista;
     }

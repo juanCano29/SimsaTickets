@@ -23,6 +23,7 @@
         </menu>
     </item>
 
+
     <group
         android:visible="true"
         android:id="@+id/menu_bottom"
@@ -46,5 +47,11 @@
                     android:icon="@drawable/multipleusers"
                     android:title="Usuario" />
     </group>
+
+    <item
+        android:id="@+id/Cerrar"
+        android:title="cerrar sesion"
+        android:icon="@drawable/boton"
+        />
 
 </menu>

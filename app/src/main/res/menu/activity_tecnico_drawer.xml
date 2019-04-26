@@ -4,7 +4,8 @@
     tools:showIn="navigation_view">
 
 
-    <item android:title="Panel de Control">
+    <item android:title="Panel de Control"
+        android:id="@+id/pn">
         <menu>
             <item
                 android:id="@+id/nav_inicio"
@@ -23,5 +24,10 @@
         </menu>
 
     </item>
+    <item
+        android:id="@+id/Cerrar"
+        android:title="cerrar sesion"
+        android:icon="@drawable/boton"
+        />
 
 </menu>

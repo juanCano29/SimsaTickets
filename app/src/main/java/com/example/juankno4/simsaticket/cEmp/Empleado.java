@@ -1,5 +1,6 @@
 package com.example.juankno4.simsaticket.cEmp;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -16,6 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.juankno4.simsaticket.MainActivity;
+import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 public class Empleado extends AppCompatActivity
@@ -24,7 +27,8 @@ public class Empleado extends AppCompatActivity
         VerDatosFragment.OnFragmentInteractionListener,ActualizarDatosFragment.OnFragmentInteractionListener
       {
 
-          TextView principal;
+//          TextView principal;
+TextView name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +37,10 @@ public class Empleado extends AppCompatActivity
         setSupportActionBar(toolbar);
         setTitle("");
 
-        principal= findViewById(R.id.principal);
+        /*principal= findViewById(R.id.principal);
         Bundle cajaE=getIntent().getExtras();
 
-        principal.setText("Bienvenido "+cajaE.get("nomPer"));
+        principal.setText("Bienvenido "+ Datos.getPer().getNomEmp());*/
 
 
 
@@ -54,6 +58,11 @@ public class Empleado extends AppCompatActivity
         SpannableString xx=new SpannableString(comm.getTitle());
         xx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xx.length(),0);
         comm.setTitle(xx);
+
+
+        /*name.findViewById(R.id.NomEmp);
+        name.setText(Datos.getPer().getNomEmp());*/
+
 
     }
 
@@ -126,6 +135,10 @@ public class Empleado extends AppCompatActivity
                     .replace(R.id.pantalla,vdf)
                     .commit();
 
+        }else if (id==R.id.Cerrar){
+            Intent ss=new  Intent(getApplicationContext(), MainActivity.class);
+            startActivity(ss);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

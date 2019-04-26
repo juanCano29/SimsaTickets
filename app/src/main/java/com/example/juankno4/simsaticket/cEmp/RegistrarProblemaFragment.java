@@ -139,15 +139,21 @@ public class RegistrarProblemaFragment extends Fragment {
           }
       };
 
+      JSONObject eq=new JSONObject();
+        try {
+            eq.put("id",Datos.getPer().getId());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-      JsonObjectRequest jor = new JsonObjectRequest(
+
+        JsonObjectRequest jor = new JsonObjectRequest(
               Request.Method.POST,
               Datos.URL + "/EquipoEmp",
-              null,
+              eq,
               new Response.Listener<JSONObject>() {
                   @Override
                   public void onResponse(JSONObject response) {
-
 
                       try {
                           JSONArray Equipos = response.getJSONArray("Equip");
@@ -194,7 +200,7 @@ public class RegistrarProblemaFragment extends Fragment {
               new Response.ErrorListener() {
                   @Override
                   public void onErrorResponse(VolleyError error) {
-
+                      error.printStackTrace();
                   }
               });
 
@@ -208,7 +214,7 @@ public class RegistrarProblemaFragment extends Fragment {
             {
                 JSONObject dd = new JSONObject();
                 try {
-                    dd.put("CodEqTrab",Datos.equipoTrabajo.id);
+                    dd.put("CodEqTrab",Datos.equipoTrabajo.getId());
                     dd.put("NotaProblema",edit_desc.getText().toString());
                     dd.put("prioridad",spin_pdp.getSelectedItem());
                     String valorcod = (String) spin_tipo.getSelectedItem();
@@ -223,7 +229,6 @@ public class RegistrarProblemaFragment extends Fragment {
                 } catch (JSONException e)
                 {
                     Toast.makeText(getContext(),"Por favor, llena los campos necesarios", Toast.LENGTH_LONG).show();
-
                 }
 
                 JsonObjectRequest jor2 = new JsonObjectRequest(
@@ -233,19 +238,25 @@ public class RegistrarProblemaFragment extends Fragment {
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {
-                                Toast.makeText(getContext(),response.toString(), Toast.LENGTH_LONG).show();
+                                Log.d("pifi",response.toString());
+                                try {
+                                    Toast.makeText(getContext(),response.getJSONObject("prob").get("Mensaje").toString(), Toast.LENGTH_LONG).show();
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-
+                                error.printStackTrace();
                             }
                         });
                 VolleyS.getInstance(getContext()).getRq().add(jor2);
+                edit_desc.getText().clear();
             }
-        });
 
+        });
         return vista;
     }
 

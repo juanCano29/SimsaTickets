@@ -1,5 +1,6 @@
 package com.example.juankno4.simsaticket.cRoot;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -16,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.juankno4.simsaticket.MainActivity;
 import com.example.juankno4.simsaticket.R;
 
 public class Root extends AppCompatActivity
@@ -141,6 +143,14 @@ public class Root extends AppCompatActivity
                     .beginTransaction()
                     .replace(R.id.pantallaR, auf)
                     .commit();
+        }else if (id==R.id.Cerrar){
+            Intent ss=new  Intent(getApplicationContext(), MainActivity.class);
+            startActivity(ss);
+            finish();
+        }else if (id==R.id.Cerrar){
+            Intent ss=new  Intent(getApplicationContext(), MainActivity.class);
+            startActivity(ss);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
