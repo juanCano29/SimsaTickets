@@ -1,5 +1,6 @@
 package com.example.juankno4.simsaticket.cTec;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,7 +8,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 
@@ -61,12 +64,18 @@ public class fragment_inicio_tecnico extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    View v;
+    TextView texto;
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragment_inicio_tecnico, container, false);
+        v=inflater.inflate(R.layout.fragment_fragment_inicio_tecnico, container, false);
+        texto=v.findViewById(R.id.presentacion);
+        texto.setText("Bienvenido "+ Datos.getPer().getNomEmp());
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
