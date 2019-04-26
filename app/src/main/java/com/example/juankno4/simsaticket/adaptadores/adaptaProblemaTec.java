@@ -37,6 +37,7 @@ public class adaptaProblemaTec extends RecyclerView.Adapter<adaptaProblemaTec.Vi
         viewHolder.etipo.setText(problemas.getNombreProblema());
         viewHolder.enombre.setText(problemas.getNomEmp());
         viewHolder.efolio.setText(problemas.getId().toString());
+        viewHolder.eestatus.setText(problemas.getEstatus());
     }
 
     @Override
@@ -45,12 +46,13 @@ public class adaptaProblemaTec extends RecyclerView.Adapter<adaptaProblemaTec.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView efolio,enombre, etipo;
+        TextView efolio,enombre, etipo,eestatus;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             efolio=itemView.findViewById(R.id.efolio);
             enombre=itemView.findViewById(R.id.enombre);
             etipo=itemView.findViewById(R.id.etipo);
+            eestatus = itemView.findViewById(R.id.eestatus);
         }
     }
 }

@@ -5,11 +5,22 @@ public class AdministrarTec {
     private Integer id;
     private String NomEmp;
     private String NombreProblema;
+    private String estatus;
 
-    public AdministrarTec(Integer id, String nomEmp, String nombreProblema) {
+
+    public AdministrarTec(Integer id, String nomEmp, String nombreProblema,String estatus) {
         this.id = id;
         NomEmp = nomEmp;
         NombreProblema = nombreProblema;
+        this.estatus = estatus;
+    }
+
+    public String getEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
     }
 
     public Integer getId() {
