@@ -73,20 +73,19 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/tipo"
+                android:layout_toRightOf="@+id/nombre"
+                android:layout_below="@+id/nombre"
                 android:layout_marginTop="10dp"
                 android:text="texto"
                 android:id="@+id/eestatus"
                 android:textSize="16sp"
                 />
             <TextView
-                android:layout_below="@+id/tipo"
+                android:layout_below="@+id/nombre"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Estatus:"
-                android:layout_toLeftOf="@+id/eestatus"
                 android:id="@+id/estatus"
                 android:textSize="16sp"
                 />

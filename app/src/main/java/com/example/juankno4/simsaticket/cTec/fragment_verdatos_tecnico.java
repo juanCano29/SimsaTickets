@@ -151,9 +151,6 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
 
 
 
-        Toast.makeText(getContext(),"Id "+ id,Toast.LENGTH_SHORT).show();
-
-
         editar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
