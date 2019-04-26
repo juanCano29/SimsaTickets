@@ -29,7 +29,7 @@ public class TecnicoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener,
         fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener, fragment_actualizar_tecnico.OnFragmentInteractionListener{
 
-    TextView presentacion,persona;
+    TextView presentacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +54,13 @@ public class TecnicoActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
+        //Esto es lo que agrgue señor kike
+
         View header = navigationView.getHeaderView(0);
         TextView persona = (TextView) header.findViewById(R.id.persona);
         persona.setText(Datos.getPer().getNomEmp());
+
+        //Esto de arriba
 
         MenuItem init = navigationView.getMenu().findItem(R.id.nav_inicio);
         SpannableString span=new SpannableString(init.getTitle());
