@@ -40,7 +40,7 @@ public class TecnicoActivity extends AppCompatActivity
         Bundle caja= getIntent().getExtras();
         presentacion= findViewById(R.id.presentacion);
         presentacion.setText("Bienvenido "+caja.get("nomPer"));
-
+        //Aqui esta
         persona= findViewById(R.id.persona);
         persona.setText(Datos.getPer().getNomEmp());
 
