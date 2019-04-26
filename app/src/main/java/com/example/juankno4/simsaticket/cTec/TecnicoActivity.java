@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.juankno4.simsaticket.MainActivity;
 import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
@@ -54,6 +55,11 @@ public class TecnicoActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
+        MenuItem comm = navigationView.getMenu().findItem(R.id.pn);
+        SpannableString xxx=new SpannableString(comm.getTitle());
+        xxx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xxx.length(),0);
+        comm.setTitle(xxx);
+
         //Esto es lo que agrgue señor kike
 
         View header = navigationView.getHeaderView(0);
@@ -62,15 +68,7 @@ public class TecnicoActivity extends AppCompatActivity
 
         //Esto de arriba
 
-        MenuItem init = navigationView.getMenu().findItem(R.id.nav_inicio);
-        SpannableString span=new SpannableString(init.getTitle());
-        span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
-        init.setTitle(span);
 
-        MenuItem dato = navigationView.getMenu().findItem(R.id.nav_datos);
-        SpannableString spandato=new SpannableString(dato.getTitle());
-        spandato.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spandato.length(),0);
-        dato.setTitle(spandato);
 
 
 
@@ -147,6 +145,10 @@ public class TecnicoActivity extends AppCompatActivity
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.contenido,problema);
             transaction.commit();
+        }else if (id==R.id.Cerrar){
+            Intent ss=new  Intent(getApplicationContext(), MainActivity.class);
+            startActivity(ss);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
