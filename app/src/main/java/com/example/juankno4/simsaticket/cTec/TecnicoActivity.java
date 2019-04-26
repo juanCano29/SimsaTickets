@@ -18,17 +18,18 @@ import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.juankno4.simsaticket.MainActivity;
+import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.R;
 
 public class TecnicoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, fragment_inicio_tecnico.OnFragmentInteractionListener,fragment_verdatos_tecnico.OnFragmentInteractionListener,
         fragment_editardatos_tecnico.OnFragmentInteractionListener, fragment_problemas_tecnico.OnFragmentInteractionListener, fragment_actualizar_tecnico.OnFragmentInteractionListener{
 
-    TextView presentacion;
+    TextView presentacion,persona;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +44,6 @@ public class TecnicoActivity extends AppCompatActivity
 
 
 
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -54,11 +54,26 @@ public class TecnicoActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setBackgroundColor(getResources().getColor(R.color.colorNegro));
 
-        MenuItem comm = navigationView.getMenu().findItem(R.id.pn);
-        SpannableString xx=new SpannableString(comm.getTitle());
-        xx.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorPrimary)),0,xx.length(),0);
-        comm.setTitle(xx);
+        View header = navigationView.getHeaderView(0);
+        TextView persona = (TextView) header.findViewById(R.id.persona);
+        persona.setText(Datos.getPer().getNomEmp());
 
+        MenuItem init = navigationView.getMenu().findItem(R.id.nav_inicio);
+        SpannableString span=new SpannableString(init.getTitle());
+        span.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,span.length(),0);
+        init.setTitle(span);
+
+        MenuItem dato = navigationView.getMenu().findItem(R.id.nav_datos);
+        SpannableString spandato=new SpannableString(dato.getTitle());
+        spandato.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spandato.length(),0);
+        dato.setTitle(spandato);
+
+
+
+        MenuItem adm = navigationView.getMenu().findItem(R.id.nav_admproblema);
+        SpannableString spanadm=new SpannableString(adm.getTitle());
+        spanadm.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this,R.color.colorBlanco)),0,spanadm.length(),0);
+        adm.setTitle(spanadm);
     }
 
     @Override
@@ -128,10 +143,6 @@ public class TecnicoActivity extends AppCompatActivity
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.contenido,problema);
             transaction.commit();
-        }else if (id==R.id.Cerrar){
-            Intent ss=new  Intent(getApplicationContext(), MainActivity.class);
-            startActivity(ss);
-            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
