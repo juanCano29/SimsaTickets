@@ -109,8 +109,13 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
         correoeditT = vista.findViewById(R.id.correoeditT);
 
 
-
-        JSONObject objeto= new JSONObject();
+        nombreeditT.setText(Datos.getPer().getNomEmp());
+        apellidomeditT.setText(Datos.getPer().getApMat());
+        apellidopeditT.setText(Datos.getPer().getApPat());
+        telefonoeditT.setText(Datos.getPer().getTelRed());
+        celulareditT.setText(Datos.getPer().getCelEmp());
+        correoeditT.setText(Datos.getPer().getEmailEmp());
+        /*JSONObject objeto= new JSONObject();
         try {
             objeto.put("idTec",id);
         } catch (JSONException e) {
@@ -147,7 +152,7 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
             }
         }
         );
-        VolleyS.getInstance(getContext()).getRq().add(jsonObjectRequest);
+        VolleyS.getInstance(getContext()).getRq().add(jsonObjectRequest);*/
 
 
 

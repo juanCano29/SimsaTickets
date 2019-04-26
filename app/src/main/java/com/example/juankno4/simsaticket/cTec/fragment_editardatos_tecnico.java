@@ -127,8 +127,7 @@ public class fragment_editardatos_tecnico extends Fragment {
                             edittel.setText(p.getTelRed());
                             editcel.setText(p.getCelEmp());
                             editemail.setText(p.getEmailEmp());
-                            fragment_verdatos_tecnico datos = fragment_verdatos_tecnico.newInstance("za","za");
-                            getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,datos).commit();
+
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -173,30 +172,26 @@ public class fragment_editardatos_tecnico extends Fragment {
                                 try {
                                     Gson gso = new Gson();
                                     Personas p = gso.fromJson(response.getJSONObject("edittec").getJSONObject("Persona").toString(), Personas.class);
-                                    editnombre.setText(p.getNomEmp());
-                                    editpaterno.setText(p.getApPat());
-                                    editmaterno.setText(p.getApMat());
-                                    edittel.setText(p.getTelRed());
-                                    editcel.setText(p.getCelEmp());
-                                    editemail.setText(p.getEmailEmp());
+                                    Datos.setPer(p);
                                     Toast.makeText(getContext(), "Actualizado", Toast.LENGTH_SHORT).show();
+
+                                    fragment_verdatos_tecnico datos = fragment_verdatos_tecnico.newInstance("za","za");
+                                    getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,datos).commit();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-
-
                             }
                         },
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-
+                                error.printStackTrace();
                             }
                         });
                 VolleyS.getInstance(getContext()).getRq().add(json);
 
-                fragment_verdatos_tecnico tecnico = fragment_verdatos_tecnico.newInstance("as","dd");
-                getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,tecnico).commit();
+                /*fragment_verdatos_tecnico tecnico = fragment_verdatos_tecnico.newInstance("as","dd");
+                getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,tecnico).commit();*/
             }
 
         });
