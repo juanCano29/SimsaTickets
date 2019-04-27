@@ -1,5 +1,6 @@
 package com.example.juankno4.simsaticket;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -33,24 +34,17 @@ public class MainActivity extends AppCompatActivity {
     Button btnl;
     EditText ed, pas;
     RequestQueue request;
+    Context conx=MainActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        shp = getSharedPreferences("archivo", MODE_PRIVATE);
         request = Volley.newRequestQueue(this);
 
         ed = findViewById(R.id.user);
         pas = findViewById(R.id.pas);
         btnl = findViewById(R.id.btn_login);
-
-        /*String enUs = shp.getString("user", null);
-        String enPassm = shp.getString("password", null);*/
-        /*if (enUs != null) {
-            ed.setText(enUs);
-            pas.setText(enPassm);
-        }*/
 
 
         btnl.setOnClickListener(new View.OnClickListener() {
@@ -85,42 +79,38 @@ public class MainActivity extends AppCompatActivity {
                                     String nomPer = per.NomEmp;
                                     //String nomPer = us.NomPer;
                                     Integer idPer = per.id;
-                                    Integer tipoPer = us.TipoP;
+                                    Bundle bu = new Bundle();
+                                    Intent intent=new Intent();
 
 
+                                    switch (per.getCodTipoPersona()){
+                                        case 1:
+                                            bu.putString("nomPer",nomPer);
+                                            bu.putInt("idPer",idPer);
+
+                                            intent.setClass(conx,Root.class);
+                                            intent.putExtras(bu);
+                                            startActivity(intent);
+                                            break;
+                                        case 2:
+                                            bu.putString("nomPer",nomPer);
+                                            bu.putInt("idPer",idPer);
+
+                                            intent.setClass(conx,TecnicoActivity.class);
+                                            intent.putExtras(bu);
+                                            startActivity(intent);
+                                            break;
+                                        case 3:
+                                            bu.putString("nomPer",nomPer);
+                                            bu.putInt("idPer",idPer);
 
 
-
-                                    if (per.getCodTipoPersona()==3)
-                                    {
-
-                                        Bundle bu = new Bundle();
-                                        bu.putString("nomPer",nomPer);
-                                        bu.putInt("idPer",idPer);
-
-
-                                        Intent emp=new Intent(MainActivity.this, Empleado.class);
-                                        emp.putExtras(bu);
-                                        startActivity(emp);
-
-                                    }if (per.getCodTipoPersona()==2){
-                                        Bundle bu = new Bundle();
-                                        bu.putString("nomPer",nomPer);
-                                        bu.putInt("idPer",idPer);
-
-                                        Intent emp=new Intent(MainActivity.this, TecnicoActivity.class);
-                                        emp.putExtras(bu);
-                                        startActivity(emp);
-                                    }if (per.getCodTipoPersona()==1){
-
-                                        Bundle bu = new Bundle();
-                                        bu.putString("nomPer",nomPer);
-                                        bu.putInt("idPer",idPer);
-
-                                        Intent emp=new Intent(MainActivity.this, Root.class);
-                                        emp.putExtras(bu);
-                                        startActivity(emp);
+                                            intent.setClass(conx,Empleado.class);
+                                            intent.putExtras(bu);
+                                            startActivity(intent);
+                                            break;
                                     }
+
                                     finish();
 
                                 } catch (JSONException e)
