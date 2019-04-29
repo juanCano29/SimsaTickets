@@ -103,12 +103,15 @@
                     android:text="Persona:"
                     android:textColor="#F6D600"
                     android:textSize="20dp" />
-                <Spinner
-                    android:id="@+id/spin_persona"
-                    android:layout_width="match_parent"
+                <AutoCompleteTextView
+                    android:background="@drawable/ed_blanco"
                     android:paddingLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="327dp"
                     android:layout_height="43dp"
-                    android:background="@drawable/ed_blanco"/>
+                    android:hint="Escribe el nombre de la persona..."/>
             </LinearLayout>
             <Button
                 android:id="@+id/submit_addequipo"
@@ -118,7 +121,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btnsubmit"
                 android:text="registrar"
-                android:onClick="enviar"/>
+                />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

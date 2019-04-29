@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -47,6 +48,7 @@ public class AgregarEquipoFragment extends Fragment {
     private String mParam2;
     View v;
     EditText descr,nums;
+    AutoCompleteTextView autoCompleteTextView;
     Spinner tequ,per;
     Button submit;
 
@@ -86,49 +88,137 @@ public class AgregarEquipoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         v=inflater.inflate(R.layout.fragment_agregar_equipo, container, false);
         descr=v.findViewById(R.id.edit_descequipo);
         nums=v.findViewById(R.id.textv_nums);
-
         tequ=v.findViewById(R.id.spin_tipoequipo);
+        autoCompleteTextView = v.findViewById(R.id.autoCompleteTextView);
+        submit = v.findViewById(R.id.submit_addequipo);
+
         String[] array_tequip={"LAPTOP","ESCRITORIO","TELEFONO"};
         tequ.setAdapter(new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,array_tequip));
 
-        per=v.findViewById(R.id.spin_persona);
-        JsonObjectRequest jor=new JsonObjectRequest(
-                Request.Method.POST,
-                Datos.URL + "/mostrarEmp",
-                null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
+        JsonObjectRequest json = new JsonObjectRequest
+                (
+                        Request.Method.GET,
+                        Datos.URL + "/allper",
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response)
+                            {
+                                try {
+                                    JSONObject Perss = response.getJSONObject("info");
+                                    JSONArray pp = response.getJSONObject("info").getJSONArray("Persona");
+                                    String[] Dessc = new String[pp.length()];
+                                    Gson gson = new Gson();
+                                    for (int i = 0; i < pp.length(); i++)
+                                    {
+                                        Personas equipoTrabajo = gson.fromJson(pp.get(i).toString(),Personas.class);
+                                        Datos.per = equipoTrabajo;
+                                        response.getJSONObject("info").getJSONArray("Persona");
+                                        Datos.per.getId();
+                                        Dessc[i] = equipoTrabajo.getNomEmp()+" "+equipoTrabajo.getApPat()+" "+equipoTrabajo.getApMat();
 
-                        try {
-                            Gson requeson=new Gson();
-                            for (int i=0; i<=response.length(); i++){
-                                Personas emp = requeson.fromJson(response.getJSONArray("empleados").get(i).toString(), Personas.class);
-                                Personas xd[] = {emp};
+                                    }
+                                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,Dessc);
+                                    autoCompleteTextView.setAdapter(adapter);
+                                    autoCompleteTextView.setThreshold(1);
+
+                                } catch (JSONException e)
+                                {
+                                    e.printStackTrace();
+                                    Toast.makeText(getContext(),"No se ha podido llenar el Spinner con la tabla Personas", Toast.LENGTH_LONG).show();
+                                }
+
                             }
-//                            Toast.makeText(getContext(), emp.getNomEmp(), Toast.LENGTH_LONG).show();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-//                        descr.setText(emp.toString());
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error)
+                            {
+                                Toast.makeText(getContext(), "HOUSTON, TENEMOS UN PROBLEMA", Toast.LENGTH_SHORT).show();
+                                error.printStackTrace();
+                            }
+                        });
+        VolleyS.getInstance(getContext()).getRq().add(json);
 
-                    }
-                }, new Response.ErrorListener() {
+
+        submit.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getContext(), "nachos!!", Toast.LENGTH_SHORT).show();
-                error.printStackTrace();
-            }
-        }
-        );
+            public void onClick(View v)
+            {
 
-        VolleyS.getInstance(getContext()).getRq().add(jor);
-//        String[] array_per={}
-        // Inflate the layout for this fragment
+                JSONObject dd = new JSONObject();
+                try
+                {
+                    dd.put("Descripcion",descr.getText().toString());
+                    dd.put("NoSerie",nums.getText().toString());
+
+                    String valuespi = (String) tequ.getSelectedItem();
+                    if (valuespi == "LAPTOP")
+                    {
+                        dd.put("TipoEquipo","LAPTOP");
+                    }
+                    if (valuespi == "ESCRITORIO")
+                    {
+                        dd.put("TipoEquipo","ESCRITORIO");
+                    }
+                    if (valuespi == "TELEFONO")
+                    {
+                        dd.put("TipoEquipo","TELEFONO");
+                    }
+                    /*int xx = autoCompleteTextView.getListSelection();
+                    dd.put("CodEmp",xx);*/
+                    dd.put("CodEmp",autoCompleteTextView.getListSelection());
+//                    Toast.makeText(getContext(),xx, Toast.LENGTH_LONG).show();
+                    /*Integer valuespi = (Integer) autoCompleteTextView.getListSelection();
+                    if (valuespi == 1)
+                    {
+                        dd.put("CodEmp",6);
+                    }
+                    if (valuespi == 2)
+                    {
+                        dd.put("CodEmp",2);
+                    }*/
+                }
+                catch (JSONException e)
+                {
+                    Toast.makeText(getContext(),"Por favor, llenar los campos necesarios", Toast.LENGTH_LONG).show();
+                }
+
+                JsonObjectRequest jor = new JsonObjectRequest
+                        (
+                                Request.Method.POST,
+                                Datos.URL + "/insequ",
+                                dd,
+                                new Response.Listener<JSONObject>()
+                                {
+                                    @Override
+                                    public void onResponse(JSONObject response)
+                                    {
+                                        Toast.makeText(getContext(),"Se registró correctamente", Toast.LENGTH_LONG).show();
+                                    }
+                                }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error)
+                            {
+                                Toast.makeText(getContext(),"Ocurrió algún error en el proceso...Lo sentimos", Toast.LENGTH_LONG).show();
+                            }
+                        }
+
+                        );
+                VolleyS.getInstance(getContext()).getRq().add(jor);
+
+
+            }
+        });
+
+
+
         return v;
     }
 
