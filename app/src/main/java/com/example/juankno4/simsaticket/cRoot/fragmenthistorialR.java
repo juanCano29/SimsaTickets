@@ -16,18 +16,22 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 
 import com.example.juankno4.simsaticket.Modelos.Datos;
+import com.example.juankno4.simsaticket.Modelos.HistorialRoot;
 import com.example.juankno4.simsaticket.Modelos.Personas;
 import com.example.juankno4.simsaticket.Modelos.Problemas;
 import com.example.juankno4.simsaticket.Modelos.TipoProb;
 import com.example.juankno4.simsaticket.Modelos.VolleyS;
 import com.example.juankno4.simsaticket.R;
 import com.example.juankno4.simsaticket.adaptadores.adaptaHistR;
+import com.example.juankno4.simsaticket.adaptadores.adaptadorHR;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -51,8 +55,7 @@ public class fragmenthistorialR extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    TextView txt, txt2, txt3;
-    RecyclerView lp;
+    RecyclerView rv;
 
 
     private OnFragmentInteractionListener mListener;
@@ -94,15 +97,33 @@ public class fragmenthistorialR extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fragmenthistorial_r, container, false);
 //        lp = v.findViewById(R.id.rv);
-        txt = v.findViewById(R.id.txt_tipopro);
-        txt2 = v.findViewById(R.id.txt_tecasi);
-        txt3 = v.findViewById(R.id.empl);
+        rv=v.findViewById(R.id.rv);
         /*String codEmp = String.valueOf(Datos.getpersona().getCodEmp());
         txt.setText(codEmp);*/
         // Inflate the layout for this fragment
         /*txt.findViewById(R.id.objeto);*/
 
-        JsonObjectRequest jor = new JsonObjectRequest(
+        JsonArrayRequest jor=new JsonArrayRequest(
+                Request.Method.POST,
+                Datos.URL + "/mostrarHist",
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        Type hislista = new TypeToken<List<HistorialRoot>>(){}.getType();
+                        List<HistorialRoot> his=new Gson().fromJson(response.toString(),hislista);
+                        rv.setLayoutManager(new LinearLayoutManager(getContext()));
+                        rv.setAdapter(new adaptadorHR(his));
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }
+        );
+
+        /*JsonObjectRequest jor = new JsonObjectRequest(
                 Request.Method.POST,
                 Datos.URL + "/mostrarHist",
                 null,
@@ -117,10 +138,8 @@ public class fragmenthistorialR extends Fragment {
                             TipoProb tipo = requeson.fromJson(response.getJSONObject("info").getJSONArray("tipo").get(0).toString(), TipoProb.class);
                             Personas emp = requeson.fromJson(response.getJSONObject("info").getJSONArray("empleado").get(0).toString(), Personas.class);
                             Personas tec = requeson.fromJson(response.getJSONObject("info").getJSONArray("tec").get(0).toString(), Personas.class);
-                            txt.setText(tipo.getNombreProblema());
-                            txt2.setText(tec.getNomEmp());
-                            txt3.setText(emp.getNomEmp());
-                            /*Type TProbList=new TypeToken<List<TipoProb>>(){}.getType();
+
+                            *//*Type TProbList=new TypeToken<List<TipoProb>>(){}.getType();
                             String p=response.getJSONObject("info").getJSONArray("problemas").get(0).toString();
                             List<TipoProb>tipoProblemas=new Gson().fromJson(p,TProbList);
                             Type EmplList=new TypeToken<List<Personas>>(){}.getType();
@@ -130,15 +149,15 @@ public class fragmenthistorialR extends Fragment {
                             String t=response.getJSONObject("info").getJSONArray("tec").get(0).toString();
                             List<Personas>tecnico=new Gson().fromJson(t,tecList);
                             lp.setLayoutManager(new LinearLayoutManager(getContext()));
-                            lp.setAdapter(new adaptaHistR(tipoProblemas,empleado,tecnico));*/
+                            lp.setAdapter(new adaptaHistR(tipoProblemas,empleado,tecnico));*//*
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        /*try {
+                        *//*try {
                             txt.setText(response.getJSONObject("info").getJSONArray("problemas"));
                         } catch (JSONException e) {
                             e.printStackTrace();
-                        }*/
+                        }*//*
 
 
                     }
@@ -149,7 +168,7 @@ public class fragmenthistorialR extends Fragment {
             }
         }
 
-        );
+        );*/
         VolleyS.getInstance(getContext()).getRq().add(jor);
 
         return v;

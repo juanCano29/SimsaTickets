@@ -26,7 +26,8 @@ public class adaptaHistR extends RecyclerView.Adapter<adaptaHistR.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cartas_historial, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cartas_historial,
+                viewGroup, false);
         return new ViewHolder(v);
     }
 

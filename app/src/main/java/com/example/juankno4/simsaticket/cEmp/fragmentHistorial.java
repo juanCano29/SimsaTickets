@@ -118,8 +118,7 @@ public class fragmentHistorial extends Fragment {
                     @Override
                     public void onResponse(JSONArray response) {
 //                        Log.d("pifi",response.toString());
-                        Type histLista = new TypeToken<List<HistorialEmp>>() {
-                        }.getType();
+                        Type histLista = new TypeToken<List<HistorialEmp>>(){}.getType();
                         List<HistorialEmp> hist = new Gson().fromJson(response.toString(), histLista);
                         rec.setLayoutManager(new LinearLayoutManager(getContext()));
                         rec.setAdapter(new adaptaHistR(hist));

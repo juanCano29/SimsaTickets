@@ -29,7 +29,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/colorNegro"
         android:textColorHint="#8A8A8A"
-        android:text="Gera"/>
+        android:text="Etorres"/>
 
 
     <EditText
@@ -46,7 +46,7 @@
         android:paddingLeft="10dp"
         android:textColor="@color/colorNegro"
         android:textColorHint="#8A8A8A"
-        android:text="g3ra"/>
+        android:text="123"/>
 
 
     <Button

@@ -7,13 +7,15 @@ public class HistorialEmp {
     public String prioridad;
     public String estatus;
 
-    public HistorialEmp(Integer id, String descripcion, String nombreProblema, String prioridad, String estatus) {
+    public HistorialEmp(Integer id, String descripcion, String nombreProblema,
+                        String prioridad, String estatus) {
         this.id = id;
         Descripcion = descripcion;
         NombreProblema = nombreProblema;
         this.prioridad = prioridad;
         this.estatus = estatus;
     }
+
 
     public Integer getId() {
         return id;
