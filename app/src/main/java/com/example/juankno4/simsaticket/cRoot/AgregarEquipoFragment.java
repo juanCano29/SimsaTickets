@@ -56,6 +56,7 @@ public class AgregarEquipoFragment extends Fragment {
     JSONObject dd = new JSONObject();
 
 
+
     private OnFragmentInteractionListener mListener;
 
     public AgregarEquipoFragment() {
@@ -175,7 +176,7 @@ public class AgregarEquipoFragment extends Fragment {
             public void onClick(View v)
             {
 
-                JSONObject dd = new JSONObject();
+
                 try
                 {
                     dd.put("Descripcion",descr.getText().toString());
@@ -194,7 +195,6 @@ public class AgregarEquipoFragment extends Fragment {
                     {
                         dd.put("TipoEquipo","TELEFONO");
                     }
-                    dd.put("CodEmp",autoCompleteTextView.getListSelection());
                 }
                 catch (JSONException e)
                 {

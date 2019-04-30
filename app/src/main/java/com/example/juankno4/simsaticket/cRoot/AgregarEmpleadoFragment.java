@@ -49,6 +49,7 @@ public class AgregarEmpleadoFragment extends Fragment {
     EditText edit_rootNombre,edit_RootaP,edit_RootaM,edit_RoottelR,edit_Rootcel,edit_Rootcorr,edit_rootTiPer,edit_rootDepa;
     Button btnroot_addPer;
     Spinner spitipo, spidep;
+    JSONObject dd = new JSONObject();
 
     private OnFragmentInteractionListener mListener;
 
@@ -115,7 +116,7 @@ public class AgregarEmpleadoFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                JSONObject dd = new JSONObject();
+
                 try {
 
                     dd.put("NomEmp",edit_rootNombre.getText().toString());
@@ -173,7 +174,7 @@ public class AgregarEmpleadoFragment extends Fragment {
                 JsonObjectRequest jor= new JsonObjectRequest
                         (
                         Request.Method.POST,
-                        Datos.URL + "/insequ",
+                        Datos.URL + "/insper",
                         dd,
                         new Response.Listener<JSONObject>()
                         {
