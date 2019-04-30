@@ -173,9 +173,10 @@ public class AgregarEmpleadoFragment extends Fragment {
 
 
 
-                JsonObjectRequest jor= new JsonObjectRequest(
+                JsonObjectRequest jor= new JsonObjectRequest
+                        (
                         Request.Method.POST,
-                        Datos.URL + "/insper",
+                        Datos.URL + "/insequ",
                         dd,
                         new Response.Listener<JSONObject>()
                         {

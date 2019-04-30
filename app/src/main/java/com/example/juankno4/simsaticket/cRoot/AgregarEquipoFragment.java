@@ -100,6 +100,8 @@ public class AgregarEquipoFragment extends Fragment {
         autoCompleteTextView = v.findViewById(R.id.autoCompleteTextView);
         submit = v.findViewById(R.id.submit_addequipo);
 
+
+
         String[] array_tequip={"LAPTOP","ESCRITORIO","TELEFONO"};
         tequ.setAdapter(new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,array_tequip));
 
@@ -175,7 +177,6 @@ public class AgregarEquipoFragment extends Fragment {
             public void onClick(View v)
             {
 
-                JSONObject dd = new JSONObject();
                 try
                 {
                     dd.put("Descripcion",descr.getText().toString());
@@ -194,19 +195,6 @@ public class AgregarEquipoFragment extends Fragment {
                     {
                         dd.put("TipoEquipo","TELEFONO");
                     }
-                    /*int xx = autoCompleteTextView.getListSelection();
-                    dd.put("CodEmp",xx);*/
-                    //dd.put("CodEmp",autoCompleteTextView.getListSelection());
-//                    Toast.makeText(getContext(),xx, Toast.LENGTH_LONG).show();
-                    /*Integer valuespi = (Integer) autoCompleteTextView.getListSelection();
-                    if (valuespi == 1)
-                    {
-                        dd.put("CodEmp",6);
-                    }
-                    if (valuespi == 2)
-                    {
-                        dd.put("CodEmp",2);
-                    }*/
                 }
                 catch (JSONException e)
                 {
