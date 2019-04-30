@@ -95,19 +95,19 @@ public class AgregarEmpleadoFragment extends Fragment {
         edit_RoottelR = vista.findViewById(R.id.telR);
         edit_Rootcel = vista.findViewById(R.id.telP);
         edit_Rootcorr = vista.findViewById(R.id.mail);
-        //edit_rootTiPer = vista.findViewById(R.id.tper);
-        //edit_rootDepa = vista.findViewById(R.id.dep);
         btnroot_addPer = vista.findViewById(R.id.btnroot_addPer);
 
 
         spitipo = vista.findViewById(R.id.tper);
         String[] arraytipop = {"Root","Tecnico","Empleado"};
-        spitipo.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,arraytipop));
-
+        spitipo.setAdapter(new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_item,arraytipop));
 
         spidep = vista.findViewById(R.id.dep);
-        String[] arraydep = {"Contabilidad","Finanzas","Bancos", "Juridico",  "Recursos Humanos"};
-        spidep.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,arraydep));
+        String[] arraydep = {"Contabilidad","Finanzas","Bancos",
+                "Juridico",  "Recursos Humanos"};
+        spidep.setAdapter(new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_item,arraydep));
 
 
         btnroot_addPer.setOnClickListener(new View.OnClickListener()
@@ -182,13 +182,15 @@ public class AgregarEmpleadoFragment extends Fragment {
                             @Override
                             public void onResponse(JSONObject response)
                             {
-                                Toast.makeText(getContext(),"Se registró correctamente", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getContext(),"Se registró correctamente",
+                                        Toast.LENGTH_LONG).show();
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error)
                     {
-                        Toast.makeText(getContext(),"Porfavor, llena los campos Necesarios", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),"Porfavor, llena los campos Necesarios",
+                                Toast.LENGTH_LONG).show();
                     }
                 }
 

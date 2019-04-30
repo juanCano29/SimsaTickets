@@ -104,6 +104,7 @@ public class RegistrarProblemaFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         vista = inflater.inflate(R.layout.fragment_registrar_problema, container, false);
+
         spin_pdp = (Spinner) vista.findViewById(R.id.spin_pdp);
         spin_tipo = (Spinner) vista.findViewById(R.id.spin_tipo);
         spin_eqt = (Spinner) vista.findViewById(R.id.spin_eqt);
@@ -112,8 +113,10 @@ public class RegistrarProblemaFragment extends Fragment {
         submit_ip = vista.findViewById(R.id.submit_ip);
         String prioridad[] = {"Baja", "Media", "Alta"};
         String tipoprob[] = {"Hardware", "Software", "Desconocido"};
-        spin_pdp.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, prioridad));
-        spin_tipo.setAdapter(new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, tipoprob));
+        spin_pdp.setAdapter(new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_dropdown_item, prioridad));
+        spin_tipo.setAdapter(new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_dropdown_item, tipoprob));
 
         edit_fecha.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,7 +126,9 @@ public class RegistrarProblemaFragment extends Fragment {
                 int mes = cal.get(Calendar.MONTH);
                 int dia = cal.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog dialogo = new DatePickerDialog(getContext(), android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth, fechaescucha, año, mes, dia);
+                DatePickerDialog dialogo = new DatePickerDialog(getContext(),
+                        android.R.style.Theme_Holo_Light_Dialog_NoActionBar_MinWidth,
+                        fechaescucha, año, mes, dia);
 
                 dialogo.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialogo.show();
@@ -160,13 +165,14 @@ public class RegistrarProblemaFragment extends Fragment {
                             String[] Dessc = new String[Equipos.length()];
                             Gson gson = new Gson();
                             for (int i = 0; i < Equipos.length(); i++) {
-                                EquipoTrabajo equipoTrabajo = gson.fromJson(Equipos.get(i).toString(), EquipoTrabajo.class);
+                                EquipoTrabajo equipoTrabajo = gson.fromJson(Equipos.get(i)
+                                        .toString(), EquipoTrabajo.class);
                                 Datos.equipoTrabajo = equipoTrabajo;
                                 Dessc[i] = equipoTrabajo.getDescripcion();
                             }
-                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item, Dessc);
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
+                                    android.R.layout.simple_spinner_dropdown_item, Dessc);
                             spin_eqt.setAdapter(adapter);
-
 
                         } catch (JSONException e) {
 
@@ -205,7 +211,8 @@ public class RegistrarProblemaFragment extends Fragment {
                     }
 
                 } catch (JSONException e) {
-                    Toast.makeText(getContext(), "Por favor, llena los campos necesarios", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(),
+                            "Por favor, llena los campos necesarios", Toast.LENGTH_LONG).show();
                 }
 
                 JsonObjectRequest jor2 = new JsonObjectRequest(
@@ -217,7 +224,8 @@ public class RegistrarProblemaFragment extends Fragment {
                             public void onResponse(JSONObject response) {
                                 Log.d("pifi", response.toString());
                                 try {
-                                    Toast.makeText(getContext(), response.getJSONObject("prob").get("Mensaje").toString(), Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getContext(), response.getJSONObject("prob")
+                                            .get("Mensaje").toString(), Toast.LENGTH_LONG).show();
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }

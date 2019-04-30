@@ -105,7 +105,6 @@ public class ActualizarDatosFragment extends Fragment {
             public void onClick(View v) {
 
                 JSONObject dd = new JSONObject();
-
                 try {
                     dd.put("id", Datos.getPer().getId());
                     dd.put("NomEmp", edit_empNombre.getText().toString());
@@ -117,6 +116,7 @@ public class ActualizarDatosFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 JsonObjectRequest jor = new JsonObjectRequest(
                         Request.Method.POST,
                         Datos.URL + "/actualizar",
