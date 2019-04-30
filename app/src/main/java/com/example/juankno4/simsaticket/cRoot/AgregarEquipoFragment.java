@@ -168,7 +168,7 @@ public class AgregarEquipoFragment extends Fragment {
                 }
 
             }
-        });
+        });//putos si se armooooooooooo
 
         submit.setOnClickListener(new View.OnClickListener()
         {
