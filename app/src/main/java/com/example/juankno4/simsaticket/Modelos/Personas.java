@@ -2,7 +2,7 @@ package com.example.juankno4.simsaticket.Modelos;
 
 public class Personas {
 
-    public int id;
+    public Integer id;
     public String NomEmp;
     public String ApPat;
     public String ApMat;
@@ -24,7 +24,7 @@ public class Personas {
         this.CodDepa = codDepa;
     }
     public Personas(){}
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.juankno4.simsaticket.Modelos.Datos;
 import com.example.juankno4.simsaticket.Modelos.Personas;
@@ -51,9 +53,16 @@ public class AgregarUsuarioFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    JSONObject dd = new JSONObject();
+
+
+
+
     View vista;
     AutoCompleteTextView autoCompleteTextView;
-
+    String[] Dessc;
+    Integer[] arrayid;
+    Personas equipoTrabajo, idper, variable, mm;
     Button btnr_saveusr;
     EditText editr_usr, editr_pass;
     ArrayList<String> listaPersonas;
@@ -99,9 +108,9 @@ public class AgregarUsuarioFragment extends Fragment {
         vista  = inflater.inflate(R.layout.fragment_agregar_usuario, container, false);
         autoCompleteTextView = vista.findViewById(R.id.autoCompleteTextView);
         btnr_saveusr = vista.findViewById(R.id.btnr_saveusr);
-
         editr_usr = vista.findViewById(R.id.editr_usr);
         editr_pass = vista.findViewById(R.id.editr_pass);
+
 
         //recibo yodo el modelo y lo guardo, lo igualo al spinner, ya sea el array o lo que apetezca
         //String[] arraypers = {"Android ","java","IOS","SQL","JDBC","Web services"};
@@ -115,37 +124,41 @@ public class AgregarUsuarioFragment extends Fragment {
                         Request.Method.GET,
                         Datos.URL + "/allper",
                         null,
-                        new Response.Listener<JSONObject>() {
+                        new Response.Listener<JSONObject>()
+                        {
                             @Override
                             public void onResponse(JSONObject response)
                             {
-                                try {
-                                    JSONObject Perss = response.getJSONObject("info");
+                                try
+                                {
+                                    final JSONObject Perss = response.getJSONObject("info");
                                     JSONArray pp = response.getJSONObject("info").getJSONArray("Persona");
-                                    String[] Dessc = new String[pp.length()];
+                                    Datos.per.getId();
+                                    //JSONArray pp = response.getJSONArray("Persona");
+                                    Dessc = new String[pp.length()];
+                                    arrayid = new Integer[pp.length()];
+
                                     Gson gson = new Gson();
                                     for (int i = 0; i < pp.length(); i++)
                                     {
-                                        Personas equipoTrabajo = gson.fromJson(pp.get(i).toString(),Personas.class);
+                                        equipoTrabajo = gson.fromJson(pp.get(i).toString(),Personas.class);
+                                        idper = gson.fromJson(pp.get(i).toString(),Personas.class);
                                         Datos.per = equipoTrabajo;
-                                        response.getJSONObject("info").getJSONArray("Persona");
-                                        //Datos.per.getId();
-                                        Dessc[i] = equipoTrabajo.getNomEmp()+" "+equipoTrabajo.getApPat()+" "+equipoTrabajo.getApMat();
 
-                                        Personas id = gson.fromJson(pp.get(i).toString(),Personas.class);
-                                        Datos.per.getId();
+                                        response.getJSONObject("info").getJSONArray("Persona");
+                                        //response.getJSONArray("Persona");
+                                        //Datos.per.getId();
+                                        Dessc[i] = equipoTrabajo.getId()+".- "+equipoTrabajo.getNomEmp()+" "+equipoTrabajo.getApPat()+" "+equipoTrabajo.getApMat();
+                                        arrayid[i] = equipoTrabajo.getId();
+
+
+                                        //arrayid[i] = equipoTrabajo.getId(); - http://simsatableau.dyndns.org:8080/
+                                        //Personas pxxp = gson.fromJson(pp.get(i).toString(),Personas.class);
+                                        //Datos.per = equipoTrabajo;
                                     }
-                                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,Dessc);
+                                    final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,Dessc);
                                     autoCompleteTextView.setAdapter(adapter);
                                     autoCompleteTextView.setThreshold(1);
-
-                                    autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-                                    {
-                                        @Override
-                                        public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-                                        {
-                                        }
-                                    });
 
                                 } catch (JSONException e)
                                 {
@@ -155,31 +168,48 @@ public class AgregarUsuarioFragment extends Fragment {
 
                             }
                         },
-                        new Response.ErrorListener() {
+                        new Response.ErrorListener()
+                        {
                             @Override
                             public void onErrorResponse(VolleyError error)
                             {
-                                Toast.makeText(getContext(), "HOUSTON, TENEMOS UN PROBLEMA", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Problemas con tu conexión al servidor...", Toast.LENGTH_SHORT).show();
                                 error.printStackTrace();
                             }
                         });
         VolleyS.getInstance(getContext()).getRq().add(json);
 
+       autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+       {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+           {
+//               Toast.makeText(getContext(), variable.getId(), Toast.LENGTH_SHORT).show();
+               int t = (int) parent.getItemIdAtPosition(position);
+               Toast.makeText(getContext(), t, Toast.LENGTH_SHORT).show();
+           }
+       });
         btnr_saveusr.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                JSONObject dd = new JSONObject();
+
                 try
                 {
                     dd.put("NomUsuario",editr_usr.getText().toString());
                     dd.put("PassUsuario",editr_pass.getText().toString());
+                    dd.put("CodEmp",variable);
+                    //int xx = autoCompleteTextView.getListSelection();
+                    //dd.put("CodEmp",xx);
+
+
+
+
+                    //dd.put("CodEmp",autoCompleteTextView.getThreshold());
                     //Integer xx = (Integer) autoCompleteTextView.getListSelection();
                     //Integer xx = (Integer) autoCompleteTextView.getAdapter().getItemId(2);
                     //String s = this.mCountry.getEditableText().toString();
-                    dd.put("CodEmp", Datos.per.getId());
-
                 }
                 catch (JSONException e)
                 {
