@@ -191,7 +191,7 @@ public class AgregarUsuarioFragment extends Fragment {
                try
                {
                    dd.put("CodEmp",Datos.per.getId());
-                   Toast.makeText(getContext(),"entro item", Toast.LENGTH_LONG).show();
+
                }
                catch (JSONException e)
                {
