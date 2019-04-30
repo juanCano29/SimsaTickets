@@ -115,46 +115,6 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
         telefonoeditT.setText(Datos.getPer().getTelRed());
         celulareditT.setText(Datos.getPer().getCelEmp());
         correoeditT.setText(Datos.getPer().getEmailEmp());
-        /*JSONObject objeto= new JSONObject();
-        try {
-            objeto.put("idTec",id);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                Request.Method.POST,
-                Datos.URL + "/datostec",
-                objeto,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-
-                        try {
-                            Gson g = new Gson();
-                            Personas p = g.fromJson(response.getJSONObject("tec").toString(),Personas.class);
-                            nombreeditT.setText(p.getNomEmp());
-                            apellidomeditT.setText(p.getApMat());
-                            apellidopeditT.setText(p.getApPat());
-                            telefonoeditT.setText(p.getTelRed());
-                            celulareditT.setText(p.getCelEmp());
-                            correoeditT.setText(p.getEmailEmp());
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        }
-        );
-        VolleyS.getInstance(getContext()).getRq().add(jsonObjectRequest);*/
-
-
 
         editar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,9 +125,6 @@ public class fragment_verdatos_tecnico extends Fragment implements fragment_edit
 
             }
         });
-
-
-
         return vista;
 
     }

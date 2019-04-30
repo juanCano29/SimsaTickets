@@ -115,9 +115,7 @@ public class AgregarEmpleadoFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                //Toast.makeText(getContext(),"ENTRO AL ONCLICK", Toast.LENGTH_LONG).show();
                 JSONObject dd = new JSONObject();
-                //Toast.makeText(getContext(),"ENTRO AL OBJECT", Toast.LENGTH_LONG).show();
                 try {
 
                     dd.put("NomEmp",edit_rootNombre.getText().toString());
@@ -140,7 +138,6 @@ public class AgregarEmpleadoFragment extends Fragment {
                     {
                         dd.put("CodTipoPersona",3);
                     }
-
 
 
                     String valuespidep = (String) spidep.getSelectedItem();

@@ -96,12 +96,8 @@ public class fragmenthistorialR extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_fragmenthistorial_r, container, false);
-//        lp = v.findViewById(R.id.rv);
         rv=v.findViewById(R.id.rv);
-        /*String codEmp = String.valueOf(Datos.getpersona().getCodEmp());
-        txt.setText(codEmp);*/
-        // Inflate the layout for this fragment
-        /*txt.findViewById(R.id.objeto);*/
+
 
         JsonArrayRequest jor=new JsonArrayRequest(
                 Request.Method.POST,
@@ -123,52 +119,6 @@ public class fragmenthistorialR extends Fragment {
         }
         );
 
-        /*JsonObjectRequest jor = new JsonObjectRequest(
-                Request.Method.POST,
-                Datos.URL + "/mostrarHist",
-                null,
-                new Response.Listener<JSONObject>() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            Gson requeson = new Gson();
-//                            Problemas prob = requeson.fromJson(response.getJSONObject("info").getJSONArray("problemas").toString(),Problemas.class);
-//                            Toast.makeText(getContext(), "loqesea", Toast.LENGTH_SHORT).show();
-                            TipoProb tipo = requeson.fromJson(response.getJSONObject("info").getJSONArray("tipo").get(0).toString(), TipoProb.class);
-                            Personas emp = requeson.fromJson(response.getJSONObject("info").getJSONArray("empleado").get(0).toString(), Personas.class);
-                            Personas tec = requeson.fromJson(response.getJSONObject("info").getJSONArray("tec").get(0).toString(), Personas.class);
-
-                            *//*Type TProbList=new TypeToken<List<TipoProb>>(){}.getType();
-                            String p=response.getJSONObject("info").getJSONArray("problemas").get(0).toString();
-                            List<TipoProb>tipoProblemas=new Gson().fromJson(p,TProbList);
-                            Type EmplList=new TypeToken<List<Personas>>(){}.getType();
-                            String e=response.getJSONObject("info").getJSONArray("empleado").get(0).toString();
-                            List<Personas>empleado=new Gson().fromJson(e,EmplList);
-                            Type tecList=new TypeToken<List<Personas>>(){}.getType();
-                            String t=response.getJSONObject("info").getJSONArray("tec").get(0).toString();
-                            List<Personas>tecnico=new Gson().fromJson(t,tecList);
-                            lp.setLayoutManager(new LinearLayoutManager(getContext()));
-                            lp.setAdapter(new adaptaHistR(tipoProblemas,empleado,tecnico));*//*
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        *//*try {
-                            txt.setText(response.getJSONObject("info").getJSONArray("problemas"));
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }*//*
-
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        }
-
-        );*/
         VolleyS.getInstance(getContext()).getRq().add(jor);
 
         return v;

@@ -117,7 +117,6 @@ public class fragment_problemas_tecnico extends Fragment implements fragment_act
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-//                        Toast.makeText(getContext(), response.toString(), Toast.LENGTH_SHORT).show();
                         Type ProblemaList = new TypeToken<List<AdministrarTec>>(){}.getType();
 
                         List<AdministrarTec> problemas = new Gson().fromJson(response.toString(),ProblemaList);

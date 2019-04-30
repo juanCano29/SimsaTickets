@@ -100,8 +100,6 @@ public class AgregarEquipoFragment extends Fragment {
         autoCompleteTextView = v.findViewById(R.id.autoCompleteTextView);
         submit = v.findViewById(R.id.submit_addequipo);
 
-
-
         String[] array_tequip={"LAPTOP","ESCRITORIO","TELEFONO"};
         tequ.setAdapter(new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item,array_tequip));
 
@@ -177,6 +175,7 @@ public class AgregarEquipoFragment extends Fragment {
             public void onClick(View v)
             {
 
+                JSONObject dd = new JSONObject();
                 try
                 {
                     dd.put("Descripcion",descr.getText().toString());
@@ -195,6 +194,7 @@ public class AgregarEquipoFragment extends Fragment {
                     {
                         dd.put("TipoEquipo","TELEFONO");
                     }
+                    dd.put("CodEmp",autoCompleteTextView.getListSelection());
                 }
                 catch (JSONException e)
                 {
@@ -211,13 +211,17 @@ public class AgregarEquipoFragment extends Fragment {
                                     @Override
                                     public void onResponse(JSONObject response)
                                     {
-                                        Toast.makeText(getContext(),"Se registró correctamente", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getContext(),
+                                                "Se registró correctamente",
+                                                Toast.LENGTH_LONG).show();
                                     }
                                 }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error)
                             {
-                                Toast.makeText(getContext(),"Ocurrió algún error en el proceso...Lo sentimos", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getContext(),
+                                        "Ocurrió algún error en el proceso...Lo sentimos",
+                                        Toast.LENGTH_LONG).show();
                             }
                         }
 

@@ -102,7 +102,7 @@ public class VerDatosFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        Log.d("pifi", dd.toString());
+//        Log.d("pifi", dd.toString());
 
         JsonObjectRequest jor = new JsonObjectRequest(
                 Request.Method.POST,

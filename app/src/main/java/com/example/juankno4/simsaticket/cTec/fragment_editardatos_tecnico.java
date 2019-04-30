@@ -190,13 +190,9 @@ public class fragment_editardatos_tecnico extends Fragment {
                         });
                 VolleyS.getInstance(getContext()).getRq().add(json);
 
-                /*fragment_verdatos_tecnico tecnico = fragment_verdatos_tecnico.newInstance("as","dd");
-                getFragmentManager().beginTransaction().setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).replace(R.id.contenido,tecnico).commit();*/
             }
 
         });
-
-//        Toast.makeText(getContext(),"Id "+ i.toString(),Toast.LENGTH_SHORT).show();
 
         return v;
     }

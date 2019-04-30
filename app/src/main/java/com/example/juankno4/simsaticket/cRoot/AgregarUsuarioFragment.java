@@ -214,18 +214,6 @@ public class AgregarUsuarioFragment extends Fragment {
                 {
                     dd.put("NomUsuario",editr_usr.getText().toString());
                     dd.put("PassUsuario",editr_pass.getText().toString());
-                    //dd.put("CodEmp",);
-
-                    //int xx = autoCompleteTextView.getListSelection();
-                    //dd.put("CodEmp",xx);
-
-
-
-
-                    //dd.put("CodEmp",autoCompleteTextView.getThreshold());
-                    //Integer xx = (Integer) autoCompleteTextView.getListSelection();
-                    //Integer xx = (Integer) autoCompleteTextView.getAdapter().getItemId(2);
-                    //String s = this.mCountry.getEditableText().toString();
                 }
                 catch (JSONException e)
                 {
@@ -242,13 +230,16 @@ public class AgregarUsuarioFragment extends Fragment {
                             @Override
                             public void onResponse(JSONObject response)
                             {
-                                Toast.makeText(getContext(),"Se registró correctamente", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getContext(),
+                                        "Se registró correctamente", Toast.LENGTH_LONG).show();
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error)
                     {
-                        Toast.makeText(getContext(),"Ocurrió algún error en el proceso...Lo sentimos", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(),
+                                "Ocurrió algún error en el proceso...Lo sentimos",
+                                Toast.LENGTH_LONG).show();
                     }
                 }
 
