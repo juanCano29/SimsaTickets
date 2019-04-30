@@ -9,119 +9,127 @@
     android:padding="30dp">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:scrollbars="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <!-- Contenedor de Prioridad del problema -->
-
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="70dp"
-                android:gravity="center"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Descripcion: "
-                    android:textColor="#F6D600"
-                    android:textSize="20dp" />
-                <EditText
-                    android:id="@+id/edit_descequipo"
+                <!-- Contenedor de Prioridad del problema -->
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="98dp"
-                    android:background="@drawable/ed_blanco"
-                    android:focusable="true"
-                    android:inputType="textMultiLine"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="3dp" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-86dp"
-                    android:text="Numero de serie:"
-                    android:textColor="#F6D600"
-                    android:textSize="20dp" />
-                <EditText
-                    android:id="@+id/textv_nums"
+                    android:layout_marginTop="70dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Descripcion: "
+                        android:textColor="#F6D600"
+                        android:textSize="20dp" />
+                    <EditText
+                        android:id="@+id/edit_descequipo"
+                        android:layout_width="match_parent"
+                        android:layout_height="98dp"
+                        android:background="@drawable/ed_blanco"
+                        android:focusable="true"
+                        android:inputType="textMultiLine"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="3dp" />
+
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="43dp"
-                    android:paddingLeft="10dp"
-                    android:background="@drawable/ed_blanco"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Tipo de Equipo:"
-                    android:textColor="#F6D600"
-                    android:textSize="20dp" />
-                <Spinner
-                    android:id="@+id/spin_tipoequipo"
-                    android:paddingLeft="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="43dp"
-                    android:background="@drawable/ed_blanco"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:orientation="vertical">
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-86dp"
+                        android:text="Numero de serie:"
+                        android:textColor="#F6D600"
+                        android:textSize="20dp" />
+                    <EditText
+                        android:id="@+id/textv_nums"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:paddingLeft="10dp"
+                        android:background="@drawable/ed_blanco"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:text="Persona:"
-                    android:textColor="#F6D600"
-                    android:textSize="20dp" />
-                <AutoCompleteTextView
-                    android:background="@drawable/ed_blanco"
-                    android:paddingLeft="10dp"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Tipo de Equipo:"
+                        android:textColor="#F6D600"
+                        android:textSize="20dp" />
+                    <Spinner
+                        android:id="@+id/spin_tipoequipo"
+                        android:paddingLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:background="@drawable/ed_blanco"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Persona:"
+                        android:textColor="#F6D600"
+                        android:textSize="20dp" />
+                    <AutoCompleteTextView
+                        android:background="@drawable/ed_blanco"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/autoCompleteTextView"
+                        android:layout_width="327dp"
+                        android:layout_height="43dp"
+                        android:hint="Escribe el nombre de la persona..."/>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/submit_addequipo"
+                    android:layout_width="300dp"
+                    android:layout_height="51dp"
                     android:layout_gravity="center"
-                    android:id="@+id/autoCompleteTextView"
-                    android:layout_width="327dp"
-                    android:layout_height="43dp"
-                    android:hint="Escribe el nombre de la persona..."/>
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btnsubmit"
+                    android:text="registrar"
+                    />
             </LinearLayout>
-            <Button
-                android:id="@+id/submit_addequipo"
-                android:layout_width="300dp"
-                android:layout_height="51dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/btnsubmit"
-                android:text="registrar"
-                />
         </LinearLayout>
-    </LinearLayout>
+
+    </ScrollView>
+
 </LinearLayout>

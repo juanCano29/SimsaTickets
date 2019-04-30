@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -51,6 +52,8 @@ public class AgregarEquipoFragment extends Fragment {
     AutoCompleteTextView autoCompleteTextView;
     Spinner tequ,per;
     Button submit;
+    Personas equipoTrabajo, idper, variable, mm;
+    JSONObject dd = new JSONObject();
 
 
     private OnFragmentInteractionListener mListener;
@@ -146,6 +149,26 @@ public class AgregarEquipoFragment extends Fragment {
         VolleyS.getInstance(getContext()).getRq().add(json);
 
 
+
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                try
+                {
+                    dd.put("CodEmp",Datos.per.getId());
+                }
+                catch (JSONException e)
+                {
+                    Toast.makeText(getContext(),"Ocurrio algun error", Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
         submit.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -173,7 +196,7 @@ public class AgregarEquipoFragment extends Fragment {
                     }
                     /*int xx = autoCompleteTextView.getListSelection();
                     dd.put("CodEmp",xx);*/
-                    dd.put("CodEmp",autoCompleteTextView.getListSelection());
+                    //dd.put("CodEmp",autoCompleteTextView.getListSelection());
 //                    Toast.makeText(getContext(),xx, Toast.LENGTH_LONG).show();
                     /*Integer valuespi = (Integer) autoCompleteTextView.getListSelection();
                     if (valuespi == 1)

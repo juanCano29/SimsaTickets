@@ -67,6 +67,7 @@ public class AgregarUsuarioFragment extends Fragment {
     EditText editr_usr, editr_pass;
     ArrayList<String> listaPersonas;
     ArrayList<Personas> PersonasList;
+    Integer auto;
 
     private OnFragmentInteractionListener mListener;
 
@@ -179,18 +180,32 @@ public class AgregarUsuarioFragment extends Fragment {
                         });
         VolleyS.getInstance(getContext()).getRq().add(json);
 
+
+
        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener()
        {
+
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
            {
-//               Toast.makeText(getContext(), variable.getId(), Toast.LENGTH_SHORT).show();
-               int t = (int) parent.getItemIdAtPosition(position);
-               Toast.makeText(getContext(), t, Toast.LENGTH_SHORT).show();
+               try
+               {
+                   dd.put("CodEmp",Datos.per.getId());
+                   Toast.makeText(getContext(),"entro item", Toast.LENGTH_LONG).show();
+               }
+               catch (JSONException e)
+               {
+                   Toast.makeText(getContext(),"error", Toast.LENGTH_LONG).show();
+                   e.printStackTrace();
+               }
+
            }
        });
+
+
         btnr_saveusr.setOnClickListener(new View.OnClickListener()
         {
+
             @Override
             public void onClick(View v)
             {
@@ -199,7 +214,8 @@ public class AgregarUsuarioFragment extends Fragment {
                 {
                     dd.put("NomUsuario",editr_usr.getText().toString());
                     dd.put("PassUsuario",editr_pass.getText().toString());
-                    dd.put("CodEmp",variable);
+                    //dd.put("CodEmp",);
+
                     //int xx = autoCompleteTextView.getListSelection();
                     //dd.put("CodEmp",xx);
 
